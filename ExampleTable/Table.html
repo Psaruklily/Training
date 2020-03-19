@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблиця</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        th, td {padding: 15px;}
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse; width: 50%;
+            }
+        
+    </style>
+</head>
+<body>
+  <table>
+      <Caption>Таблиця 2.2.-Динаміка товарних запасів<br>магазину "Світанок" у 2009-2011 рр.</Caption>
+      <thead>
+          <tr>
+              <th rowspan="2">Роки</th>
+              <th colspan="2">Товарні запаси в діючих цінах, тис. грн.</th>
+              <th rowspan="2">Відсоток відповідності товарних запасів нормативів</th>
+              <th rowspan="2">Відхилення(+ -) тис. грн</th>
+            </tr>
+            <tr>
+                <th>норматив</th>
+                <th>факт</th>
+            </tr>
+      </thead>
+      <tbody style="text-align: center">
+          <tr>
+              <td>2009</td><td>225.0</td><td>227.78</td><td>101.2</td><td>+2.78</td>
+          </tr>
+          <tr>
+              <td>2010</td><td>191.7</td><td>183.67</td><td>95.8</td><td>-8.03</td>
+            </tr>
+            <tr>
+              <td>2011</td><td>191.7</td><td>198.77</td><td>103.7</td><td>+7.07</td>
+            </tr>
+      </tbody>
+  </table>  
+</body>
+</html>
