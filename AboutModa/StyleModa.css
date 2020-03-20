@@ -1,0 +1,60 @@
+body {
+    background-image: url(fon.png);
+    max-width: 960px;
+    margin: 0 auto;
+}
+div {
+    border-style: hidden;
+    padding: 5px 15px;
+}
+h4 {
+    text-align: center;
+}
+.header {
+    border: 2px solid brown;
+    height: 100px;
+    width: 700px;
+    padding: 30px 30px 30px 30px;
+    margin: auto;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-image: url(fon1.png);
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 0 10px rgb(17, 16, 16);
+}
+.sidebar {
+    background-color: wheat;
+    float: left;
+    margin-right: 10px;
+    max-width: 200px;
+    min-width: 150px;
+}
+.sidebar1 {
+    background-color: wheat;
+    float: right;
+    margin-left: 10px;
+    max-width: 250px;
+    min-width: 200px;
+}
+.container {
+    margin-bottom: 10px;
+    background-image: url(images11.jpg);
+    font-size: larger;
+    text-align: justify;
+    box-shadow: 0 0 10px rgb(17, 16, 16);
+}
+.footer {
+    font-weight: bold;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgb(17, 16, 16);
+    height: 40px;
+    font-size: 20px;
+}
+a:hover {
+    color: red;
+}
