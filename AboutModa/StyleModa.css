@@ -12,11 +12,10 @@ h4 {
 }
 .header {
     border: 2px solid brown;
-    height: 100px;
-    width: 700px;
-    padding: 30px 30px 30px 30px;
+    height: 200px;
+    width: 950px;
+    padding: 25px 10px 10px 10px;
     margin: auto;
-    text-align: center;
     border-radius: 0 0 15px 15px;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -25,15 +24,98 @@ h4 {
     font-family: 'Courier New', Courier, monospace;
     box-shadow: 0 0 10px rgb(17, 16, 16);
 }
+.header h1 {
+    display: inline;
+}
+.header img {
+    float: left;
+    height: 120px;
+    padding-right: 10px;
+}
+.dws-menu *{
+    margin: 0;
+    padding: 0;
+}
+.dws-menu ul,
+.dws-menu ol{
+    list-style: none;
+}
+.dws-menu > ul{
+    display: flex;
+    justify-content: center;
+}
+.dws-menu > ul li a{
+    display: block;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3e2c7+0,b68d4c+100,e9d4b3+100 */
+background: rgb(243,226,199); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(243,226,199,1) 0%, rgba(182,141,76,1) 100%, rgba(233,212,179,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(243,226,199,1) 0%,rgba(182,141,76,1) 100%,rgba(233,212,179,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(243,226,199,1) 0%,rgba(182,141,76,1) 100%,rgba(233,212,179,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
+
+    padding: 15px 30px 15px 30px;
+    font-size: 14px;
+    color: #454547;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.dws-menu > ul li {
+    border-right: 1px solid black;
+}
+.dws-menu > ul li:first-child{
+    border-left: 1px solid black;
+}
+.dws-menu > ul li:last-child{
+    border-right: 1px solid black;
+}
+.dws-menu li a:hover{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+1,b68d4c+100,e9d4b3+100 */
+background: rgb(243,226,199); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(243,226,199,1) 0%, rgba(193,158,103,1) 1%, rgba(182,141,76,1) 100%, rgba(233,212,179,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(243,226,199,1) 0%,rgba(193,158,103,1) 1%,rgba(182,141,76,1) 100%,rgba(233,212,179,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(243,226,199,1) 0%,rgba(193,158,103,1) 1%,rgba(182,141,76,1) 100%,rgba(233,212,179,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
+
+    color: #ffffff;
+    box-shadow: 1px 5px 10px -5px black;
+    transition: all 0.3s ease;
+}
+.dws-menu li ul{
+    position: absolute;
+    min-width: 150px;
+    display: none;
+}
+.dws-menu li > ul li{
+    border: 1px solid #c7c8ca;
+}
+.dws-menu li > ul li a{
+    padding: 10px;
+    background: #b8a6a6;
+}
+.dws-menu li > ul li ul{
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+.dws-menu li:hover > ul{
+    display: block;
+}
 .sidebar {
-    background-color: wheat;
+    background-color: #ebed3b;
     float: left;
     margin-right: 10px;
     max-width: 200px;
     min-width: 150px;
 }
+.sidebar,.sidebar1 a:visited{
+    color: brown;
+}
+.sidebar a:hover{
+    margin-left: 20px;
+}
 .sidebar1 {
-    background-color: wheat;
+    background-color: #ebed3b;
     float: right;
     margin-left: 10px;
     max-width: 250px;
@@ -46,6 +128,31 @@ h4 {
     text-align: justify;
     box-shadow: 0 0 10px rgb(17, 16, 16);
 }
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    width: 900px;
+    height: 250px;
+}
+.box div{
+    margin: 5px;
+    padding: 5px;
+    width: 440px;
+    height: 100px;
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+}
+.box div p{
+    text-transform: uppercase;
+    color: red;
+}
+.box div a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
 .footer {
     font-weight: bold;
     margin-bottom: 30px;
@@ -54,7 +161,4 @@ h4 {
     box-shadow: 0 0 10px rgb(17, 16, 16);
     height: 40px;
     font-size: 20px;
-}
-a:hover {
-    color: red;
 }
