@@ -1,0 +1,118 @@
+body{
+    background: url(gradient.png);
+    background-repeat: repeat-x;
+    margin: 0;
+    padding: 0;
+}
+.dws-wraper{
+    margin: 0 auto;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 0 10px;
+}
+div.header{
+    /*background-color: sandybrown;*/
+}
+.header img{
+    margin: 10px;
+}
+ul.top-menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #216980;
+    display: flex;
+    justify-content: center;
+}
+.top-menu li a{
+    color: #ffffff;
+    padding: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    display: block;
+}
+.top-menu li:hover{
+    background: #153243;
+}
+.banner img{
+    margin: 0 auto;
+    width: 100%;
+}
+div.conteiner{
+    /*background-color: teal;*/
+}
+.conteiner{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.sidebar{
+    /*background: #e7bf9e;*/
+    width: 250px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+.sidebar-menu{
+    background: #676767;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.sidebar-menu li{
+    border-bottom: 1px solid #4a4a4a;
+}
+.sidebar-menu li a{
+    color: #ffffff;
+    font-size: 14px;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.sidebar-menu li:hover{
+    background: #153243;
+}
+.sidebar img{
+    text-align: center;
+    margin-top: 10px;
+}
+.content{
+    width: 100%;
+    /*background: #a4e2ff;*/
+    margin-left: 20px;
+}
+.content h1{
+    color: #525252;
+    margin: 5px 0;
+}
+.content p{
+    color: #525252;
+    margin: 10px 0;
+}
+.box-text{
+    background: #f3f3f3;
+    border: 1px solid #cdcdcd;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+}
+.box-text img{
+    margin-right: 10px; 
+}
+.text h2{
+    color: #525252;
+}
+.text p{
+    font-size: 14px;
+}
+.footer{
+    background: #153243;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer p{
+    color: #ffffff;
+}
