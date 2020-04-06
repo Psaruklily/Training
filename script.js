@@ -30,7 +30,7 @@ if (vallue > 0) {
 }*/
 
 //*6. Перепишите if с использованием условного оператора '?'
-let result;
+/*let result;
 let a = parseInt(prompt ('Ведіть а', ''), 10);
 let b = parseInt(prompt ('Введіть b', ''), 10);
 if (a + b < 4) {
@@ -38,7 +38,18 @@ if (a + b < 4) {
 } else {
     result = 'Багато';
 }
-alert (result);
+alert (result);*/
+
+//Напишите условие if для проверки, что переменная age находится в диапазоне между 14 и 90 включительно.
+let age;
+let x = parseInt(prompt ('Ведіть вік', ''), 10);
+if (x >= 14 && x <= 90) {
+    age = 'True';
+} else {
+    age = 'False';
+}
+alert (age);
+
 
 
 
