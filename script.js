@@ -60,14 +60,31 @@ if (x < 14 || x > 90) {
 }
 alert (age);*/
 
-let age;
+/*let age;
 age = 18;
 if (!(age >= 14 && age <= 90)) {
     age = 'True';
 } else {
     age = 'False';
 }
-alert (age);
+alert (age);*/
+
+let name = prompt ('Введіть login', '');
+if (name == 'Адмін') {
+    let password = prompt ('Введіть пароль', '');
+    if (password == 'Я_головний') {
+    alert ('Добрий день!');
+} else if (password == '' || password == null) {
+    alert ('Відміна');
+} else {
+    alert ('Пароль невірний');
+}
+} else if (name == '' || name == null) {
+    alert ('Відміна');
+} else {
+    alert ('Я вас не знаю');
+}
+
 
 
 
