@@ -69,7 +69,7 @@ if (!(age >= 14 && age <= 90)) {
 }
 alert (age);*/
 
-let name = prompt ('Введіть login', '');
+/*let name = prompt ('Введіть login', '');
 if (name == 'Адмін') {
     let password = prompt ('Введіть пароль', '');
     if (password == 'Я_головний') {
@@ -83,6 +83,12 @@ if (name == 'Адмін') {
     alert ('Відміна');
 } else {
     alert ('Я вас не знаю');
+}*/
+
+//При помощи цикла for выведите чётные числа от 2 до 10.
+for (let i = 2; i <= 10; i++) {
+    if (i % 2 !== 0) continue;
+    alert (i);
 }
 
 
