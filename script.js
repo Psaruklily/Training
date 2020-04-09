@@ -99,10 +99,35 @@ while (i < 3) {
 
 //Напишите цикл, который предлагает prompt ввести число, большее 100. Если посетитель ввёл другое число – попросить ввести ещё раз, и так далее.
 //Цикл должен спрашивать число пока либо посетитель не введёт число, большее 100, либо не нажмёт кнопку Отмена (ESC).
-let num;
+/*let num;
 do {
   num = prompt("Введите число, большее 100?", 0);
-} while (num <= 100 && num);
+} while (num <= 100 && num);*/
+
+switch (browser) {
+    case 'Edge':
+        alert ("You've got the Edge");
+        break;
+    case 'Chrome':
+    case 'Firefox':
+    case 'Safari':
+    case 'Opera':
+        alert ('Okay, we support these browsers too!');
+        break;
+    default :
+    alert ('We hope that this page looks ok!');
+    break;
+}
+if (browser =='Edge') {
+    alert ("You've got the Edge");
+} else if (browser == 'Chrom'
+|| browser == 'Firefox'
+|| browser == 'Safari'
+|| browser == 'Opera') {
+    alert ('Okey, we support these browsers too');
+} else {
+    alert ('We hope that this page looks ok!')
+}
 
 
 
