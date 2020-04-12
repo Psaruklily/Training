@@ -104,7 +104,7 @@ do {
   num = prompt("Введите число, большее 100?", 0);
 } while (num <= 100 && num);*/
 
-switch (browser) {
+/*switch (browser) {
     case 'Edge':
         alert ("You've got the Edge");
         break;
@@ -127,7 +127,37 @@ if (browser =='Edge') {
     alert ('Okey, we support these browsers too');
 } else {
     alert ('We hope that this page looks ok!')
+}*/
+
+/*let styles = ['Джаз', 'Блюз',];
+styles.push ('Рок-н-ролл');
+//alert (styles);
+styles [1] = 'Класика';
+//alert (styles);
+//alert (styles.shift());
+//alert (styles);
+styles.unshift ('Реп', 'Реггі');
+alert (styles);*/
+
+/*Напишите функцию sumInput(), которая:
+Просит пользователя ввести значения, используя prompt и сохраняет их в массив.
+Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена».
+Подсчитывает и возвращает сумму элементов массива.*/
+function sumInput() {
+    let numbers = [];
+    while (true) {
+        let value = prompt ('Введіть число', 0);
+        //Зупиняємо код якщо
+        if(value === "" || null || !isFinite(value)) break;
+        numbers.push(+value);
+    }
+    let sum = 0;
+    for (let number of numbers) {
+        sum += number;
+    }
+    return sum;
 }
+alert (sumInput());
 
 
 
