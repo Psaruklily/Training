@@ -180,10 +180,14 @@ let a = b.join('-');
 console.log(a);
 console.log(typeof a);*/
 
-//Metod "Slice"
-let arr_1 = ["Hello", "my", "mame", "is", "Lili"];
+//Metod "Slice" - створює новий масив і переносить туди скопійовані певні елементи із основного масиву.
+/*let arr_1 = ["Hello", "my", "mame", "is", "Lili"];
 let arr_2 = arr_1.slice(1,3);
-console.log(arr_2);
+console.log(arr_2);*/
+
+let a = [9, 2, 4, 8, 33, 'hello'];
+let [b, c] = a;
+console.log(b, c);
 
 
 
