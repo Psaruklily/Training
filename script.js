@@ -175,10 +175,15 @@ let d = b.split (','); // metod "trim" - дозволяє позбавитися
 console.log(d);*/
 
 //Метод join (перетворює масив у рядок)
-let b = ["Hello", "my", "mame", "is", "Lili"];
+/*let b = ["Hello", "my", "mame", "is", "Lili"];
 let a = b.join('-');
 console.log(a);
-console.log(typeof a);
+console.log(typeof a);*/
+
+//Metod "Slice"
+let arr_1 = ["Hello", "my", "mame", "is", "Lili"];
+let arr_2 = arr_1.slice(1,3);
+console.log(arr_2);
 
 
 
