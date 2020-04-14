@@ -199,13 +199,25 @@ for (i=0; i < p.length; i++) {
 }*/
 
 //Створення події
-let p = document.getElementsByClassName ('event');
+/*let p = document.getElementsByClassName ('event');
 console.log(p);
 for (j = 0; j < p.length; j++){
     p[j].onclick = function() {
         alert ('Work!');
     }
+}*/
+
+//Визначення середньої температури
+let tempC = [-4, -3, -1, 2, 2, 3, 4, 5, 6, 6, 4, 2];
+let Csum = 0; // Середня температура
+for (i = 0; i < tempC.length; i++) {
+    Csum += tempC[i];
 }
+let CA = Csum / tempC.length;// середнє арифметичне
+console.log(CA);
+console.log( Math.min.apply(null, tempC));//min temp.
+console.log( Math.max.apply(null, tempC));//max temp.
+
 
 
 
