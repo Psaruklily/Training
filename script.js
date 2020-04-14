@@ -170,9 +170,16 @@ out.innerHTML = str;
 console.log(out.innerHTML);*/
 
 //Метод роботи із string - "Split"
-let b = "Hello, my, mame, is, Lili";
-let d = b.split (',');
-console.log(d);
+/*let b = "Hello, my, mame, is, Lili";
+let d = b.split (','); // metod "trim" - дозволяє позбавитися від пробілів у масиві
+console.log(d);*/
+
+//Метод join (перетворює масив у рядок)
+let b = ["Hello", "my", "mame", "is", "Lili"];
+let a = b.join('-');
+console.log(a);
+console.log(typeof a);
+
 
 
 
