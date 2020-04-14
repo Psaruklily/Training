@@ -185,9 +185,27 @@ console.log(typeof a);*/
 let arr_2 = arr_1.slice(1,3);
 console.log(arr_2);*/
 
-let a = [9, 2, 4, 8, 33, 'hello'];
+//Деструктуризація масиву
+/*let a = [9, 2, 4, 8, 33, 'hello'];
 let [b, c] = a;
-console.log(b, c);
+console.log(b, c);*/
+
+// Міняємо колір параграфів (працюємо як із масивом)
+/*let p = document.getElementsByTagName ('p');
+console.log(p);
+//p [2].style.color = 'red';
+for (i=0; i < p.length; i++) {
+    p [i].style.color = 'yellow';
+}*/
+
+//Створення події
+let p = document.getElementsByClassName ('event');
+console.log(p);
+for (j = 0; j < p.length; j++){
+    p[j].onclick = function() {
+        alert ('Work!');
+    }
+}
 
 
 
