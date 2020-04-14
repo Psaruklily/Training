@@ -208,7 +208,7 @@ for (j = 0; j < p.length; j++){
 }*/
 
 //Визначення середньої температури
-let tempC = [-4, -3, -1, 2, 2, 3, 4, 5, 6, 6, 4, 2];
+/*let tempC = [-4, -3, -1, 2, 2, 3, 4, 5, 6, 6, 4, 2];
 let Csum = 0; // Середня температура
 for (i = 0; i < tempC.length; i++) {
     Csum += tempC[i];
@@ -216,7 +216,30 @@ for (i = 0; i < tempC.length; i++) {
 let CA = Csum / tempC.length;// середнє арифметичне
 console.log(CA);
 console.log( Math.min.apply(null, tempC));//min temp.
-console.log( Math.max.apply(null, tempC));//max temp.
+console.log( Math.max.apply(null, tempC));//max temp.*/
+
+/*let user = {
+    name: "Lili",
+    age: 30
+};
+console.log (user.name);
+console.log (user.age);
+user.isAdmin = true;// Додавання властивості
+console.log (user.isAdmin);*/
+
+let name = prompt ("Введіть ім'я", 'Lili');
+let age = prompt ("Введіть вік", 18);
+function makeUser (name, age) {
+    return {
+        name: name,
+        age: age
+    };
+}
+let user = makeUser(name, age);
+alert (user.name);
+alert (user.age);
+
+
 
 
 
