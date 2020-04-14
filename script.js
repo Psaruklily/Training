@@ -159,14 +159,20 @@ alert (styles);*/
 }
 alert (sumInput());*/
 
-let arr = ['HTML', 'CSS', 'JavaScript'];
+//Виведення масиву на сторінку браузера
+/*let arr = ['HTML', 'CSS', 'JavaScript'];
 let out = document.getElementById('out');
 let str = ' ';
 for (let i = 0; i < arr.length; i++) {
     str += arr[i] + '<br>';
 }
 out.innerHTML = str;
-//console.log(out.innerHTML);
+console.log(out.innerHTML);*/
+
+//Метод роботи із string - "Split"
+let b = "Hello, my, mame, is, Lili";
+let d = b.split (',');
+console.log(d);
 
 
 
