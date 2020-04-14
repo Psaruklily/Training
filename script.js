@@ -143,7 +143,7 @@ alert (styles);*/
 Просит пользователя ввести значения, используя prompt и сохраняет их в массив.
 Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена».
 Подсчитывает и возвращает сумму элементов массива.*/
-function sumInput() {
+/*function sumInput() {
     let numbers = [];
     while (true) {
         let value = prompt ('Введіть число', 0);
@@ -157,7 +157,19 @@ function sumInput() {
     }
     return sum;
 }
-alert (sumInput());
+alert (sumInput());*/
+
+let arr = ['HTML', 'CSS', 'JavaScript'];
+let out = document.getElementById('out');
+let str = ' ';
+for (let i = 0; i < arr.length; i++) {
+    str += arr[i] + '<br>';
+}
+out.innerHTML = str;
+//console.log(out.innerHTML);
+
+
+
 
 
 
