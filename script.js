@@ -225,9 +225,11 @@ console.log( Math.max.apply(null, tempC));//max temp.*/
 console.log (user.name);
 console.log (user.age);
 user.isAdmin = true;// Додавання властивості
-console.log (user.isAdmin);*/
+console.log (user.isAdmin);
+delete user.name;
+console.log (user);*/
 
-let name = prompt ("Введіть ім'я", 'Lili');
+/*let name = prompt ("Введіть ім'я", 'Lili');
 let age = prompt ("Введіть вік", 18);
 function makeUser (name, age) {
     return {
@@ -237,7 +239,28 @@ function makeUser (name, age) {
 }
 let user = makeUser(name, age);
 alert (user.name);
-alert (user.age);
+alert (user.age);*/
+
+/*let user = {};
+user.name = "John";
+user.surname = "Smith";
+user.name = "Pete";
+console.log (user);
+delete user.name;
+console.log (user);*/
+
+//Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
+function isEmpty (schedule) {
+    for (let key in schedule) {
+        return false;
+    }
+    return true
+}
+let schedule = {};
+//alert( isEmpty(schedule) );
+schedule["8:30"] = "get up";
+alert( isEmpty(schedule) );
+
 
 
 
