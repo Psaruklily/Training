@@ -290,12 +290,22 @@ alert(sum);*/
   console.log (menu);*/
 
   //Array method "every" 
-  let arr = [3, 4, 5, -9];
+  /*let arr = [3, 4, 5, -9];
    let a = arr.every (function (b) {
     //console.log (b);
       return b < 5;
   });
+  console.log (a);*/
+
+  // Array method reduce / reduceRight
+  let arr = [20, 4, 5, 9];
+  let a = arr.reduce (function (accum, currentValue) {
+      //console.log ('accum: ' + accum);
+     // console.log ('currentValue: ' + currentValue);
+      return accum + currentValue;
+  });
   console.log (a);
+
 
 
 
