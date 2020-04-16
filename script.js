@@ -274,7 +274,7 @@ for (let key in salaries) {
 alert(sum);*/
 
 //Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
-function multiplyNumeric(obj) {
+/*function multiplyNumeric(obj) {
     for (let key in obj) {
       if (typeof obj[key] == 'number') {
         obj[key] *= 2;
@@ -287,7 +287,15 @@ function multiplyNumeric(obj) {
     title: "My menu"
   };
   multiplyNumeric(menu)
-  console.log (menu);
+  console.log (menu);*/
+
+  //Array method "every" 
+  let arr = [3, 4, 5, -9];
+   let a = arr.every (function (b) {
+    //console.log (b);
+      return b < 5;
+  });
+  console.log (a);
 
 
 
