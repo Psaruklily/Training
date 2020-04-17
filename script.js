@@ -14,7 +14,6 @@ Http.onreadystatechange = (e) => {
   console.log(jsonString)
 
   var element = document.getElementById("out");
-//   element.innerHTML = 
 }
 
 console.log("test")
