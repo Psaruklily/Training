@@ -20,3 +20,8 @@ Http.onreadystatechange = (e) => {
 console.log("test")
 // console.log(jsonString)
 // console.log(typeof jsonString)
+
+// new part code
+// asdasda
+// asdasda
+// asdasda
