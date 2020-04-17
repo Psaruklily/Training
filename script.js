@@ -1,5 +1,5 @@
 
-let jsonString
+let jsonString2
 
 const Http = new XMLHttpRequest();
 const url='https://jsonplaceholder.typicode.com/posts';
@@ -9,9 +9,9 @@ Http.send();
 Http.onreadystatechange = (e) => {
   console.log(Http.responseText)
   console.log(typeof Http.responseText)
-  jsonString = JSON.stringify(Http.responseText)
-  console.log(jsonString[0])
-  console.log(jsonString)
+  jsonString2 = JSON.stringify(Http.responseText)
+  console.log(jsonString2[0])
+  console.log(jsonString2)
 
   var element = document.getElementById("out");
 }
