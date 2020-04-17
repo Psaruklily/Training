@@ -7,6 +7,7 @@ Http.open("GET", url);
 Http.send();
 
 Http.onreadystatechange = (e) => {
+  console.log("test")
   console.log(Http.responseText)
   console.log(typeof Http.responseText)
   jsonString2 = JSON.stringify(Http.responseText)
