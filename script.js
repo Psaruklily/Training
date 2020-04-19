@@ -298,13 +298,24 @@ alert(sum);*/
   console.log (a);*/
 
   // Array method reduce / reduceRight
-  let arr = [20, 4, 5, 9];
+  /*let arr = [20, 4, 5, 9];
   let a = arr.reduce (function (accum, currentValue) {
       //console.log ('accum: ' + accum);
      // console.log ('currentValue: ' + currentValue);
       return accum + currentValue;
   });
-  console.log (a);
+  console.log (a);*/
+
+  //Creating calculator
+  function pluss() {
+      let num1, num2, result;
+      num1 = document.getElementById ('number1').value;
+      num1 =parseInt(num1);
+      num2 = document.getElementById ('number2').value;
+      num2 =parseInt(num2);
+      result = num1 + num2;
+      document.getElementById('out').innerHTML = result;
+  }
 
 
 
