@@ -307,7 +307,7 @@ alert(sum);*/
   console.log (a);*/
 
   //Creating calculator
-  function pluss() {
+    /*function pluss() {
       let num1, num2, result;
       num1 = document.getElementById ('number1').value;
       num1 =parseInt(num1);
@@ -315,22 +315,44 @@ alert(sum);*/
       num2 =parseInt(num2);
       result = num1 + num2;
       document.getElementById('out').innerHTML = result;
+  }*/
+
+  function hello() {
+      console.log ('Hello', this);
   }
 
+  const person = {
+      name: "Lili",
+      age: 23,
+      sayHello: hello,
+      sayHelloWindow: hello.bind(window),
+      logInfo: function () {
+          console.group (`${this.name} info:`)
+          console.log (`Name is ${this.name}`);
+          console.log (`Age is ${this.age}`);
+          console.groupEnd();
+      }
+  }
 
+  const anotherPerson = {
+      name: "Nastya",
+      age: 9
+  }
+  //Потрібно вивести anotherPerson через функцію, яка є у об'єкта person*/
+  person.logInfo.bind(anotherPerson)();
 
+  //Напишите программу, которая выводит на экран числа от 1 до 100. При этом вместо чисел, кратных трем, программа должна выводить слово Fizz, а вместо чисел, кратных пяти — слово Buzz. Если число кратно пятнадцати, то программа должна выводить слово FizzBuzz. 
+  /*for (i=1; i<=100; i++) {
+    
+    if (i % 15 == 0) {
+        console.log ('FizzBazz');
+    } if (i % 3 == 0) {
+        console.log('Fizz');
+    } else if (i % 5 == 0) {
+        console.log('Bazz');
+    } else {
+        console.log (i);
+    }
+}*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
