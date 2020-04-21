@@ -316,8 +316,8 @@ alert(sum);*/
       result = num1 + num2;
       document.getElementById('out').innerHTML = result;
   }*/
-
-  function hello() {
+//Method this
+ /* function hello() {
       console.log ('Hello', this);
   }
 
@@ -337,9 +337,9 @@ alert(sum);*/
   const anotherPerson = {
       name: "Nastya",
       age: 9
-  }
+  }*/
   //Потрібно вивести anotherPerson через функцію, яка є у об'єкта person*/
-  person.logInfo.bind(anotherPerson)();
+  //person.logInfo.bind(anotherPerson)();
 
   //Напишите программу, которая выводит на экран числа от 1 до 100. При этом вместо чисел, кратных трем, программа должна выводить слово Fizz, а вместо чисел, кратных пяти — слово Buzz. Если число кратно пятнадцати, то программа должна выводить слово FizzBuzz. 
   /*for (i=1; i<=100; i++) {
@@ -355,4 +355,28 @@ alert(sum);*/
     }
 }*/
 
-    
+// Введіть суму двох чисел і виведіть їх суму
+/*let num1 = +prompt ('Введіть перше число');
+let num2 = +prompt ('Введіть друге число');
+let sum = num1 + num2;
+alert (sum);*/
+
+//Создайте функцию readNumber, которая будет запрашивать ввод числового значения до тех пор, пока посетитель его не введёт.
+/*function readNumber () {
+    let num;
+    do {
+        num = +prompt ('Введіть число', '');
+        if (isFinite(num)) {
+            alert (num);
+        } else if (num === null || num === '') break;
+    } while (!isFinite(num));
+    }
+readNumber();*/
+
+
+
+
+
+
+
+
