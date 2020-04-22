@@ -24,7 +24,52 @@ console.log (hyper.parentElement); //Шукаємо батька a;
 
 console.log (hyper.parentElement.nextElementSibling); //Переходимо до наступного div;
 
-console.log (hyper.parentElement.previousElementSibling);*/ // Переходимо до попереднього div;                    
+console.log (hyper.parentElement.previousElementSibling);*/ // Переходимо до попереднього div;    
+
+
+
+/*let paragr = document.querySelector ('.paragraph');                                                  //Lesson 4
+console.log (paragr);
+paragr.style.width = '250px';
+paragr.style.paddingBottom = '40px';
+console.log (paragr.style);
+
+paragr.classList.add('two', 'three');// Додавання декількож класів до вузла;
+paragr.classList.remove('three');// Видалення класу;
+
+let toggle = document.querySelector('.toggle');
+console.log (toggle);
+toggle.onclick = function() {
+    this.classList.toggle('three');
+}
+
+//aтрибути data
+console.log(paragr.getAttribute('data'));
+console.log (document.querySelector('link').getAttribute('href'));
+
+//Вартість бензину;
+let gass = document.querySelectorAll('.gass');
+for (i = 0; i < gass.length; i++) {
+    gass[i].onclick = function() {
+        let gallons = document.querySelector('.gallons').value;
+        let amount = this.getAttribute('data');
+        console.log (gallons * amount);
+    }
+}
+
+//Створення елементу у JS;
+let myDiv = document.createElement ('div');
+myDiv.innerHTML = 'Hello world!';
+myDiv.classList.add('two');
+
+document.querySelector('.test').appendChild('myDiv');// ??
+console.log (myDiv);*/
+
+
+
+
+
+
 
 
 
