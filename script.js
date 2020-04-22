@@ -49,6 +49,7 @@ console.log (document.querySelector('link').getAttribute('href'));
 
 //Вартість бензину;
 let gass = document.querySelectorAll('.gass');
+console.log (gass);
 for (i = 0; i < gass.length; i++) {
     gass[i].onclick = function() {
         let gallons = document.querySelector('.gallons').value;
@@ -62,8 +63,22 @@ let myDiv = document.createElement ('div');
 myDiv.innerHTML = 'Hello world!';
 myDiv.classList.add('two');
 
-document.querySelector('.test').appendChild('myDiv');// ??
+document.querySelector('.test').appendChild('myDiv');
 console.log (myDiv);*/
+
+
+//Сделайте все внешние ссылки оранжевыми, изменяя их свойство style
+//Ссылка является внешней, если:
+//Её href содержит ://
+//Но не начинается с http://internal.com.
+let links = document.querySelectorAll('a');
+for (let link of links) {
+    let href = link.getAttribute('href');
+    if (!href) continue;
+    if (!href.includes('://')) continue;
+    if (href.startsWith('http://internal.com')) continue;
+    link.style.color = 'orange';
+}
 
 
 
