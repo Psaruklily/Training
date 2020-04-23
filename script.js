@@ -67,18 +67,39 @@ document.querySelector('.test').appendChild('myDiv');
 console.log (myDiv);*/
 
 
-//Сделайте все внешние ссылки оранжевыми, изменяя их свойство style
+//Сделайте все внешние ссылки оранжевыми, изменяя их свойство style                            Lesson 5
 //Ссылка является внешней, если:
 //Её href содержит ://
 //Но не начинается с http://internal.com.
-let links = document.querySelectorAll('a');
+/*let links = document.querySelectorAll('a');
 for (let link of links) {
     let href = link.getAttribute('href');
     if (!href) continue;
     if (!href.includes('://')) continue;
     if (href.startsWith('http://internal.com')) continue;
     link.style.color = 'orange';
-}
+}*/
+
+
+//Навігація по елементах
+ /*let a = document.body.firstElementChild;
+ console.log (a);
+console.log (a.nextElementSibling);
+let b = document.querySelector('ul').lastElementChild;
+console.log (b);*/
+
+
+let tableAge = document.querySelector('#age-table');
+console.log (tableAge);
+let tdAge = document.getElementById('age-list');
+console.log (tdAge);
+console.log (document.querySelector('td'));
+let form = document.getElementsByName('search')[0];
+console.log (form);
+console.log (document.getElementsByTagName('input')[0]);
+let input = form.querySelectorAll('input');
+console.log (input);
+console.log (input[input.length-1]);
 
 
 
