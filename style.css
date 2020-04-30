@@ -29,3 +29,10 @@
 .col-md-7 > .show {
     font-size: 12px;
 }
+.card {
+    border: none;
+}
+.card-body > .card-text {
+    text-align: center;
+}
+
