@@ -1,7 +1,31 @@
 /*специфікація*/
 
 
-/*navbar*/
-.logo > img {
-    width: 200px;
+.col-md-7 {
+    font-size: 25px;
+}
+.col-md-7 .button {
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid rgb(180, 180, 180 );
+    border-radius: 5px;
+    padding: 2px 5px;
+    color: black;
+}
+.userInfo {
+    width: 400px;
+}
+.userInfo *{
+    color: rgb(60, 60, 60);
+    font-size: 15px;
+}
+.userInfo a {
+    text-decoration: none;
+}
+.col-md-7 > .oleh {
+    font-size: 15px; 
+}
+.col-md-7 > .show {
+    font-size: 12px;
 }
