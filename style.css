@@ -1,5 +1,24 @@
 /*специфікація*/
 
+/*Header*/
+.flex-container {
+    display: flex;
+    height: 78px;
+    align-items: center;
+  }
+  .inpute > input {
+      width: 210px;
+      border: 1px solid rgb(180, 180, 180);
+      border-radius: 4px;
+      background: #fafafa;
+  }
+  .line {
+    margin-top: 0px;
+}
+
+
+
+
 
 .col-md-7 {
     font-size: 25px;
