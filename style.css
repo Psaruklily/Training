@@ -12,6 +12,14 @@
       border-radius: 4px;
       background: #fafafa;
   }
+  .inpute > input::placeholder{
+      text-align: center;
+      font-size: 13px;
+      color: rgb(180, 180, 180);
+  }
+  .inpute > input:focus::placeholder {
+      text-align: left;
+  }
   .line {
     margin-top: 0px;
 }
