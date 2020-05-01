@@ -1,6 +1,11 @@
 /*специфікація*/
-
+body {
+    background: #fafafa;
+}
 /*Header*/
+.flex-container {
+    background: white;
+}
 .flex-container {
     display: flex;
     height: 78px;
@@ -19,6 +24,10 @@
   }
   .inpute > input:focus::placeholder {
       text-align: left;
+  }
+  .button *{
+      color: black;
+      font-size: 23px;
   }
   .line {
     margin-top: 0px;
