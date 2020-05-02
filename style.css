@@ -30,39 +30,10 @@ body {
       font-size: 23px;
   }
   .line {
-    margin-top: 0px;
-}
-/*Stories*/
-.stories {
-    display: flex;
-    margin: 0 15px;
-  }
-  .stories__column {
-    /* flex: 0 0 33.333%; */
-    padding: 0 11px;
-  }
-  .stories__story {
-    /* border: 1px solid black; */
-    padding: 10px 15px;
-  }
-  .story__image > img {
-    width: 80px;
-    padding:2px;
-    border:1px solid rgb(180, 180, 180);
-    }
-  .story__text > p {
     margin: 0px;
-    text-align: center;
-    padding-top: 15px;
-    font-size: 13px;
-    font-weight: 500;
-  } 
+}
 
-
-
-
-
-
+/*Information about user*/
 .col-md-7 {
     font-size: 25px;
 }
@@ -97,4 +68,43 @@ body {
 .card-body > .card-text {
     text-align: center;
 }
+
+/*Stories*/
+.stories {
+    display: flex;
+    margin: 0 15px;
+  }
+  .stories__column {
+    /* flex: 0 0 33.333%; */
+    padding: 0 11px;
+  }
+  .stories__story {
+    /* border: 1px solid black; */
+    padding: 10px 15px;
+  }
+  .story__image > img {
+    width: 80px;
+    padding:2px;
+    border:1px solid rgb(180, 180, 180);
+    }
+  .story__text > p {
+    margin: 0px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 13px;
+    font-weight: 500;
+  } 
+
+/*Navs*/
+.nav-link {
+    text-transform: uppercase;
+    color: rgb(180, 180, 180);
+    font-size: 14px;
+  }
+  .nav-link:hover {
+    color: rgb(180, 180, 180);
+  }
+  .nav {
+    margin-top: 15px;
+  }
 
