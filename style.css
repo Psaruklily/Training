@@ -107,4 +107,10 @@ body {
   .nav {
     margin-top: 15px;
   }
+  a, a:visited { 
+    color: rgb(180, 180, 180 )
+    }
+a.link.active {
+    color:black;
+}
 
