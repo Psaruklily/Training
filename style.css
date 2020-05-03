@@ -2,11 +2,19 @@
 body {
     background: #fafafa;
 }
+.container {
+    max-width: 975px;
+}
+#container {
+    padding: 60px 20px 0px;
+}
 /*Header*/
-.flex-container {
-    background: white;
+.navbar {
+    margin: 0;
+    padding: 0;
 }
 .flex-container {
+    background: white;
     display: flex;
     height: 78px;
     align-items: center;
@@ -62,12 +70,6 @@ body {
 .col-md-7 > .show {
     font-size: 12px;
 }
-.card {
-    border: none;
-}
-.card-body > .card-text {
-    text-align: center;
-}
 
 /*Stories*/
 .stories {
@@ -75,12 +77,12 @@ body {
     margin: 0 15px;
   }
   .stories__column {
-    /* flex: 0 0 33.333%; */
     padding: 0 11px;
   }
   .stories__story {
     /* border: 1px solid black; */
     padding: 10px 15px;
+    margin-bottom: 48px;
   }
   .story__image > img {
     width: 80px;
@@ -94,7 +96,7 @@ body {
     font-size: 13px;
     font-weight: 500;
   } 
-
+  
 /*Navs*/
 .nav-link {
     text-transform: uppercase;
@@ -112,5 +114,15 @@ body {
     }
 a.link.active {
     color:black;
+}
+.d-flex {
+    margin-bottom: 17px;
+}
+
+/*Image*/
+.image img {
+    width: 293px;
+    height: 293px;
+    margin: 0px 0px 30px;
 }
 
