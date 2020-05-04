@@ -103,9 +103,10 @@ body {
     color: rgb(180, 180, 180);
     font-size: 14px;
     padding-top: 16px;
+    border-top: 1px solid white;
   }
   .active {
-    border-top: 1px solid black
+    border-top: 1px solid black;
 }
   .nav-link:hover {
     color: rgb(180, 180, 180);
@@ -117,13 +118,25 @@ a.link.active {
     color:black;
 }
 .d-flex {
-    margin-bottom: 17px;
+    margin-bottom: 12px;
 }
 
 /*Image*/
-.image img {
+.image {
+    position: relative;
+}
+ .image img {
     width: 293px;
     height: 293px;
     margin: 0px 0px 30px;
+} 
+.image:hover > .overlay {
+    width: 293px;
+    height: 293px;
+    position:absolute;
+    background-color:#000;
+    opacity:0.3;
+    
+    
 }
 
