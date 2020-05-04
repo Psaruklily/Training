@@ -102,12 +102,13 @@ body {
     text-transform: uppercase;
     color: rgb(180, 180, 180);
     font-size: 14px;
+    padding-top: 16px;
   }
+  .active {
+    border-top: 1px solid black
+}
   .nav-link:hover {
     color: rgb(180, 180, 180);
-  }
-  .nav {
-    margin-top: 15px;
   }
   a, a:visited { 
     color: rgb(180, 180, 180 )
