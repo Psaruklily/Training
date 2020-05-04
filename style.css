@@ -122,21 +122,20 @@ a.link.active {
 }
 
 /*Image*/
-.image {
-    position: relative;
-}
+
  .image img {
     width: 293px;
     height: 293px;
     margin: 0px 0px 30px;
 } 
-.image:hover > .overlay {
+/* .image:hover > .overlay {
     width: 293px;
     height: 293px;
     position:absolute;
     background-color:#000;
     opacity:0.3;
-    
-    
+} */
+.image img:hover{
+    filter: brightness(70%);
 }
 
