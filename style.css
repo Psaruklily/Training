@@ -40,7 +40,13 @@ body {
   .line {
     margin: 0px;
 }
-
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border: 1px solid rgb(240, 240, 240);
+    z-index: 1;
+  }
 /*Information about user*/
 .col-md-7 {
     font-size: 25px;
@@ -122,19 +128,11 @@ a.link.active {
 }
 
 /*Image*/
-
  .image img {
     width: 293px;
     height: 293px;
     margin: 0px 0px 30px;
 } 
-/* .image:hover > .overlay {
-    width: 293px;
-    height: 293px;
-    position:absolute;
-    background-color:#000;
-    opacity:0.3;
-} */
 .image img:hover{
     filter: brightness(70%);
 }
