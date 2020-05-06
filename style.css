@@ -136,7 +136,7 @@ a.link.active {
     height: 293px;
     margin: 0px 0px 30px;
 } 
-.image img:hover{
+.image:hover{
     filter: brightness(70%);
 }
 .image:hover .icon-center {
@@ -154,25 +154,22 @@ a.link.active {
     display: inline-block;
     padding: 12px; 
 }
-.heart a, .comment a{
+.heart, .comment {
     text-decoration: none;
     color: white;
     font-weight: bolder;
     font-size: 16px;
 }
-
 .icon-top-right {
     position: absolute;
     right: 30px;
     top: 13px;
     font-size: 17px;
 }
-.icon-top-right a {
+.icon-top-right {
     color: white;
 }
-.image:hover .icon-top-right a {
-    filter: brightness(70%);
-}
+
 
 
 
