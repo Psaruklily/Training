@@ -6,7 +6,7 @@ body {
     max-width: 975px;
 }
 #container {
-    padding: 60px 20px 0px;
+    padding: 120px 20px 0px;
 }
 /*Header*/
 .navbar {
@@ -40,7 +40,7 @@ body {
   .line {
     margin: 0px;
 }
-.sticky {
+ #myHeader {
     position: fixed;
     top: 0;
     width: 100%;
@@ -136,4 +136,28 @@ a.link.active {
 .image img:hover{
     filter: brightness(70%);
 }
+.image {
+    position: relative;
+}
+.icon-center {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.icon-center > .heart, .comment {
+    display: inline-block;
+    padding: 12px;
+}
+.heart a, .comment a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+
+
+
 

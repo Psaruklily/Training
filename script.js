@@ -6,7 +6,8 @@
  }); 
 
 
- window.onscroll = function() {myFunction()};
+
+  window.onscroll = function() {myFunction()};
 
  let header = document.getElementById("myHeader");
  let sticky = header.offsetTop;
@@ -17,4 +18,4 @@
    } else {
      header.classList.remove("sticky");
    }
- }
+ } 
