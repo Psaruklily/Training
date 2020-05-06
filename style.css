@@ -128,6 +128,9 @@ a.link.active {
 }
 
 /*Image*/
+.image {
+    position: relative;
+}
  .image img {
     width: 293px;
     height: 293px;
@@ -136,8 +139,8 @@ a.link.active {
 .image img:hover{
     filter: brightness(70%);
 }
-.image {
-    position: relative;
+.image:hover .icon-center {
+    visibility: visible;
 }
 .icon-center {
     position: absolute;
@@ -145,16 +148,30 @@ a.link.active {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    visibility: hidden;
 }
 .icon-center > .heart, .comment {
     display: inline-block;
-    padding: 12px;
+    padding: 12px; 
 }
 .heart a, .comment a{
     text-decoration: none;
     color: white;
     font-weight: bolder;
     font-size: 16px;
+}
+
+.icon-top-right {
+    position: absolute;
+    right: 30px;
+    top: 13px;
+    font-size: 17px;
+}
+.icon-top-right a {
+    color: white;
+}
+.image:hover .icon-top-right a {
+    filter: brightness(70%);
 }
 
 
