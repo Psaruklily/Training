@@ -127,6 +127,7 @@ a.link.active {
     margin-bottom: 12px;
 }
 
+
 /*Image*/
 .image {
     position: relative;
@@ -169,6 +170,9 @@ a.link.active {
 .icon-top-right {
     color: white;
 }
+.tab-pane {
+    padding: 0;
+} 
 
 
 
