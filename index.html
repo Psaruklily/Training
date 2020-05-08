@@ -1,343 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/f97f7bf996.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/480px-Instagram_logo_2016.svg.png">
-    <title>Instagram</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/f97f7bf996.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon"
+    href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/480px-Instagram_logo_2016.svg.png">
+  <title>Instagram</title>
 </head>
+
 <body>
   <!--Create navbar-->
   <div class="container-fluid flex-container header" id="myHeader">
     <div class="container justify-content-between">
-        <nav class="navbar navbar-light">
+      <nav class="navbar navbar-light">
         <div class="logo">
-                  <a href="#"><img src="images/logo.png" width="130" class="d-inline-block align-top" alt=""></a>
+          <a href="#"><img src="images/logo.png" width="130" class="d-inline-block align-top" alt=""></a>
         </div>
         <div class="inpute">
-            <input type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
+          <input type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
         </div>
         <div class="button">
-            <a href="#" class="nav-link d-inline"><i class="far fa-paper-plane"></i></a>
-            <a href="#" class="nav-link d-inline"><i class="far fa-compass"></i></a>
-            <a href="#" class="nav-link d-inline"><i class="far fa-heart"></i></a>
-            <a href="#" class="nav-link d-inline"><i class="far fa-user"></i></a>
+          <a href="#" class="nav-link d-inline"><i class="far fa-paper-plane"></i></a>
+          <a href="#" class="nav-link d-inline"><i class="far fa-compass"></i></a>
+          <a href="#" class="nav-link d-inline"><i class="far fa-heart"></i></a>
+          <a href="#" class="nav-link d-inline"><i class="far fa-user"></i></a>
         </div>
-    </nav>
+      </nav>
+    </div>
   </div>
-</div>
-<hr class="line">
-
-<!--Information about user-->
-<div class="container" id="container">
-  <div class="row">
-    <div class="col-md-4">
-      <img src="images/main photo.jpg" class="rounded-circle mx-auto d-block" alt="user" height="150px">
-    </div>
-    <div class="col-md-8">
-      <p class="d-inline">oleh_boburchak</p>&nbsp; &nbsp;
-      <a href="#" class="button">Edit Profile</a><br><br>
-      <div class="userInfo d-flex justify-content-between">
-      <p><b>152</b>дописів</p>
-      <a href="#"><p><b>296</b>читачів</p></a>
-      <a href="#"><p>Стежить:<b>943</b></p></a>
-      </div>
-      <p class="oleh"><b>Oleg Boburchak</b></p>
-      <p class="show">Стежать: monomodeon і sergii_maryn</p>
-    </div>
-  </div><br>
-
-  <!--Stories-->
-  <div class="stories">
-    <div class="stories__column">
-        <div class="stories__story">
-            <div class="story__image">
-                <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=lq1iN0klXWIAX847tP6&oh=c3654c16f9b7f1d4c274357fdd828068&oe=5ED89310" class="rounded-circle" alt="Azores">
-            </div>
-            <div class="story__text">
-                <p>Azores</p>
-            </div>
-        </div>
-   </div>
-   <div class="stories__column">
-       <div class="stories__story">
-           <div class="story__image">
-               <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=lq1iN0klXWIAX847tP6&oh=c3654c16f9b7f1d4c274357fdd828068&oe=5ED89310" class="rounded-circle" alt="Azores">
-           </div>
-           <div class="story__text">
-               <p>Azores</p>
-           </div>
-       </div>
-   </div>
-   <div class="stories__column">
-       <div class="stories__story">
-           <div class="story__image">
-               <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=lq1iN0klXWIAX847tP6&oh=c3654c16f9b7f1d4c274357fdd828068&oe=5ED89310" class="rounded-circle" alt="Azores">
-           </div>
-           <div class="story__text">
-               <p>Azores</p>
-           </div>
-       </div>
-   </div> 
-</div>
-
-  <!--nav-->
   <hr class="line">
-        <div class="d-flex justify-content-center">
-          <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-              <a class ="nav-link link" data-toggle="tab"  href="#posts"><i class="fas fa-th"></i>&nbsp;&nbsp;Posts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link link" data-toggle="tab"  href="#"><i class="far fa-calendar-minus"></i>&nbsp;&nbsp;Igtv</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link" data-toggle="tab" href="#"><i class="far fa-bookmark"></i>&nbsp;&nbsp;Saved</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link link" data-toggle="tab" href="#tagged"><i class="far fa-user"></i>&nbsp;&nbsp;Tagged</a>
-            </li>
-          </ul>
+
+  <!--Information about user-->
+  <div class="container" id="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="images/main photo.jpg" class="rounded-circle mx-auto d-block" alt="user" height="150px">
+      </div>
+      <div class="col-md-8">
+        <p class="d-inline">oleh_boburchak</p>&nbsp; &nbsp;
+        <a href="#" class="button">Edit Profile</a><br><br>
+        <div class="userInfo d-flex justify-content-between">
+          <p><b>152</b>дописів</p>
+          <a href="#">
+            <p><b>296</b>читачів</p>
+          </a>
+          <a href="#">
+            <p>Стежить:<b>943</b></p>
+          </a>
         </div>
- 
-  <!--Tab panes Image-->
-   <div class="tab-content">
-    <div id="posts" class="container tab-pane active">
-      <div class="row">
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=jQ5LH8ZcDtcAX_jFyKt&oh=6d8cb1cd4f1ff2d1344bbdbb54f8b33b&oe=5ED89310">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div>
-            <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=jQ5LH8ZcDtcAX_jFyKt&oh=6d8cb1cd4f1ff2d1344bbdbb54f8b33b&oe=5ED89310" alt="#">
-        </a>
+        <p class="oleh"><b>Oleg Boburchak</b></p>
+        <p class="show">Стежать: monomodeon і sergii_maryn</p>
       </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/84447101_2724707614311287_8862141425529329837_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ywHHzJ5Ab6sAX8HiAPZ&oh=ea66785dfcbadc28dbea3bc5e1bddc34&oe=5EDA333D">
-          <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/84447101_2724707614311287_8862141425529329837_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ywHHzJ5Ab6sAX8HiAPZ&oh=ea66785dfcbadc28dbea3bc5e1bddc34&oe=5EDA333D" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
+    </div><br>
+
+    <!--Stories-->
+    <div class="stories">
+      <div class="stories__column">
+        <div class="stories__story">
+          <div class="story__image">
+            <img
+              src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=lq1iN0klXWIAX847tP6&oh=c3654c16f9b7f1d4c274357fdd828068&oe=5ED89310"
+              class="rounded-circle" alt="Azores">
           </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
+          <div class="story__text">
+            <p>Azores</p>
           </div>
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/59941281_399004134031227_751605626903362848_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=udfuiDa6Q7UAX_bxcbR&oh=c2e60c864f19dfa93de62d76a238e5f9&oe=5ED6BDA3">
-          <img src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/59941281_399004134031227_751605626903362848_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=udfuiDa6Q7UAX_bxcbR&oh=c2e60c864f19dfa93de62d76a238e5f9&oe=5ED6BDA3" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div>
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/40473405_232709404067453_3762944802765397498_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=9YUNuTVwnCoAX_itQId&oh=9be13f3a1b21c19d3d84f4a6f4a0e87c&oe=5ED6A6B3">
-          <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/40473405_232709404067453_3762944802765397498_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=9YUNuTVwnCoAX_itQId&oh=9be13f3a1b21c19d3d84f4a6f4a0e87c&oe=5ED6A6B3" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div> 
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/33370618_206782663292231_7202559318149824512_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=f1YrIBG57w8AX9VbbKD&oh=59656e74dad688fae4642bd1d8e95ff7&oe=5EDA0C91">
-          <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/33370618_206782663292231_7202559318149824512_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=f1YrIBG57w8AX9VbbKD&oh=59656e74dad688fae4642bd1d8e95ff7&oe=5EDA0C91" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div>
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/20482690_1905653139699847_5490675668536524800_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=ewGEHo3IffMAX8O4EVg&oh=b4f237972ffe741e242c82ddc04d3204&oe=5ED68967">
-          <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/20482690_1905653139699847_5490675668536524800_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=ewGEHo3IffMAX8O4EVg&oh=b4f237972ffe741e242c82ddc04d3204&oe=5ED68967" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div>  
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/19932190_1794515770575102_3382232972609454080_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=0vA6nLlsS7sAX9FVmNJ&oh=11450b08039758e83c4d8966d3eef0a1&oe=5ED87EEF">
-          <img src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/19932190_1794515770575102_3382232972609454080_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=0vA6nLlsS7sAX9FVmNJ&oh=11450b08039758e83c4d8966d3eef0a1&oe=5ED87EEF" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div>
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/16123337_1855889921290173_8909154548761755648_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=jIzLzKoiETYAX-ftDQk&oh=66a0d846b37d81059a0204d3acf1fd44&oe=5ED9AFE4">
-          <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/16123337_1855889921290173_8909154548761755648_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=jIzLzKoiETYAX-ftDQk&oh=66a0d846b37d81059a0204d3acf1fd44&oe=5ED9AFE4" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div> 
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/16123656_294468764284902_1047743974640451584_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=XLdpYFjd5qUAX8JZKC6&oh=908fd80a1ef6b576f74de9b9607ab3a7&oe=5ED65EAA">
-          <img src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/16123656_294468764284902_1047743974640451584_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=XLdpYFjd5qUAX8JZKC6&oh=908fd80a1ef6b576f74de9b9607ab3a7&oe=5ED65EAA" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div> 
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/17438609_417884201899047_826324370283560960_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=wZ58I2v8P7wAX_3A-8F&oh=4b4984ebecfb08dd05e7da0b0c464da8&oe=5ED6A8E2">
-          <img src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/17438609_417884201899047_826324370283560960_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=wZ58I2v8P7wAX_3A-8F&oh=4b4984ebecfb08dd05e7da0b0c464da8&oe=5ED6A8E2" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div>
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/18444362_1549948875078010_6352846724930732032_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=gLGXYsaovNQAX9jq1iE&oh=378a8a09152b9fb016d92b8ee91ed037&oe=5ED9C5FF">
-          <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/18444362_1549948875078010_6352846724930732032_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=gLGXYsaovNQAX9jq1iE&oh=378a8a09152b9fb016d92b8ee91ed037&oe=5ED9C5FF" alt="#">
-          <div class="icon-top-right">
-            <i class="fas fa-square"></i>
-          </div>
-          <div class="icon-center">
-            <div class="heart">
-              <i class="fas fa-heart"></i>&nbsp;51
-            </div>
-            <div class="comment">
-            <i class="fas fa-comment"></i>&nbsp;0
-            </div>
-          </div>  
-        </a>
-      </div>
-  
-      <div class="col-md-4 image">
-        <a target="_self" href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/19436839_119562298644473_7075562774499164160_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=8jT7xvhCTEkAX8dHe2j&oh=d7bf96846ec7dbf118d5a6bf1e99c4dd&oe=5ED9AE78">
-        <img src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/19436839_119562298644473_7075562774499164160_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=8jT7xvhCTEkAX8dHe2j&oh=d7bf96846ec7dbf118d5a6bf1e99c4dd&oe=5ED9AE78" alt="#">
-        <div class="icon-top-right">
-          <i class="fas fa-square"></i>
         </div>
-        <div class="icon-center">
-          <div class="heart">
-            <i class="fas fa-heart"></i>&nbsp;51
+      </div>
+      <div class="stories__column">
+        <div class="stories__story">
+          <div class="story__image">
+            <img
+              src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=lq1iN0klXWIAX847tP6&oh=c3654c16f9b7f1d4c274357fdd828068&oe=5ED89310"
+              class="rounded-circle" alt="Azores">
           </div>
-          <div class="comment">
-          <i class="fas fa-comment"></i>&nbsp;0
+          <div class="story__text">
+            <p>Azores</p>
           </div>
-        </div> 
-      </a>
+        </div>
+      </div>
+      <div class="stories__column">
+        <div class="stories__story">
+          <div class="story__image">
+            <img
+              src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=lq1iN0klXWIAX847tP6&oh=c3654c16f9b7f1d4c274357fdd828068&oe=5ED89310"
+              class="rounded-circle" alt="Azores">
+          </div>
+          <div class="story__text">
+            <p>Azores</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--nav-->
+    <hr class="line">
+    <div class="d-flex justify-content-center">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#posts"><i class="fas fa-th"></i>&nbsp;&nbsp;Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#"><i class="far fa-calendar-minus"></i>&nbsp;&nbsp;Igtv</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#"><i class="far fa-bookmark"></i>&nbsp;&nbsp;Saved</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#tagged"><i class="far fa-user"></i>&nbsp;&nbsp;Tagged</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--Tab panes Image-->
+    <div class="tab-content">
+      <div id="posts" class="container tab-pane active">
+        <div class="row">
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=jQ5LH8ZcDtcAX_jFyKt&oh=6d8cb1cd4f1ff2d1344bbdbb54f8b33b&oe=5ED89310">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/87328963_2580881285372081_3601514295540460806_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=jQ5LH8ZcDtcAX_jFyKt&oh=6d8cb1cd4f1ff2d1344bbdbb54f8b33b&oe=5ED89310"
+                alt="#">
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/84447101_2724707614311287_8862141425529329837_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ywHHzJ5Ab6sAX8HiAPZ&oh=ea66785dfcbadc28dbea3bc5e1bddc34&oe=5EDA333D">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/84447101_2724707614311287_8862141425529329837_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ywHHzJ5Ab6sAX8HiAPZ&oh=ea66785dfcbadc28dbea3bc5e1bddc34&oe=5EDA333D"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/59941281_399004134031227_751605626903362848_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=udfuiDa6Q7UAX_bxcbR&oh=c2e60c864f19dfa93de62d76a238e5f9&oe=5ED6BDA3">
+              <img
+                src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/59941281_399004134031227_751605626903362848_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=udfuiDa6Q7UAX_bxcbR&oh=c2e60c864f19dfa93de62d76a238e5f9&oe=5ED6BDA3"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/40473405_232709404067453_3762944802765397498_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=9YUNuTVwnCoAX_itQId&oh=9be13f3a1b21c19d3d84f4a6f4a0e87c&oe=5ED6A6B3">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/40473405_232709404067453_3762944802765397498_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=9YUNuTVwnCoAX_itQId&oh=9be13f3a1b21c19d3d84f4a6f4a0e87c&oe=5ED6A6B3"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/33370618_206782663292231_7202559318149824512_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=f1YrIBG57w8AX9VbbKD&oh=59656e74dad688fae4642bd1d8e95ff7&oe=5EDA0C91">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/33370618_206782663292231_7202559318149824512_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=f1YrIBG57w8AX9VbbKD&oh=59656e74dad688fae4642bd1d8e95ff7&oe=5EDA0C91"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/20482690_1905653139699847_5490675668536524800_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=ewGEHo3IffMAX8O4EVg&oh=b4f237972ffe741e242c82ddc04d3204&oe=5ED68967">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/20482690_1905653139699847_5490675668536524800_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=ewGEHo3IffMAX8O4EVg&oh=b4f237972ffe741e242c82ddc04d3204&oe=5ED68967"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/19932190_1794515770575102_3382232972609454080_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=0vA6nLlsS7sAX9FVmNJ&oh=11450b08039758e83c4d8966d3eef0a1&oe=5ED87EEF">
+              <img
+                src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/19932190_1794515770575102_3382232972609454080_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=0vA6nLlsS7sAX9FVmNJ&oh=11450b08039758e83c4d8966d3eef0a1&oe=5ED87EEF"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/16123337_1855889921290173_8909154548761755648_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=jIzLzKoiETYAX-ftDQk&oh=66a0d846b37d81059a0204d3acf1fd44&oe=5ED9AFE4">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/16123337_1855889921290173_8909154548761755648_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=jIzLzKoiETYAX-ftDQk&oh=66a0d846b37d81059a0204d3acf1fd44&oe=5ED9AFE4"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/16123656_294468764284902_1047743974640451584_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=XLdpYFjd5qUAX8JZKC6&oh=908fd80a1ef6b576f74de9b9607ab3a7&oe=5ED65EAA">
+              <img
+                src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/e35/16123656_294468764284902_1047743974640451584_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=XLdpYFjd5qUAX8JZKC6&oh=908fd80a1ef6b576f74de9b9607ab3a7&oe=5ED65EAA"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/17438609_417884201899047_826324370283560960_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=wZ58I2v8P7wAX_3A-8F&oh=4b4984ebecfb08dd05e7da0b0c464da8&oe=5ED6A8E2">
+              <img
+                src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/17438609_417884201899047_826324370283560960_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=wZ58I2v8P7wAX_3A-8F&oh=4b4984ebecfb08dd05e7da0b0c464da8&oe=5ED6A8E2"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/18444362_1549948875078010_6352846724930732032_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=gLGXYsaovNQAX9jq1iE&oh=378a8a09152b9fb016d92b8ee91ed037&oe=5ED9C5FF">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/18444362_1549948875078010_6352846724930732032_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=gLGXYsaovNQAX9jq1iE&oh=378a8a09152b9fb016d92b8ee91ed037&oe=5ED9C5FF"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/19436839_119562298644473_7075562774499164160_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=8jT7xvhCTEkAX8dHe2j&oh=d7bf96846ec7dbf118d5a6bf1e99c4dd&oe=5ED9AE78">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/19436839_119562298644473_7075562774499164160_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=8jT7xvhCTEkAX8dHe2j&oh=d7bf96846ec7dbf118d5a6bf1e99c4dd&oe=5ED9AE78"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="tagged" class="container tab-pane fade">
+        <div class="row">
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/62643543_314606376086587_7804594516629822462_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=F2jaTws8blcAX94PWqb&oh=461a14ee300c7a36c0edda5ac88d5662&oe=5EE0145E">
+              <img
+                src="https://instagram.flwo4-1.fna.fbcdn.net/v/t51.2885-15/e35/62643543_314606376086587_7804594516629822462_n.jpg?_nc_ht=instagram.flwo4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=F2jaTws8blcAX94PWqb&oh=461a14ee300c7a36c0edda5ac88d5662&oe=5EE0145E"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 image">
+            <a target="_self"
+              href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/18950327_116862498831366_7061886829829554176_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=Yyu1J7dQx5YAX_o-17R&oh=5d619404c29f923df860adbe869876a2&oe=5EE09F29">
+              <img
+                src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/18950327_116862498831366_7061886829829554176_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=Yyu1J7dQx5YAX_o-17R&oh=5d619404c29f923df860adbe869876a2&oe=5EE09F29"
+                alt="#">
+              <div class="icon-top-right">
+                <i class="fas fa-square"></i>
+              </div>
+              <div class="icon-center">
+                <div class="heart">
+                  <i class="fas fa-heart"></i>&nbsp;51
+                </div>
+                <div class="comment">
+                  <i class="fas fa-comment"></i>&nbsp;0
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-<div id="tagged" class="container tab-pane fade">
-    <div class="col-md-4 image">
-      <a target="_self" href="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/84157249_623015185098198_820254303898693237_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=TTm5yqSkHN8AX8SuZy2&oh=044aab1bff63c29bf6eef66fa9fe8b5c&oe=5EDDB4FD">
-      <img src="https://instagram.flwo4-2.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/84157249_623015185098198_820254303898693237_n.jpg?_nc_ht=instagram.flwo4-2.fna.fbcdn.net&_nc_cat=106&_nc_ohc=TTm5yqSkHN8AX8SuZy2&oh=044aab1bff63c29bf6eef66fa9fe8b5c&oe=5EDDB4FD" alt="#">
-      <div class="icon-top-right">
-        <i class="fas fa-square"></i>
-      </div>
-      <div class="icon-center">
-        <div class="heart">
-          <i class="fas fa-heart"></i>&nbsp;51
-        </div>
-        <div class="comment">
-        <i class="fas fa-comment"></i>&nbsp;0
-        </div>
-      </div> 
-    </a>
-    </div>
-</div>
-</div>
-
-
-</div>
+  </div>
 
 
 
@@ -348,10 +428,11 @@
 
 
 
-  
 
-    
-<script src="script.js"></script>
-    
+
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>

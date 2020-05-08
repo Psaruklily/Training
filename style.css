@@ -111,18 +111,22 @@ body {
     padding-top: 16px;
     border-top: 1px solid white;
   }
-  .active {
+  .nav-tabs {
+      border-bottom: none;
+  }
+  .nav > .nav-item > .active {
     border-top: 1px solid black;
+    background: #fafafa;
 }
   .nav-link:hover {
     color: rgb(180, 180, 180);
   }
-  a, a:visited { 
+ /*  a, a:visited { 
     color: rgb(180, 180, 180 )
     }
 a.link.active {
     color:black;
-}
+} */
 .d-flex {
     margin-bottom: 12px;
 }

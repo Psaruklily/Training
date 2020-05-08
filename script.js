@@ -1,12 +1,12 @@
- $(function() {
+/*  $(function() {
     let links = $('a.link').click(function() {
         links.removeClass('active');
         $(this).addClass('active');
     });
- }); 
+ });  */
 
 
-
+/* 
   window.onscroll = function() {myFunction()};
 
  let header = document.getElementById("myHeader");
@@ -18,4 +18,4 @@
    } else {
      header.classList.remove("sticky");
    }
- } 
+ }  */
