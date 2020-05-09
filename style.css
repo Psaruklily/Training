@@ -131,7 +131,6 @@ a.link.active {
     margin-bottom: 12px;
 }
 
-
 /*Image*/
 .image {
     position: relative;
@@ -177,6 +176,41 @@ a.link.active {
 .tab-pane {
     padding: 0;
 } 
+
+
+/*main*/
+/*friends-stories*/
+.friend-stories {
+    border: 1px solid #ccc5c5;
+    width: 610px;
+    height: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+.friend-stories a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.image-story img {
+    width: 65px;
+    padding: 2px;
+    border: 2px solid red;
+}
+.user-name {
+    font-size: 13px;
+}
+.user-name p {
+    text-align: center;
+}
+.stories-col {
+    width: 74px;
+    height: 90px;
+    margin: 10px 3px 10px;
+}
+
 
 
 

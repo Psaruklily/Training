@@ -19,3 +19,7 @@
      header.classList.remove("sticky");
    }
  }  */
+
+ $(function(){
+  $("#includedContent").load("index1.html"); 
+});
