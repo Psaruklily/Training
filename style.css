@@ -178,6 +178,25 @@ a.link.active {
 } 
 
 
+
+
+
+/*Footer*/
+.footer {
+    height: 100px;
+}
+.col-lg-1 a {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
 /*main*/
 /*friends-stories*/
 .friend-stories {
