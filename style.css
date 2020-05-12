@@ -211,6 +211,60 @@ a.link.active {
     margin: 10px 3px 10px;
 }
 
+/*Sidebar*/
+.media-body p small {
+    color: rgb(151, 145, 145);
+}
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+.paragraph_1 p {
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(151, 145, 145);
+}
+.flexbox a{
+    text-decoration: none;
+}
+.paragraph_2 p {
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+.sidebar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar-content a {
+    text-decoration: none;
+}
+.follow p {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(50, 182, 235);
+}
+.media-body p {
+    margin: 0;
+    font-size: 14px;
+}
+.media-body a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+ .sidebar {
+    height: 100%;
+    width: 291.66px;
+    position: fixed;
+    z-index: 1;
+    top: 120px;
+    right: 154.5px;
+    overflow-x: hidden;
+}  
+
+
+
 
 
 
