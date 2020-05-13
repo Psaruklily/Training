@@ -177,10 +177,6 @@ a.link.active {
     padding: 0;
 } 
 
-
-
-
-
 /*Footer*/
 .footer {
     height: 100px;
@@ -189,10 +185,6 @@ a.link.active {
     font-size: 15px;
     text-decoration: none;
 }
-
-
-
-
 
 
 
@@ -281,6 +273,53 @@ a.link.active {
     right: 154.5px;
     overflow-x: hidden;
 }  
+
+/*News-of-my-friends*/
+.main-div {
+    margin: 50px 0px 0px;
+}
+.title {
+    width: 610px;
+    height: 60px;
+    border: 1px solid #ccc5c5;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title .media .media-body a {
+    font-size: 14px;
+}
+.icon a {
+    margin: 16px;
+    color: rgb(0, 0, 0);
+}
+.news img {
+    width: 610px;
+    height: 509px;
+}
+.image-description {
+    border: 1px solid #ccc5c5;
+    padding: 16px;
+}
+.image-description .nav-link{
+    padding: 0px;
+    padding: 8px;
+}
+.image-description .nav-link .fa-bookmark {
+    margin-left: 413px;
+}
+/* .icons {
+    display: flex;
+    justify-content: space-between;
+} */
+/* .bookmark a {
+    color: black;
+    font-size: 23px;
+} */
+
+
+
 
 
 
