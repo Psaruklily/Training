@@ -304,19 +304,30 @@ a.link.active {
 }
 .image-description .nav-link{
     padding: 0px;
-    padding: 8px;
+    padding-right: 16px;
 }
 .image-description .nav-link .fa-bookmark {
     margin-left: 413px;
 }
-/* .icons {
-    display: flex;
-    justify-content: space-between;
-} */
-/* .bookmark a {
-    color: black;
-    font-size: 23px;
-} */
+.brief-description a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+.second-part {
+    font-size: 14px;
+    display: inline;
+}
+.third-part {
+    font-size: 49px;
+    color: red;
+}
+.line_1 {
+    background: #000;
+    width: 100px;
+    margin-bottom: 5px;
+}
 
 
 
