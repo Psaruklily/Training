@@ -294,6 +294,29 @@ a.link.active {
     margin: 16px;
     color: rgb(0, 0, 0);
 }
+
+
+.modal-content {
+    border-radius: 20px;
+}
+.modal-dialog {
+    width: 450px;
+}
+.modal-body {
+    text-align: center;
+}
+.modal-body a {
+    text-decoration: none;
+    font-size: 14px;
+}
+.modal-body .text-red {
+    color: red;
+    font-weight: bold;
+}
+
+
+
+
 .news img {
     width: 610px;
     height: 509px;

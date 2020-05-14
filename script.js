@@ -20,6 +20,7 @@
    }
  }  */
 
- $(function(){
+/*  $(function(){
   $("#includedContent").load("index1.html"); 
-});
+}); */
+
