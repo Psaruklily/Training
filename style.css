@@ -294,8 +294,7 @@ a.link.active {
     margin: 16px;
     color: rgb(0, 0, 0);
 }
-
-
+/*Modal window*/
 .modal-content {
     border-radius: 20px;
 }
@@ -315,8 +314,6 @@ a.link.active {
 }
 
 
-
-
 .news img {
     width: 610px;
     height: 509px;
@@ -332,6 +329,14 @@ a.link.active {
 .image-description .nav-link .fa-bookmark {
     margin-left: 413px;
 }
+
+
+
+/* .image-description .fa-comment {
+    color: red;
+} */
+
+
 .brief-description a {
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -351,6 +356,46 @@ a.link.active {
     width: 100px;
     margin-bottom: 5px;
 }
+
+
+
+.add-comment {
+    border: 1px solid #ccc5c5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+.add-comment textarea {
+    width: 600px;
+    height: 65px;
+    padding: 15px;
+    resize: none;
+}
+.add-comment textarea:focus {
+    outline: none;
+  } 
+.add-comment button {
+    border: none;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(50, 182, 235);
+    background:white;
+}
+.add-comment button:disabled {
+    color: rgb(197, 230, 243);
+}
+.add-comment button:focus {
+    outline: none;
+  } 
+
+
+
+
+
+
+
 
 
 

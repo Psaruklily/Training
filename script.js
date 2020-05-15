@@ -24,3 +24,19 @@
   $("#includedContent").load("index1.html"); 
 }); */
 
+ function fillHeart(icon) {
+  icon.classList.toggle("fas");
+} 
+
+
+
+function enableBtn() {
+  document.getElementById("myBtn").disabled = false;
+} 
+
+
+
+
+
+
+ 

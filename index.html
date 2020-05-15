@@ -37,7 +37,7 @@
         <div class="button">
           <a href="#" class="nav-link d-inline"><i class="far fa-paper-plane"></i></a>
           <a href="#" class="nav-link d-inline"><i class="far fa-compass"></i></a>
-          <a href="#" class="nav-link d-inline"><i class="far fa-heart"></i></a>
+          <a href="#" class="nav-link d-inline"><i onclick="fillHeart(this)" class="far fa-heart"></i></a>
           <a href="#" class="nav-link d-inline"><i onclick="document.getElementById('container').innerHTML=document.getElementById('about-user').innerHTML;" class="far fa-user"></i></a>
         </div>
       </nav>
@@ -580,10 +580,6 @@
                   </div>
                 </div>
               </div>
-
-
-
-
             </div>
 
           </div>
@@ -599,7 +595,7 @@
           <div class="image-description">
             
               <div class="button">
-                <a href="#" class="nav-link d-inline"><i class="far fa-heart"></i></a>
+                <a href="#" class="nav-link d-inline"><i onclick="fillHeart(this)" class="far fa-heart"></i></a>
                 <a href="#" class="nav-link d-inline"><i class="far fa-comment"></i></a>
                 <a href="#" class="nav-link d-inline"><i class="far fa-paper-plane"></i></a>
                 <a href="#" class="nav-link d-inline"><i class="far fa-bookmark"></i></a>
@@ -619,26 +615,17 @@
                 </div>
 
                 <a href="#" class="text-secondary"><p>Переглянути всі коментарі: 10</p></a>
-
               </div>
 
-              
-              
-            
-            
           </div>
-
-
-
-
 
         </div>
 
 
-
-
-
-
+        <div class="add-comment">
+          <textarea onclick="enableBtn()" class="border border-0" id="text" placeholder="Додайте коментар..."></textarea>
+          <button id="myBtn" type="button" disabled>Опублікувати</button>
+        </div><br><br>
 
       </div>
 
