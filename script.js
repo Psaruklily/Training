@@ -30,27 +30,38 @@ function fillHeart(icon) {
 
 
 
-/*  function enableBtn() {
-  document.getElementById("myBtn").disabled = false;
-}  */
 
 
-let textarea = document.getElementById('text');
-console.log(textarea);
-let sendbutton = document.getElementById('myBtn');
-console.log(sendbutton);
+
+
+
+
+
+
+
 
 function IsEmpty() {
-  console.log('1');
-  if (textarea.value) {
-    sendbutton.removeAttribute('disabled');
+  let textarea = document.getElementById('text');
+  let oleh = document.getElementById('oleh');
+
+  if (textarea.value !== "") {
+    if (oleh.classList.contains("disabled")) {
+      oleh.classList.remove("disabled");
+    }
   } else {
-    sendbutton.addAttribute('disabled', '');
+    oleh.classList.add("disabled");
   }
 }
 
 
-textarea.onkeyup = IsEmpty;
+
+
+
+
+
+
+
+
 
 
 
