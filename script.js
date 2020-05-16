@@ -24,19 +24,60 @@
   $("#includedContent").load("index1.html"); 
 }); */
 
- function fillHeart(icon) {
+function fillHeart(icon) {
   icon.classList.toggle("fas");
-} 
+}
 
 
 
-function enableBtn() {
+/*  function enableBtn() {
   document.getElementById("myBtn").disabled = false;
-} 
+}  */
+
+
+let textarea = document.getElementById('text');
+console.log(textarea);
+let sendbutton = document.getElementById('myBtn');
+console.log(sendbutton);
+
+function IsEmpty() {
+  console.log('1');
+  if (textarea.value) {
+    sendbutton.removeAttribute('disabled');
+  } else {
+    sendbutton.addAttribute('disabled', '');
+  }
+}
+
+
+textarea.onkeyup = IsEmpty;
 
 
 
 
 
 
- 
+/* let textarea = document.getElementById('text');
+let sendbutton = document.getElementById('myBtn');
+
+function IsEmpty(){
+ if (textarea.value !== '' || textarea.value !== null){
+   sendbutton.removeAttribute('disabled');
+ } else {
+   sendbutton.addAttribute('disabled', '');
+ }
+}
+
+textarea.onkeyup = IsEmpty; */
+
+
+
+
+
+
+
+
+
+
+
+
