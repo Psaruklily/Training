@@ -47,6 +47,21 @@ body {
     border: 1px solid rgb(240, 240, 240);
     z-index: 1;
   }
+
+/*Visibl / invisibl div after onclick on the heart*/
+  #box {
+    width: 510px;
+    height: 363px;
+    background: rgb(212, 49, 49);
+    border: 1px solid black;
+    border-radius: 5px;
+    display: none;
+    position: absolute;
+    top: 56px;
+    right: 17px;
+    overflow: auto;
+}
+
 /*Information about user*/
 .col-md-7 {
     font-size: 25px;
@@ -375,7 +390,7 @@ a.link.active {
 .add-comment textarea:focus {
     outline: none;
   } 
-.add-comment button {
+.add-comment a {
     border: none;
     padding: 15px;
     font-size: 14px;
@@ -383,12 +398,18 @@ a.link.active {
     color: rgb(50, 182, 235);
     background:white;
 }
-.add-comment button:disabled {
+.add-comment a:disabled {
     color: rgb(197, 230, 243);
 }
-.add-comment button:focus {
-    outline: none;
-  } 
+
+
+
+
+
+
+
+
+
 
 
 
