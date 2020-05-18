@@ -24,39 +24,66 @@ function goToProfile () {
 }
 
 
+// ---------------------------------------
+// // EVENTS ON THE HEART
+// let heart = document.getElementsByClassName('far fa-heart')[0];
+// // console.log (heart);
 
-// EVENTS ON THE HEART
+// heart.addEventListener ('click', fillHeart); //FILLING OG THE HEARTS BY THE COLOR
+// heart.addEventListener ('click', openBox);  // Visibl / invisibl div after onclick on the heart 
+
+//  function fillHeart(icon) {
+//   this.classList.toggle("fas");
+//   // console.log(this.classList)
+// }  
+
+//  function openBox(box) {
+//   display = document.getElementById ('box').style.display;
+//   console.log(display)
+//   if (heart.classList.contains("fas")) {
+//     document.getElementById ('box').style.display = "block";
+//   } else {
+//     console.log("hide")
+//     document.getElementById ('box').style.display = "none";
+//   }
+// } 
+
+
+//  window.addEventListener('mouseup', function(event){
+//   let box = this.document.getElementById('box');
+//   if(event.target !== box && event.target.parentNode !== box) {
+//     box.style.display = "none";
+//       if (heart.classList.contains("fas")) {
+//       heart.classList.toggle("fas");
+//     }
+//   }
+// });
+// -------------------------------------
 let heart = document.getElementsByClassName('far fa-heart')[0];
-console.log (heart);
+heart.addEventListener('click', toggleFunc); //FILLING OG THE HEARTS BY THE COLOR
 
-heart.addEventListener ('click', fillHeart); //FILLING OG THE HEARTS BY THE COLOR
-heart.addEventListener ('click', openBox);  // Visibl / invisibl div after onclick on the heart 
-
- function fillHeart(icon) {
-  this.classList.toggle("fas");
-}  
-
- function openBox(box) {
-  display = document.getElementById ('box').style.display;
-  if (display == "none") {
-    document.getElementById ('box').style.display = "block";
-  } else {
+function toggleFunc() {
+  let heart = document.getElementsByClassName('far fa-heart')[0];
+  if (heart.classList.contains("fas")) {
+    heart.classList.toggle("fas");
     document.getElementById ('box').style.display = "none";
+  } else {
+    heart.classList.toggle("fas");
+    document.getElementById ('box').style.display = "block";
   }
-} 
-
+}
 
  window.addEventListener('mouseup', function(event){
   let box = this.document.getElementById('box');
   if(event.target !== box && event.target.parentNode !== box) {
     box.style.display = "none";
+    if (heart.classList.contains("fas")) {
+      heart.classList.toggle("fas");
+    }
   }
 });
 
-
-
-
-
+// --------------------------------------
 /*FILLING OG THE HEARTS BY THE COLOR (like-heart)*/
 
 function fillLikeHeart(icon) {
