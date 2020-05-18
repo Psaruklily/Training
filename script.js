@@ -48,20 +48,11 @@ heart.addEventListener ('click', openBox);  // Visibl / invisibl div after oncli
 
  window.addEventListener('mouseup', function(event){
   let box = this.document.getElementById('box');
-  if(event.target !== box) {
+  if(event.target !== box && event.target.parentNode !== box) {
     box.style.display = "none";
   }
-}); 
+});
 
-
-/*   window.onload = function(){
-  let box1 = document.getElementById('box');
-  document.onclick = function(e){
-     if(e.target.id !== 'box'){
-        box1.style.display = 'none';
-     }
-  };
-};  */
 
 
 
