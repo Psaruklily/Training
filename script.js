@@ -88,7 +88,7 @@ function toggleFunc() {
 
 function fillLikeHeart(icon) {
   icon.classList.toggle("fas");
-} 
+}
 
 
 /*ENABLED / DISABLED BUTTON IN THE COMMENT (after focus textarea)*/
