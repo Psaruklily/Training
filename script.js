@@ -6,7 +6,7 @@ let mainContent = document.getElementById('main-content');
 /*event*/
 logoInstagram.onclick = changeContent;
 
-function changeContent () {
+function changeContent() {
   container.innerHTML = mainContent.innerHTML;
 }
 
@@ -19,7 +19,7 @@ let aboutUser = document.getElementById('about-user');
 /*event*/
 iconUser.onclick = goToProfile;
 
-function goToProfile () {
+function goToProfile() {
   container.innerHTML = aboutUser.innerHTML;
 }
 
@@ -27,41 +27,51 @@ function goToProfile () {
 
 // EVENTS ON THE HEART
 let heart = document.getElementsByClassName('far fa-heart')[0];
-console.log (heart);
+console.log(heart);
 
-heart.addEventListener ('click', fillHeart); //FILLING OG THE HEARTS BY THE COLOR
-heart.addEventListener ('click', openBox);  // Visibl / invisibl div after onclick on the heart 
+heart.addEventListener('click', fillHeart); //FILLING OG THE HEARTS BY THE COLOR
+heart.addEventListener('click', openBox);  // Visibl / invisibl div after onclick on the heart 
 
- function fillHeart(icon) {
+function fillHeart(icon) {
   this.classList.toggle("fas");
-}  
+  console.log("1")
+}
 
- function openBox(box) {
-  display = document.getElementById ('box').style.display;
-  if (display == "none") {
-    document.getElementById ('box').style.display = "block";
+function openBox(box) {
+  console.log("2")
+  display = document.getElementById('box').style.display;
+  if (heart.classList.contains("fas")) {
+    console.log("3")
+    document.getElementById('box').style.display = "block";
   } else {
-    document.getElementById ('box').style.display = "none";
+    console.log("4")
+    document.getElementById('box').style.display = "none";
   }
-} 
+}
 
 
- window.addEventListener('mouseup', function(event){
+window.addEventListener('mouseup', function (event) {
+  console.log("5")
   let box = this.document.getElementById('box');
-  if(event.target !== box && event.target.parentNode !== box) {
+  if (event.target !== box && event.target.parentNode !== box && event.target !== heart) {
     box.style.display = "none";
+    console.log("6")
+    if (heart.classList.contains("fas")) {
+      heart.classList.toggle("fas");
+      console.log("7")
+    }
   }
 });
 
 
-
+// && event.target !== heart
 
 
 /*FILLING OG THE HEARTS BY THE COLOR (like-heart)*/
 
 function fillLikeHeart(icon) {
   icon.classList.toggle("fas");
-} 
+}
 
 
 /*ENABLED / DISABLED BUTTON IN THE COMMENT (after focus textarea)*/
@@ -72,7 +82,7 @@ function fillLikeHeart(icon) {
 
 
 /*ENABLED / DISABLED BUTTON IN THE COMMENT (after entered text into textarea)*/
- function IsEmpty() {
+function IsEmpty() {
   let textarea = document.getElementById('text');
   let button = document.getElementById('button');
   if (textarea.value !== "") {
@@ -82,11 +92,7 @@ function fillLikeHeart(icon) {
   } else {
     button.classList.add("disabled");
   }
-} 
-
-
-
- 
+}
 
 
 
@@ -97,4 +103,8 @@ function fillLikeHeart(icon) {
 
 
 
- 
+
+
+
+
+
