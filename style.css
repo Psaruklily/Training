@@ -48,19 +48,71 @@ body {
     z-index: 1;
   }
 
-/*Visibl / invisibl div after onclick on the heart*/
+/*Visibl / invisibl modal window after onclick on the heart*/
   #box {
     width: 510px;
     height: 363px;
-    background: rgb(212, 49, 49);
-    border: 1px solid black;
+    background: white;
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 5px;
     display: none;
     position: absolute;
     top: 56px;
     right: 17px;
     overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#box a {
+    text-decoration: none;
+}
+.main-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px 13px;
+}
+.follow-like {
+    display: flex;
+}
+.follower-text {
+    margin: 0px 12px;
+    display: flex;
+    align-items: center;
+
+}
+.follower-text p {
+    font-size: 13px;
+    margin: 0px;
+}
+.first-span {
+    font-size: 13px;
+    font-weight: bold;
+}
+.second-span{
+    font-size: 15px;
+    color: rgb(180, 180, 180);
+}
+.line-box {
+    margin: 0;
+    width: 87%;
+    margin-left: auto;
+}
+.button-box {
+    width: 73px;
+    height: 32px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    background: #0095f6;
+    border: 1px solid #0095f6;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
 
 /*Information about user*/
 .col-md-7 {
