@@ -1,0 +1,37 @@
+.header{
+    text-align: center;
+}
+.wrapper {
+    margin: auto;
+    width: 200px;
+    height: 350px;
+    border: 2px solid rgb(3, 105, 3);
+}
+.weather-box * {
+    text-align: center;
+}
+.city-name {
+    color: rgb(3, 105, 3);
+    font-size: 25px;
+    font-weight: bold;
+}
+.degree {
+    font-size: 30px;
+    font-weight: 700;
+}
+/* .weather-box p {
+    font-size: 20px;
+} */
+
+.button-primary {
+    width: 100px;
+    height: 40px;
+    background: rgb(3, 105, 3);
+    border: 1px solid rgb(3, 105, 3);
+    font-size: 18px;
+    display: block;
+    margin-left: 50px;
+}
+.line {
+    width: 130px;
+}
