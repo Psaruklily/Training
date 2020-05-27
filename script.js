@@ -27,7 +27,7 @@ getResponse(); */
 
 
 
-fetch('http://api.openweathermap.org/data/2.5/weather?id=703448&appid=a87d04d470e32219e279023b8563b01e')
+/* fetch('http://api.openweathermap.org/data/2.5/weather?id=703448&appid=a87d04d470e32219e279023b8563b01e')      Get the weather forecast(2)
 .then (function(responsive) {
     return responsive.json()
 })
@@ -41,5 +41,45 @@ fetch('http://api.openweathermap.org/data/2.5/weather?id=703448&appid=a87d04d470
 })
 .catch (function (){
     //catch any errors
-});
+}); */
+
+
+
+
+let address = 'https://jsonplaceholder.typicode.com/users';
+function sendRequest(method, url) {
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+
+        xhr.open(method, url);
+
+        xhr.responseType = 'json';
+
+        xhr.onload = () => {
+            if (xhr.status >= 400) {
+                reject(xhr.response);
+            } else {
+                resolve(xhr.response);
+            }
+        }
+
+        xhr.onerror = () => {
+            reject(xhr.response);
+        }
+
+        xhr.send();
+
+    })
+}
+sendRequest( 'GET', address)
+.then (function(data){
+    console.log(data);
+    document.querySelector('.name').innerHTML = `${data[0]['name']};`;
+    document.querySelector('.city').innerHTML = `${data[0]['address']['city']};`;
+    document.querySelector('.username').innerHTML = `${data[0]['username']};`;
+    document.querySelector('.phone').innerHTML = `${data[0]['phone']};`;
+})
+.catch (err => console.log(err));
+
+
 

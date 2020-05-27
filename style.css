@@ -1,4 +1,4 @@
-.header{
+/* .header{                                     Get the weather forecast(2)
     text-align: center;
 }
 .wrapper {
@@ -19,10 +19,6 @@
     font-size: 30px;
     font-weight: 700;
 }
-/* .weather-box p {
-    font-size: 20px;
-} */
-
 .button-primary {
     width: 100px;
     height: 40px;
@@ -35,3 +31,19 @@
 .line {
     width: 130px;
 }
+ */
+
+
+
+
+ .header{                                   
+    text-align: center;
+}
+ p {
+     display: inline;
+     font-size: 25px;
+
+ }
+ .about-user {
+     font-weight: bold;
+ }
