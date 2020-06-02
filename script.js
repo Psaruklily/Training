@@ -46,7 +46,7 @@ getResponse(); */
 
 
 
-let address = 'https://jsonplaceholder.typicode.com/users';
+/* let address = 'https://jsonplaceholder.typicode.com/users';                             Obtaining data about user(3)
 function sendRequest(method, url) {
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
@@ -80,6 +80,17 @@ sendRequest( 'GET', address)
     document.querySelector('.phone').innerHTML = `${data[0]['phone']};`;
 })
 .catch (err => console.log(err));
+ */
 
 
 
+
+
+
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(function(responsive) {
+        return responsive.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
