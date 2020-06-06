@@ -151,15 +151,67 @@ fetch('https://jsonplaceholder.typicode.com/users')
             array.push(user);
         }
         /* console.log(arrey); */
-        return array;
 
 
-    })
-    .then(array => {
         array.sort(function(a, b) { //Sort names alphabetically
             let nameA = a.name.toUpperCase();
             let nameB = b.name.toUpperCase();
             return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
         });
-        console.log(array);
+        //console.log(array);
+
+
+
+        const tbody = document.querySelector('#info-about-user > tbody');
+        console.log(tbody);
+
+        function populateData() {
+            //console.log(array);
+            while (tbody.firstChild) {
+                tbody.removeChild(tbody.firstChild);
+            }
+
+            array.forEach((user) => {
+
+                let tr = document.createElement('tr');
+                for (const informAboutUser in user) { //в цьому місці буде відбуватися перебір об'єкта
+                    let element = document.createElement('td');
+                    /* console.log(informAboutUser);
+                    console.log(user[informAboutUser]); */
+                    element.textContent = user[informAboutUser];
+                    tr.appendChild(element);
+                }
+
+                tbody.appendChild(tr);
+
+                /*   let tr = document.createElement('tr');
+                  let name = document.createElement('td');
+                  let phone = document.createElement('td');
+                  let username = document.createElement('td');
+                  name.textContent = user.name;
+                  phone.textContent = user.phone;
+                  username.textContent = user.username;
+                  tr.appendChild(name);
+                  tr.appendChild(phone);
+                  tr.appendChild(username);
+
+                  tbody.appendChild(tr); */
+
+            });
+
+        }
+        populateData();
+
     })
+
+
+
+
+
+
+
+
+
+
+
+/* document.addEventListener('DOMContentLoaded', () => { fetch('https://jsonplaceholder.typicode.com/users'); }); */
