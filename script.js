@@ -87,10 +87,79 @@ sendRequest( 'GET', address)
 
 
 
-fetch('https://jsonplaceholder.typicode.com/users')
+/* fetch('https://jsonplaceholder.typicode.com/users')
     .then(function(responsive) {
         return responsive.json();
     })
     .then(data => {
         console.log(data);
+
+
+        let outputData = [];
+
+        for (let i = 0; i < data.length; i++) {
+            let arr = data[i];
+
+            outputData.push([arr.name, arr.phone]);
+            console.log(outputData);
+        }
+    }) */
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+//     .then(function(responsive) {
+//         return responsive.json();
+//     })
+//     .then(data => {
+//         console.log(data);
+
+//         let a = data.map(function(currentValue) {
+//             /* let arr = [];
+//             arr.push(currentValue.name);
+//             arr.push(currentValue.phone);
+//             arr.push(currentValue.username); */
+
+
+//             let user = {
+//                 name: currentValue.name,
+//                 phone: currentValue.phone,
+//                 username: currentValue.username
+//             }
+//             return user;
+//         });
+//         console.log(a);
+
+//     })
+
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(function(responsive) {
+        return responsive.json();
+    })
+    .then(data => {
+        /*  console.log(data); */
+
+        let array = []; // Reducing the properties of the object
+        for (let i = 0; i < data.length; i++) {
+
+            let user = {
+                    name: data[i].name,
+                    phone: data[i].phone,
+                    username: data[i].username
+                }
+                /* console.log(user); */
+            array.push(user);
+        }
+        /* console.log(arrey); */
+        return array;
+
+
+    })
+    .then(array => {
+        array.sort(function(a, b) { //Sort names alphabetically
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();
+            return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+        });
+        console.log(array);
     })
