@@ -289,25 +289,25 @@ alert(sum);*/
   multiplyNumeric(menu)
   console.log (menu);*/
 
-  //Array method "every" 
-  /*let arr = [3, 4, 5, -9];
-   let a = arr.every (function (b) {
-    //console.log (b);
-      return b < 5;
-  });
-  console.log (a);*/
+//Array method "every" 
+/*let arr = [3, 4, 5, -9];
+ let a = arr.every (function (b) {
+  //console.log (b);
+    return b < 5;
+});
+console.log (a);*/
 
-  // Array method reduce / reduceRight
-  /*let arr = [20, 4, 5, 9];
-  let a = arr.reduce (function (accum, currentValue) {
-      //console.log ('accum: ' + accum);
-     // console.log ('currentValue: ' + currentValue);
-      return accum + currentValue;
-  });
-  console.log (a);*/
+// Array method reduce / reduceRight
+/*let arr = [20, 4, 5, 9];
+let a = arr.reduce (function (accum, currentValue) {
+    //console.log ('accum: ' + accum);
+   // console.log ('currentValue: ' + currentValue);
+    return accum + currentValue;
+});
+console.log (a);*/
 
-  //Creating calculator
-    /*function pluss() {
+//Creating calculator
+/*function pluss() {
       let num1, num2, result;
       num1 = document.getElementById ('number1').value;
       num1 =parseInt(num1);
@@ -317,32 +317,32 @@ alert(sum);*/
       document.getElementById('out').innerHTML = result;
   }*/
 //Method this
- /* function hello() {
-      console.log ('Hello', this);
-  }
+/* function hello() {
+     console.log ('Hello', this);
+ }
 
-  const person = {
-      name: "Lili",
-      age: 23,
-      sayHello: hello,
-      sayHelloWindow: hello.bind(window),
-      logInfo: function () {
-          console.group (`${this.name} info:`)
-          console.log (`Name is ${this.name}`);
-          console.log (`Age is ${this.age}`);
-          console.groupEnd();
-      }
-  }
+ const person = {
+     name: "Lili",
+     age: 23,
+     sayHello: hello,
+     sayHelloWindow: hello.bind(window),
+     logInfo: function () {
+         console.group (`${this.name} info:`)
+         console.log (`Name is ${this.name}`);
+         console.log (`Age is ${this.age}`);
+         console.groupEnd();
+     }
+ }
 
-  const anotherPerson = {
-      name: "Nastya",
-      age: 9
-  }*/
-  //Потрібно вивести anotherPerson через функцію, яка є у об'єкта person*/
-  //person.logInfo.bind(anotherPerson)();
+ const anotherPerson = {
+     name: "Nastya",
+     age: 9
+ }*/
+//Потрібно вивести anotherPerson через функцію, яка є у об'єкта person*/
+//person.logInfo.bind(anotherPerson)();
 
-  //Напишите программу, которая выводит на экран числа от 1 до 100. При этом вместо чисел, кратных трем, программа должна выводить слово Fizz, а вместо чисел, кратных пяти — слово Buzz. Если число кратно пятнадцати, то программа должна выводить слово FizzBuzz. 
-  /*for (i=1; i<=100; i++) {
+//Напишите программу, которая выводит на экран числа от 1 до 100. При этом вместо чисел, кратных трем, программа должна выводить слово Fizz, а вместо чисел, кратных пяти — слово Buzz. Если число кратно пятнадцати, то программа должна выводить слово FizzBuzz. 
+/*for (i=1; i<=100; i++) {
     
     if (i % 15 == 0) {
         console.log ('FizzBazz');
@@ -413,8 +413,18 @@ console.log (accumulator.value); */
 
 
 
+//Виведення на сторінку двовимірного масиву                              lesson 1
+let ourFamily = [
+    ['Psaruk', 'Lilya', 'Andriivna'],
+    ['Psaruk', 'Oleksii', 'Andriovuch'],
+    ['Psaruk', 'Anastasiya', 'Andriivna']
+];
 
-
-
-
-
+let out = '';
+for (let i = 0; i < ourFamily.length; i++) {
+    for (let k = 0; k < ourFamily[i].length; k++) {
+        out += ourFamily[i][k] + ' ';
+    }
+    out += '<br>';
+}
+document.getElementById('out').innerHTML = out;
