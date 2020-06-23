@@ -414,7 +414,7 @@ console.log (accumulator.value); */
 
 
 //Виведення на сторінку двовимірного масиву                              lesson 1
-let ourFamily = [
+/*let ourFamily = [
     ['Psaruk', 'Lilya', 'Andriivna'],
     ['Psaruk', 'Oleksii', 'Andriovuch'],
     ['Psaruk', 'Anastasiya', 'Andriivna']
@@ -427,4 +427,29 @@ for (let i = 0; i < ourFamily.length; i++) {
     }
     out += '<br>';
 }
-document.getElementById('out').innerHTML = out;
+document.getElementById('out').innerHTML = out;*/
+
+
+
+
+//Функція повинна повертати слово без кожної другої букви
+// function skipLetter(str) {
+//     let result = '';
+//     for (let i = 0; i < str.length; i = i + 2) {
+//         result = result + str[i];
+//     }
+//     return result;
+// }
+// console.log(skipLetter('Lilya'));
+
+function skipLetter(str) {
+    let i = 0;
+    let out = '';
+    while (i < str.length) {
+        out += str[i];
+        i = i + 2;
+    }
+    return out;
+}
+console.log(skipLetter('Lilya'));
+console.log(skipLetter('Konkatunacia'));
