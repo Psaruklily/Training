@@ -442,14 +442,32 @@ document.getElementById('out').innerHTML = out;*/
 // }
 // console.log(skipLetter('Lilya'));
 
-function skipLetter(str) {
-    let i = 0;
+// function skipLetter(str) {
+//     let i = 0;
+//     let out = '';
+//     while (i < str.length) {
+//         out += str[i];
+//         i = i + 2;
+//     }
+//     return out;
+// }
+// console.log(skipLetter('Lilya'));
+// console.log(skipLetter('Konkatunacia'));
+
+
+
+
+//Замінити у слові літери на цифри
+function numberInsteadLetter(str) {
     let out = '';
-    while (i < str.length) {
-        out += str[i];
-        i = i + 2;
+    for (let i = 0; i < str.length; i++) {
+        if ((str[i] !== 'a' && str[i] !== 'e' && str[i] !== 'i' && str[i] !== 'o' && str[i] !== 'u' && str[i] !== 'y') &&
+            (str[i] !== 'A' && str[i] !== 'E' && str[i] !== 'I' && str[i] !== 'O' && str[i] !== 'U' && str[i] !== 'Y')) {
+            out += '1';
+        } else {
+            out += '0';
+        }
     }
     return out;
 }
-console.log(skipLetter('Lilya'));
-console.log(skipLetter('Konkatunacia'));
+console.log(numberInsteadLetter('Anastasiya'));
