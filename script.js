@@ -457,17 +457,23 @@ document.getElementById('out').innerHTML = out;*/
 
 
 
-//Замінити у слові літери на цифри
+//Замінити у слові літери на цифри і підрахувати їх суму
+
 function numberInsteadLetter(str) {
-    let out = '';
-    for (let i = 0; i < str.length; i++) {
-        if ((str[i] !== 'a' && str[i] !== 'e' && str[i] !== 'i' && str[i] !== 'o' && str[i] !== 'u' && str[i] !== 'y') &&
-            (str[i] !== 'A' && str[i] !== 'E' && str[i] !== 'I' && str[i] !== 'O' && str[i] !== 'U' && str[i] !== 'Y')) {
-            out += '1';
+    let array = str.split('');
+    //console.log(array);
+    let out = [];
+    for (let i = 0; i < array.length; i++) {
+        if ((array[i] !== 'a' && array[i] !== 'e' && array[i] !== 'i' && array[i] !== 'o' && array[i] !== 'u' && array[i] !== 'y') &&
+            (array[i] !== 'A' && array[i] !== 'E' && array[i] !== 'I' && array[i] !== 'O' && array[i] !== 'U' && array[i] !== 'Y')) {
+            out.push(1);
         } else {
-            out += '0';
+            out.push(0);
         }
     }
-    return out;
+    let result = out.reduce((sum, current) => sum + current, 0);
+    console.log(result);
+    let string = out.join('');
+    return string;
 }
 console.log(numberInsteadLetter('Anastasiya'));
