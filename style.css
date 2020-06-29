@@ -1,6 +1,5 @@
 #div {
     max-width: 1200px;
-    background: yellow;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
