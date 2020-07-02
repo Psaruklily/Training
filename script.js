@@ -110,3 +110,37 @@ function closeDialog() {
     // using jQuery
     // $("#DialogOverlay").css('display', 'none');
 }
+
+
+
+let containerRandomImages = document.querySelector('.containerRandomImages');
+async function getRandomImages() {
+    let response = await fetch('https://random.dog/woof.json');
+    let result = await response.json();
+    console.log(result);
+    let image = document.createElement('img');
+    image.src = result['url'];
+    containerRandomImages.innerHTML += `
+    <div class="col-md-4 image">
+    <a target="_self" href="${result['url']}">
+        <img src="${result['url']}"
+            alt="#">
+        <div class="icon-top-right">
+            <i class="fas fa-square"></i>
+        </div>
+        <div class="icon-center">
+            <div class="heart">
+                <i class="fas fa-heart"></i>&nbsp;51
+            </div>
+            <div class="comment">
+                <i class="fas fa-comment"></i>&nbsp;0
+            </div>
+        </div>
+    </a>
+</div>
+    `
+}
+
+for (let i = 0; i < 40; i++) {
+    getRandomImages();
+}
