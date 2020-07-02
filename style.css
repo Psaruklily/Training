@@ -1,0 +1,84 @@
+body {
+    background: rgb(190, 231, 135);
+}
+
+.container {
+    max-width: 1200px;
+    /*  background: yellow; */
+    margin: 0 auto;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px 40px 10px 0;
+    cursor: pointer;
+}
+
+.text-alizarin {
+    color: #e74c3c;
+}
+
+.text-wisteria {
+    color: #8e44ad;
+}
+
+.text-emerland {
+    color: #2ecc71;
+}
+
+.text-sunflower {
+    color: #f1c40f;
+}
+
+.text-belizehole {
+    color: #2980b9;
+}
+
+.box {
+    min-width: 200px;
+    min-height: 140px;
+    float: left;
+    margin: 15px;
+    padding: 0 10px;
+    /*background: brown;*/
+    border-radius: 4px;
+    box-shadow: 6px 7px 28px 0 rgba(16, 16, 16, 0.7);
+}
+
+.box.alizarin {
+    border: 3px solid #e74c3c;
+}
+
+.box.wisteria {
+    border: 3px solid #8e44ad;
+}
+
+.box.emerland {
+    border: 3px solid #2ecc71;
+}
+
+.box.belizehole {
+    border: 3px solid #2980b9;
+}
+
+.box.sunflower {
+    border: 3px solid #f1c40f;
+}
+
+.hide {
+    opacity: 1;
+    animation-name: a1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes a1 {
+    to {
+        opacity: 0;
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}
