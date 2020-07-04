@@ -1,0 +1,21 @@
+.field {
+    width: 400px;
+    height: 400px;
+    background: rgb(14, 221, 32);
+    position: relative;
+    margin: 0 auto;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.field p {
+    font-size: 30px;
+}
+
+.ball {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    transition: all 1s;
+}
