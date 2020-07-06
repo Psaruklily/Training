@@ -15,7 +15,7 @@ button.onclick = function() {
 
 
 //Пусть мяч перемещается при клике на поле, туда, куда был клик
-let field = document.querySelector('.field');
+/* let field = document.querySelector('.field');
 let ball = document.querySelector('.ball');
 
 field.onclick = function(event) {
@@ -46,4 +46,32 @@ field.onclick = function(event) {
 
     ball.style.left = ballCoords.left + 'px';
     ball.style.top = ballCoords.top + 'px';
+} */
+
+
+const animals = document.querySelectorAll('.animal');
+
+function closeDiv() {
+    for (let animal of animals) {
+        animal.onclick = function(event) {
+            if (event.target.tagName == 'SPAN') {
+                animal.style.display = 'none';
+            }
+        }
+    }
 }
+closeDiv();
+
+
+//При помощи JavaScript для каждого сообщения добавьте в верхний правый угол кнопку закрытия.
+/* const animals = document.querySelectorAll('.animal');
+
+function closeDiv() {
+    for (let animal of animals) {
+        animal.insertAdjacentHTML("afterbegin", '<button class="remove-button">x</button>');
+        animal.firstChild.style.fontSize = '20px';
+        animal.firstChild.style.float = 'right';
+        animal.firstChild.onclick = () => animal.remove();
+    }
+}
+closeDiv(); */

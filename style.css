@@ -1,4 +1,4 @@
-.field {
+/* .field {
     width: 400px;
     height: 400px;
     background: rgb(14, 221, 32);
@@ -18,4 +18,28 @@
     top: 0;
     width: 50px;
     transition: all 1s;
+} */
+
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.animal {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 20px;
 }
