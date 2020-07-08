@@ -1,3 +1,6 @@
+/*Закрити div за допомогою кнопки закриття(через HTML)*/
+
+
 /* .field {
     width: 400px;
     height: 400px;
@@ -20,7 +23,11 @@
     transition: all 1s;
 } */
 
-#container {
+
+/*При помощи JavaScript для каждого сообщения добавьте в верхний правый угол кнопку закрытия.*/
+
+
+/* #container {
     max-width: 800px;
     margin: 0 auto;
 }
@@ -42,4 +49,52 @@
 
 p {
     font-size: 20px;
+} */
+
+
+/*Створення каруселі із зображень*/
+
+#slider {
+    width: 384px;
+    height: 128px;
+    border: 5px solid black;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#polosa {
+    width: 1024px;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+}
+
+#polosa::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#polosa img {
+    float: left;
+}
+
+#slider-left {
+    position: absolute;
+    top: 33%;
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#slider-left:hover {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+#slider-left {
+    right: 5px;
 }

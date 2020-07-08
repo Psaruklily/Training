@@ -48,8 +48,8 @@ field.onclick = function(event) {
     ball.style.top = ballCoords.top + 'px';
 } */
 
-
-const animals = document.querySelectorAll('.animal');
+//Закрити div за допомогою кнопки закриття(через HTML)
+/* const animals = document.querySelectorAll('.animal');
 
 function closeDiv() {
     for (let animal of animals) {
@@ -60,7 +60,7 @@ function closeDiv() {
         }
     }
 }
-closeDiv();
+closeDiv(); */
 
 
 //При помощи JavaScript для каждого сообщения добавьте в верхний правый угол кнопку закрытия.
@@ -75,3 +75,17 @@ function closeDiv() {
     }
 }
 closeDiv(); */
+
+
+//Створення каруселі із зображень
+document.getElementById('slider-left').onclick = sliderLeft;
+let left = 0;
+
+function sliderLeft() {
+    let polosa = document.getElementById('polosa');
+    left = left - 128;
+    if (left < -640) {
+        left = 0;
+    }
+    polosa.style.left = left + 'px';
+}
