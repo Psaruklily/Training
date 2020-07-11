@@ -481,7 +481,7 @@ console.log(numberInsteadLetter('Anastasiya')); */
 
 
 //Функціональне програмування. Робота з масивом
-let name = ['Lilya', 'Anastasiya', 'Oleh', 'Ivan', 'Ira'];
+/* let name = ['Lilya', 'Anastasiya', 'Oleh', 'Ivan', 'Ira'];
 
 function mapArray(arr, fn) {
     const res = [];
@@ -503,4 +503,42 @@ function upperCase(el) {
 const length = mapArray(name, lengthName);
 console.log(length);
 const upper = mapArray(name, upperCase);
-console.log(upper);
+console.log(upper); */
+
+
+
+
+//Функція виводить різні питання взалежності від переданої професії
+//                                                                       І-спосіб
+/* function question(job) {
+    if (job === 'developer') {
+        return function(name) {
+            return `${name}, що таке JavaScript?`
+        }
+    } else if (job === 'teacher') {
+        return function(name) {
+            return `${name}, який предмет ви вчите?`
+        }
+    }
+}
+const developerQuestion = question('developer');
+console.log(developerQuestion('Lili'));
+const teacherQuestion = question('teacher');
+console.log(teacherQuestion('Oleh')); */
+
+
+//                                                                       ІІ-спосіб
+function question(job) {
+    let jobDictionary = {
+        developer: 'що таке JavaScript?',
+        teacher: 'який предмет ви вчите?'
+    }
+    return function(name) {
+        return `${name}, ${jobDictionary[job]}`
+    }
+}
+
+const developerQuestion = question('developer')('Lili');
+console.log(developerQuestion);
+const teacherQuestion = question('teacher')('Oleh');
+console.log(teacherQuestion);
