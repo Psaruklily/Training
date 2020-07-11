@@ -459,7 +459,7 @@ document.getElementById('out').innerHTML = out;*/
 
 //Замінити у слові літери на цифри і підрахувати їх суму
 
-function numberInsteadLetter(str) {
+/* function numberInsteadLetter(str) {
     let array = str.split('');
     //console.log(array);
     let out = [];
@@ -476,4 +476,31 @@ function numberInsteadLetter(str) {
     let string = out.join('');
     return string;
 }
-console.log(numberInsteadLetter('Anastasiya'));
+console.log(numberInsteadLetter('Anastasiya')); */
+
+
+
+//Функціональне програмування. Робота з масивом
+let name = ['Lilya', 'Anastasiya', 'Oleh', 'Ivan', 'Ira'];
+
+function mapArray(arr, fn) {
+    const res = [];
+    for (let i = 0; i < arr.length; i++) {
+        res.push(fn(arr[i]));
+    }
+    return res;
+}
+
+function lengthName(el) {
+    console.log(el);
+    return el.length;
+}
+
+function upperCase(el) {
+    return el.toUpperCase();
+}
+
+const length = mapArray(name, lengthName);
+console.log(length);
+const upper = mapArray(name, upperCase);
+console.log(upper);
