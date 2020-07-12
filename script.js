@@ -1,5 +1,3 @@
-//let img = document.querySelector('.image');
-
 /* let container = document.querySelector('#div');
 async function getRandomImage() {
     let response = await fetch('https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM');
@@ -17,7 +15,29 @@ getRandomImage(); */
 }*/
 
 
-let container = document.querySelector('#div');
+//--------------------------------------------------------------------------------------------------------------------
+//Та ж сама функція з використанням замикання
+function getRandomImage() {
+    let container = document.querySelector('#div');
+    return async function() {
+        let response = await fetch('https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM');
+        let result = await response.json();
+        console.log(result);
+        let image = document.createElement('img');
+        image.src = result['url'];
+        container.appendChild(image);
+    }
+}
+
+const randomImage = getRandomImage();
+
+for (let i = 0; i < 40; i++) {
+    randomImage();
+}
+
+//--------------------------------------------------------------------
+
+/* let container = document.querySelector('#div');
 let result;
 let arrayUrl = [];
 async function getRandomImage() {
@@ -45,10 +65,9 @@ async function getRandomImage() {
         })
 }
 
-//getRandomImage();
 for (let i = 0; i < 10; i++) {
     getRandomImage();
-}
+} */
 
 
 /* function url(string) {
