@@ -528,7 +528,7 @@ console.log(teacherQuestion('Oleh')); */
 
 
 //                                                                       ІІ-спосіб
-function question(job) {
+/* function question(job) {
     let jobDictionary = {
         developer: 'що таке JavaScript?',
         teacher: 'який предмет ви вчите?'
@@ -541,4 +541,55 @@ function question(job) {
 const developerQuestion = question('developer')('Lili');
 console.log(developerQuestion);
 const teacherQuestion = question('teacher')('Oleh');
-console.log(teacherQuestion);
+console.log(teacherQuestion); */
+
+
+
+//Methods call(), apply(), bind()
+/* const person1 = {
+    name: 'Olena',
+    position: 'Project manager',
+    salary: 1000
+}
+
+const person2 = {
+    name: 'Ira',
+    position: 'Junior developer',
+    salary: 800
+}
+
+function promote(newPosition, salaryRise) {
+    this.position = newPosition;
+    this.salary += salaryRise;
+    return `${this.name} is ${this.position} and earns ${this.salary}`;
+} */
+
+/* const olena = promote.apply(person1, ['Department head', 500]);
+console.log(olena);
+const ira = promote.apply(person2, ['Middle developer', 300]);
+console.log(ira); 
+
+const olena = promote.bind(person1, 'Department head', 500)();
+console.log(olena);
+const ira = promote.bind(person2, 'Middle developer', 300)();
+console.log(ira);*/
+
+
+
+//call(), apply(), bind()
+const b1 = document.querySelector('.b-1');
+const b2 = document.querySelector('.b-2');
+
+function changeBg(color) {
+    return this.style.background = color;
+}
+
+//b1.onclick = changeBg;
+
+b1.onclick = function() {
+    changeBg.bind(b2, 'red')();
+}
+
+b2.onclick = function() {
+    changeBg.bind(b1, 'yellow')();
+}
