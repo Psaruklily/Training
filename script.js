@@ -577,7 +577,7 @@ console.log(ira);*/
 
 
 //call(), apply(), bind()
-const b1 = document.querySelector('.b-1');
+/* const b1 = document.querySelector('.b-1');
 const b2 = document.querySelector('.b-2');
 
 function changeBg(color) {
@@ -592,4 +592,32 @@ b1.onclick = function() {
 
 b2.onclick = function() {
     changeBg.bind(b1, 'yellow')();
+} */
+
+
+
+
+//Callback function
+//Example 1
+/* function inputName(callback) {
+    let name = prompt('Enter your name');
+    callback(name);
 }
+
+function greeting(name) {
+    alert(`Hello, ${name}`);
+}
+
+inputName(greeting); */
+
+//Example 2
+function printNumber(intNumber, callback) {
+    console.log('The number you provided is:' + intNumber);
+    callback();
+}
+
+function printFinishMessage() {
+    console.log('I have finished printed number.');
+}
+
+printNumber(6, printFinishMessage);
