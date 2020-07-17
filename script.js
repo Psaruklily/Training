@@ -106,7 +106,7 @@ auditUrl(getRandomImage); */
 
 //----------------------------------------------------------------------------
 
-let container = document.querySelector('#div');
+/* let container = document.querySelector('#div');
 async function getRandomImage() {
     let response = await fetch('https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM');
     let result = await response.json();
@@ -114,7 +114,7 @@ async function getRandomImage() {
     console.log(urlImage);
     return Promise.resolve(urlImage);
 }
-
+ */
 //getRandomImage();
 
 
@@ -132,7 +132,7 @@ async function getRandomImage() {
 } */
 
 
-async function url() {
+/* async function url() {
     await getRandomImage()
         .then(stringUrl => {
             return stringUrl;
@@ -151,4 +151,81 @@ function url2() {
     }
 }
 const auditUrl = url2()
-console.log(auditUrl);
+console.log(auditUrl); */
+
+
+
+/////////////////////////Callback
+
+/* const getUrl = function(url, callback) {
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            callback(request.responseText);
+        }
+    };
+    request.open('GET', url);
+    request.send();
+}
+
+function mycallback(data) {
+    console.log(data);
+    newData = JSON.parse(data);
+    console.log(newData['url']);
+    return newData['url'];
+}
+
+getUrl('https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM', mycallback); */
+
+
+
+
+
+// PROMISE
+/* 
+async function getRandomUrl() {
+    const url = 'https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM';
+    let promise = await fetch(url);
+    let urlImage = await promise.json();
+    //console.log(stringUrl);
+    console.log(urlImage['url']);
+    return urlImage['url'];
+}
+
+getRandomUrl()
+    .then(string => {
+        if (!string.includes('jpg')) {
+            getRandomUrl();
+        }
+        return string;
+    }) */
+
+
+//-------------------------------------------------------------------------
+//      FINISHED!!!!!
+container = document.querySelector('#div');
+async function getRandomUrl(callback) {
+    const url = 'https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM';
+    let promise = await fetch(url);
+    let urlImage = await promise.json();
+    let stringUrl = urlImage['url'];
+    let image = document.createElement('img');
+    image.src = stringUrl;
+    container.appendChild(image);
+    callback(stringUrl, image);
+}
+
+function auditUrl(stringUrl, image) {
+    console.log(stringUrl);
+    if (stringUrl.includes('jpg')) {
+        image.style.display = 'block';
+    } else {
+        image.style.display = 'none';
+        getRandomUrl(auditUrl);
+
+    }
+}
+
+for (let i = 0; i < 40; i++) {
+    getRandomUrl(auditUrl);
+}
