@@ -611,7 +611,7 @@ function greeting(name) {
 inputName(greeting); */
 
 //Example 2
-function printNumber(intNumber, callback) {
+/* function printNumber(intNumber, callback) {
     console.log('The number you provided is:' + intNumber);
     callback();
 }
@@ -620,4 +620,86 @@ function printFinishMessage() {
     console.log('I have finished printed number.');
 }
 
-printNumber(6, printFinishMessage);
+printNumber(6, printFinishMessage); */
+
+
+
+//Задачі на рекурсію
+// 1. Вивести числа від 0 до 10
+/* let num = 0;
+
+function outputNumber() {
+    console.log(num++);
+    if (num > 10) {
+        return num;
+    }
+    outputNumber();
+}
+outputNumber(); */
+
+//2.Вивести елементи масиву у консолі
+/* function outputArray(array) {
+    console.log(array.shift());
+    if (array.length != 0) {
+        outputArray(array);
+    }
+}
+outputArray([1, 2, 3]); */
+
+
+//3. Знайти суму елементів масиву
+/* function sumNumber(array, sum) {
+    sum += array.shift();
+    if (array.length != 0) {
+        sum = sumNumber(array, sum);
+    }
+    return sum;
+}
+const summa = sumNumber([1, 2, 3], 0);
+console.log(summa); */
+
+
+//4. Вивести у консоль багатовимірний масив
+/* function outputArr(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] == 'object') {
+            arr[i] = outputArr(arr[i]);
+        } else {
+            arr[i] = arr[i] + '!';
+        }
+    }
+    return arr;
+}
+const changedArr = outputArr([1, 2, 3, [4, [8, 5]]]);
+console.log(changedArr); */
+
+
+//5. Обчислення додавання числа до моменту, допоки воно не стане одноцифровим
+function auditSumDigit(num) {
+    let sum = finishedSum(num);
+    if (sum > 10) {
+        return finishedSum(sum);
+    } else {
+        return sum;
+    }
+}
+
+function splitNumber(num) {
+    let array = String(num).split('');
+    return array;
+}
+
+function sumDigit(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += Number(array[i]);
+    }
+    //console.log(sum);
+    return sum;
+}
+
+function finishedSum(num) {
+    return sumDigit(splitNumber(num));
+}
+
+console.log(auditSumDigit(128));
