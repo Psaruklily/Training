@@ -675,7 +675,7 @@ console.log(changedArr); */
 
 
 //5. Обчислення додавання числа до моменту, допоки воно не стане одноцифровим
-function auditSumDigit(num) {
+/* function auditSumDigit(num) {
     let sum = finishedSum(num);
     if (sum > 10) {
         return finishedSum(sum);
@@ -702,4 +702,69 @@ function finishedSum(num) {
     return sumDigit(splitNumber(num));
 }
 
-console.log(auditSumDigit(128));
+console.log(auditSumDigit(128)); */
+
+
+//Цикл while
+//1. Знайти суму чисел від 0 до 10.
+/* let sum = 0;
+let nextNumber = 0;
+while (nextNumber < 10) {
+    sum += nextNumber;
+    nextNumber++;
+}
+console.log(sum); */
+
+
+//2. Вивести на сторінку зірочки по зменшенню їх кількості
+//2.1. Вивести на сторінку вряд 4 зірочки
+/* const outDiv = document.querySelector('.out');
+let outString = '';
+let star = 0;
+
+while (star < 4) {
+    outString += '*';
+    star++;
+}
+outDiv.textContent = outString; */
+
+
+//2.2. Вивести на сторінку 4 рядки по 4 зірочки в ряді
+/* const outDiv = document.querySelector('.out');
+let outString = '';
+let column = 0;
+
+while (column < 4) {
+    let star = 0;
+    while (star < 4) {
+        outString += '*';
+        star++;
+    }
+    outString += '<br>';
+    column++;
+}
+outDiv.innerHTML = outString; */
+
+
+//2.3. Вивести на сторінку зірочки у порядку збільшення
+
+const outDiv = document.querySelector('.out');
+let outString = '';
+let column = 0;
+let flag = 3;
+
+while (column < 4) {
+    let star = 0;
+    while (star < 4) {
+        if (star < flag) {
+            outString += '&nbsp';
+        } else {
+            outString += '*';
+        }
+        star++;
+    }
+    flag--;
+    outString += '<br>';
+    column++;
+}
+outDiv.innerHTML = outString;
