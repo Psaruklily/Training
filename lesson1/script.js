@@ -16,10 +16,10 @@ function requestPost() {
         })
         .then(response => response.json())
         .then(json => console.log(json))
-} */
+}  */
 
 // Відсилання GET запиту
-function getRequest(url) {
+/* function getRequest(url) {
     let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function() {
@@ -36,4 +36,14 @@ function getRequest(url) {
     }
 }
 const firstRequest = getRequest('https://learn.javascript.ru/xmlhttprequest');
-console.log(firstRequest);
+console.log(firstRequest); */
+
+
+//Відсилання форми на сервер
+let formPerson = new FormData(document.querySelector('.person'));
+formPerson.append('fatherName', 'Andriivna');
+
+let xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://jsonplaceholder.typicode.com/users');
+xhr.send(formPerson);
+xhr.onload = () => alert(xhr.response);
