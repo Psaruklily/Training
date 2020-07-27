@@ -65,7 +65,7 @@ outputImages(); */
 
 
 //Динамічно підгружати картинки із сервера по кліку
-let button = document.querySelector('.myButton');
+/* let button = document.querySelector('.myButton');
 let input = document.querySelector('.inputNumber');
 let output = document.querySelector('.output');
 
@@ -80,5 +80,23 @@ function changeImages() {
                 document.body.appendChild(image);
             });
         }
+    });
+} */
+
+
+//--------------------------------------------------------
+let button = document.querySelector('.myButton');
+let pageNumber = document.querySelector('.inputNumber');
+let output = document.querySelector('.output');
+
+button.addEventListener('click', () => {
+    getImages(pageNumber.value, onDataRecieved);
+});
+
+function onDataRecieved(data) {
+    data.forEach(element => {
+        let image = document.createElement('img');
+        image.src = element.original;
+        document.body.appendChild(image);
     });
 }
