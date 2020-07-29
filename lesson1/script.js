@@ -84,13 +84,33 @@ function changeImages() {
 } */
 
 
-//--------------------------------------------------------
-let button = document.querySelector('.myButton');
+//Devide the code into several functions
+/* let button = document.querySelector('.myButton');
 let pageNumber = document.querySelector('.inputNumber');
 let output = document.querySelector('.output');
 
 button.addEventListener('click', () => {
     getImages(pageNumber.value, onDataRecieved);
+});
+
+function onDataRecieved(data) {
+    data.forEach(element => {
+        let image = document.createElement('img');
+        image.src = element.original;
+        document.body.appendChild(image);
+    });
+} */
+
+
+
+//Same code with usage promise instead callback
+let button = document.querySelector('.myButton');
+let pageNumber = document.querySelector('.inputNumber');
+let output = document.querySelector('.output');
+
+button.addEventListener('click', () => {
+    let promise = getImages(pageNumber.value);
+    promise.then(onDataRecieved);
 });
 
 function onDataRecieved(data) {

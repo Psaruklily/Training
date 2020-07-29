@@ -1,5 +1,23 @@
-function getImages(pageNumber, callbackSuccess) {
+//Devide the code into several functions
+/* function getImages(pageNumber, callbackSuccess) {
     $.ajax(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`, {
         success: callbackSuccess
+    });
+} */
+
+
+
+//Same code with usage promise instead callback
+//У цьому скріпті можна легко підміняти бібліотеки, наприклад. При цьому головний script.js ми не міняємо. Це дає багато можливостей
+
+/* function getImages(pageNumber) {
+    const promise = $.ajax(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`);
+    return promise;
+} */
+
+function getImages(pageNumber) {
+    const promise = axios.get(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`);
+    return promise.then((response) => {
+        return response.data;
     });
 }
