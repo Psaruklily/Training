@@ -104,7 +104,7 @@ function onDataRecieved(data) {
 
 
 //Same code with usage promise instead callback
-let button = document.querySelector('.myButton');
+/* let button = document.querySelector('.myButton');
 let pageNumber = document.querySelector('.inputNumber');
 let output = document.querySelector('.output');
 
@@ -119,4 +119,31 @@ function onDataRecieved(data) {
         image.src = element.original;
         document.body.appendChild(image);
     });
-}
+} */
+
+
+//Compare fetch and axios
+//1. Axios автоматично перетворює у JSON дані
+
+/* const url = 'https://jsonplaceholder.typicode.com/users'; */
+/* axios.get(url)
+    .then(data => console.log(data.data)) */
+
+
+/* fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data)); */
+
+
+//2. Різна поведінка при викидання помилки
+
+/* const url = 'https://jsonplaceholder.typicode.com/users/wrong'; // допустимо помилку в адресі
+fetch(url)
+    .catch(error => console.log('BAD', error))
+    .then(response => console.log('GOOD', response));//Помилка не обробляється у блоку catch
+ */
+
+/* const url = 'https://jsonplaceholder.typicode.com/users/wrong';
+axios.get(url)
+    .catch(error => console.log('BAD', error))
+    .then(response => console.log('GOOD', response)); */
