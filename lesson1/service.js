@@ -21,3 +21,20 @@
         return response.data;
     });
 } */
+
+
+//Create todoList
+function getTasks() {
+    const promise = axios.get(`https://repetitora.net/api/JS/Tasks?widgetId=34235`);
+    return promise.then((response) => {
+        return response.data;
+    });
+}
+
+
+function createTask(title) {
+    const promise = axios.post(`https://repetitora.net/api/JS/Tasks?widgetId=34235&title=${title}`);
+    return promise.then((response) => {
+        return response.data;
+    });
+}
