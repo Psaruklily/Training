@@ -147,3 +147,26 @@ fetch(url)
 axios.get(url)
     .catch(error => console.log('BAD', error))
     .then(response => console.log('GOOD', response)); */
+
+
+//Create todoList
+let getTasksButton = document.querySelector('.get-task');
+
+getTasksButton.addEventListener('click', () => {
+    let promise = getTasks();
+    promise.then(onTasksRecieved);
+});
+
+
+createTask('learn JS').then((data) => {
+    console.log(data);
+});
+
+
+function onTasksRecieved(tasks) {
+    tasks.forEach(task => {
+        const li = document.createElement('li');
+        li.innerHTML = task.title;
+        document.querySelector('#task-result').appendChild(li);
+    });
+}
