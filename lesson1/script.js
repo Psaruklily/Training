@@ -152,21 +152,28 @@ axios.get(url)
 //Create todoList
 let getTasksButton = document.querySelector('.get-task');
 
+
+//createTask('learn CSS');
+
+//deleteTask('889f485b-e228-47fd-bb3c-e09ba3d07d61');
+
+//updateTask('527b8f67-79ce-432c-b4a8-e27999ddc0e7', 'Git')
+
 getTasksButton.addEventListener('click', () => {
     let promise = getTasks();
     promise.then(onTasksRecieved);
 });
 
 
-createTask('learn JS').then((data) => {
-    console.log(data);
-});
 
 
 function onTasksRecieved(tasks) {
+    const result = document.querySelector('#task-result');
+    result.innerHTML = '';
     tasks.forEach(task => {
         const li = document.createElement('li');
         li.innerHTML = task.title;
-        document.querySelector('#task-result').appendChild(li);
+        li.dataset.id = task.id;
+        result.appendChild(li);
     });
 }
