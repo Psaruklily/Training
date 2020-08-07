@@ -25,7 +25,7 @@
 
 
 //Create todoList
-function getTasks() {
+/* function getTasks() {
     const promise = axios.get('https://repetitora.net/api/JS/Tasks?widgetId=34235');
     return promise.then((response) => {
         return response.data;
@@ -59,6 +59,23 @@ function updateTask(id, title) {
 function deleteTask(id) {
     const promise = axios.delete(`https://repetitora.net/api/JS/Tasks?widgetId=34235&taskId=${id}`);
     return promise.then((response) => {
+        return response.data;
+    });
+} */
+
+
+//------------------------------------------------------------------------------------------------------------------
+//LESSON 2 
+//спрощення 'Створення назви нової книги на сервері (axios)'
+function createBook(bookName) {
+    let promise = axios({
+        method: 'post',
+        url: 'http://fakerestapi.azurewebsites.net/api/Books',
+        data: {
+            book: bookName
+        }
+    });
+    return promise.then(response => {
         return response.data;
     });
 }

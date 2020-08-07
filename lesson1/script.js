@@ -149,8 +149,10 @@ axios.get(url)
     .then(response => console.log('GOOD', response)); */
 
 
+
+
 //Create todoList
-let getTasksButton = document.querySelector('.get-task');
+/* let getTasksButton = document.querySelector('.get-task'); */
 
 
 //createTask('learn CSS');
@@ -159,13 +161,10 @@ let getTasksButton = document.querySelector('.get-task');
 
 //updateTask('527b8f67-79ce-432c-b4a8-e27999ddc0e7', 'Git')
 
-getTasksButton.addEventListener('click', () => {
+/* getTasksButton.addEventListener('click', () => {
     let promise = getTasks();
     promise.then(onTasksRecieved);
 });
-
-
-
 
 function onTasksRecieved(tasks) {
     const result = document.querySelector('#task-result');
@@ -176,4 +175,60 @@ function onTasksRecieved(tasks) {
         li.dataset.id = task.id;
         result.appendChild(li);
     });
+} */
+
+//LESSON 2---------------------------------------------------------------------------------------------------------
+//Створення назви нової книги на сервері (axios)
+/* let button = document.querySelector('.button');
+let bookName = document.querySelector('.book-name');
+const output = document.querySelector('.output');
+button.onclick = () => {
+    let createBook = axios({
+        method: 'post',
+        url: 'http://fakerestapi.azurewebsites.net/api/Books',
+        data: {
+            book: bookName.value
+        }
+    });
+    createBook.then(response => {
+            console.log(response.data);
+            return response.data;
+        })
+        .then(data => output.innerHTML = data.PublishDate)
+} */
+
+
+
+
+//---------------------- спрощення 'Створення назви нової книги на сервері (axios)'
+let button = document.querySelector('.button');
+let bookName = document.querySelector('.book-name');
+const output = document.querySelector('.output');
+
+button.addEventListener('click', () => {
+    const promise = createBook(bookName.value);
+    promise.then(outputTime);
+});
+
+function outputTime(data) {
+    output.innerHTML = data.PublishDate;
 }
+
+
+
+//Створення назви нової книги на сервері (fetch)                       НЕКОРЕКТНО ПРАЦЮЄ!!!
+/* let bookName = document.querySelector('.book-name');
+let button = document.querySelector('.button');
+
+button.onclick = async() => {
+     
+let response = await fetch('http://fakerestapi.azurewebsites.net/api/Books', {
+    method: 'POST',
+    data: {
+        "book": bookName.value
+    }
+});
+
+let result = await response.json();
+console.log(result);
+} */
