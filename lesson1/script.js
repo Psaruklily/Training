@@ -178,7 +178,7 @@ function onTasksRecieved(tasks) {
 } */
 
 //LESSON 2---------------------------------------------------------------------------------------------------------
-//Створення назви нової книги на сервері (axios)
+//Створення назви нової книги на сервері (axios)                          POST
 /* let button = document.querySelector('.button');
 let bookName = document.querySelector('.book-name');
 const output = document.querySelector('.output');
@@ -232,3 +232,47 @@ let response = await fetch('http://fakerestapi.azurewebsites.net/api/Books', {
 let result = await response.json();
 console.log(result);
 } */
+
+
+//Внесення даних у таблицю, отриманих із сервера
+//--------------------------------------------------------------------------GET
+const table = document.querySelector('#books');
+
+function createTable() {
+    let promise = getBook();
+    promise.then(data => {
+            let partOfArray = data.splice(0, 4);
+            return partOfArray;
+        })
+        .then(books => {
+            for (let book of books) {
+                let tr = document.createElement('tr');
+                table.appendChild(tr);
+
+                createCell(book.ID, tr);
+                createCell(book.Title, tr);
+                createCell(book.PublishDate, tr);
+                /* 
+                                td = document.createElement('td');
+                                td.innerHTML = book.ID;
+                                tr.appendChild(td);
+
+                                td = document.createElement('td');
+                                td.innerHTML = book.Title;
+                                tr.appendChild(td);
+
+                                td = document.createElement('td');
+                                td.innerHTML = book.PublishDate;
+                                tr.appendChild(td);
+                            } */
+            };
+        })
+}
+
+function createCell(text, tr) {
+    let td = document.createElement('td');
+    td.innerHTML = text;
+    tr.appendChild(td);
+}
+
+createTable();

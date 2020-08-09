@@ -79,3 +79,16 @@ function createBook(bookName) {
         return response.data;
     });
 }
+
+
+
+//Внесення даних у таблицю, отриманих із сервера
+function getBook() {
+    let promise = axios({
+        method: 'get',
+        url: 'http://fakerestapi.azurewebsites.net/api/Books'
+    });
+    return promise.then(response => {
+        return response.data;
+    })
+}
