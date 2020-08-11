@@ -201,7 +201,7 @@ button.onclick = () => {
 
 
 //---------------------- спрощення 'Створення назви нової книги на сервері (axios)'
-let button = document.querySelector('.button');
+/* let button = document.querySelector('.button');
 let bookName = document.querySelector('.book-name');
 const output = document.querySelector('.output');
 
@@ -212,26 +212,33 @@ button.addEventListener('click', () => {
 
 function outputTime(data) {
     output.innerHTML = data.PublishDate;
+} */
+
+
+
+//Створення назви нової книги на сервері (fetch)                       
+let bookName = document.querySelector('.book-name');
+let button = document.querySelector('.button');
+
+async function postData(data = {}) {
+    const response = await fetch('http://fakerestapi.azurewebsites.net/api/Books', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data) //Тип даних тіла повинен відповідати заголовку "Тип вмісту"
+    });
+    return await response.json();
+}
+
+button.onclick = function() {
+    postData({ book: bookName.value })
+        .then((data) => {
+            console.log(data);
+        });
 }
 
 
-
-//Створення назви нової книги на сервері (fetch)                       НЕКОРЕКТНО ПРАЦЮЄ!!!
-/* let bookName = document.querySelector('.book-name');
-let button = document.querySelector('.button');
-
-button.onclick = async() => {
-     
-let response = await fetch('http://fakerestapi.azurewebsites.net/api/Books', {
-    method: 'POST',
-    data: {
-        "book": bookName.value
-    }
-});
-
-let result = await response.json();
-console.log(result);
-} */
 
 
 //Внесення даних у таблицю, отриманих із сервера
@@ -249,9 +256,10 @@ function createTable() {
                 let tr = document.createElement('tr');
                 table.appendChild(tr);
 
+
                 createCell(book.ID, tr);
                 createCell(book.Title, tr);
-                createCell(book.PublishDate, tr);
+                createCell(new Date(book.PublishDate).toISOString().replace(/T/, ' ').replace(/\..+/, ''), tr);
                 /* 
                                 td = document.createElement('td');
                                 td.innerHTML = book.ID;
