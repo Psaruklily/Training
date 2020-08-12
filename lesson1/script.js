@@ -1,15 +1,19 @@
- function COVID() {
+ function COVID(callback) {
      let response = getInfoAboutCOVID();
      response.then(data => {
+
              //console.log(data)
-             outputDataCOVID(data);
-             let partOfCountries = data.Countries.slice(0, 11);
-             return partOfCountries;
+             //outputDataCOVID(data);
+             //let partOfCountries = data.Countries.slice(0, 5);
+             callback(data);
+             //return partOfCountries;
          })
-         .then(data => outputTable(data))
+         //.then(data => outputTable(data))
  }
 
- COVID()
+ COVID(outputDataCOVID);
+ COVID(outputTable);
+
 
  function outputDataCOVID(data) {
      let paragraph = document.querySelectorAll('p');
@@ -23,28 +27,19 @@
  //------------------TABLE
  let table = document.querySelector('#covid');
 
- function outputTable(countries) {
-     console.log(countries);
-     countries.forEach((country, index) => {
+ function outputTable(data) {
+     let partOfCountries = data.Countries.slice(0, 5);
+     partOfCountries.forEach((country, index) => {
          let tr = document.createElement('tr');
          table.appendChild(tr);
 
-         maketCovid(index, tr);
+         maketCovid(index + 1, tr);
          maketCovid(country.Country, tr)
          maketCovid(country.TotalConfirmed, tr)
          maketCovid(country.NewConfirmed, tr)
          maketCovid(country.TotalDeaths, tr)
          maketCovid(country.NewDeaths, tr)
          maketCovid(country.TotalRecovered, tr)
-
-         /*  td = document.createElement('td');
-          td.innerHTML = '1';
-          tr.appendChild(td);
-
-          td = document.createElement('td');
-          td.innerHTML = country.Country;
-          tr.appendChild(td); */
-
      });
  }
 
@@ -56,4 +51,19 @@
          td.innerHTML = text;
      }
      tr.appendChild(td);
+ }
+
+ //------------------------------------------------------FILTER BUTTON
+ let btnFilter = document.querySelector('.filter');
+ btnFilter.onclick = function() {
+     COVID(filterDate);
+ }
+
+ function filterDate(data) {
+     let partOfCountries = data.Countries.slice(0, 5);
+     console.log(partOfCountries)
+     let insedent = partOfCountries.sort(function(a, b) {
+         return a.TotalConfirmed - b.TotalConfirmed;
+     });
+     console.log(insedent)
  }
