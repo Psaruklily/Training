@@ -1,3 +1,5 @@
+ let dataWorld = [];
+
  function COVID(callback) {
      let response = getInfoAboutCOVID();
      response.then(data => {
@@ -29,6 +31,7 @@
 
  function outputTable(data) {
      let partOfCountries = data.Countries.slice(0, 5);
+
      partOfCountries.forEach((country, index) => {
          let tr = document.createElement('tr');
          table.appendChild(tr);
@@ -44,7 +47,7 @@
  }
 
  function maketCovid(text, tr) {
-     td = document.createElement('td');
+     let td = document.createElement('td');
      if (text == 0) {
          td.innerHTML = ' ';
      } else {
@@ -59,11 +62,35 @@
      COVID(filterDate);
  }
 
+
  function filterDate(data) {
      let partOfCountries = data.Countries.slice(0, 5);
-     console.log(partOfCountries)
      let insedent = partOfCountries.sort(function(a, b) {
          return a.TotalConfirmed - b.TotalConfirmed;
      });
-     console.log(insedent)
+
+
+     table.innerHTML = '';
+
+     /*   $(document).ready(function() {
+           $("table").find("tr:gt(0)").remove();
+       }); */
+
+     //$('table').children('tr:not(:first)').remove();
+
+
+
+     insedent.forEach((country, index) => {
+         let tr = document.createElement('tr');
+         table.appendChild(tr);
+
+         maketCovid(index + 1, tr);
+         maketCovid(country.Country, tr)
+         maketCovid(country.TotalConfirmed, tr)
+         maketCovid(country.NewConfirmed, tr)
+         maketCovid(country.TotalDeaths, tr)
+         maketCovid(country.NewDeaths, tr)
+         maketCovid(country.TotalRecovered, tr)
+     });
+
  }
