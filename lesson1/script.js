@@ -38,6 +38,7 @@
      covidWorld = partOfCountries;
      covidWorld.forEach((country, index) => {
          let tr = document.createElement('tr');
+
          table.appendChild(tr);
 
          createRow(index, tr, country);
@@ -46,12 +47,22 @@
 
  function createRow(index2, tr, country) {
      maketCovid(index2 + 1, tr);
-     maketCovid(country.country, tr)
+     columnWithLink(country.country, tr)
      maketCovid(country.cases, tr)
      maketCovid(country.todayCases, tr)
      maketCovid(country.deaths, tr)
      maketCovid(country.todayDeaths, tr)
      maketCovid(country.recovered, tr)
+ }
+
+ function columnWithLink(text, tr) {
+     let a = document.createElement('a');
+     let link = document.createTextNode(text);
+     a.appendChild(link);
+     a.href = "#";
+     let td = document.createElement('td');
+     td.appendChild(a);
+     tr.appendChild(td);
  }
 
  function maketCovid(text, tr) {
