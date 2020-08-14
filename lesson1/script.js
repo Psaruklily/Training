@@ -3,25 +3,38 @@
  function COVID(callback) {
      let response = getInfoAboutCOVID();
      response.then(data => {
+         //console.log(data);
          callback(data);
      });
  }
 
  COVID(outputDataCOVID);
- COVID(outputTable);
+ //COVID(outputTable);
 
  function outputDataCOVID(data) {
      let paragraph = document.querySelectorAll('p');
-     paragraph[0].innerHTML = data.Global.TotalConfirmed;
-     paragraph[1].innerHTML = data.Global.TotalDeaths;
-     paragraph[2].innerHTML = data.Global.TotalRecovered;
+     paragraph[0].innerHTML = data.cases;
+     paragraph[1].innerHTML = data.deaths;
+     paragraph[2].innerHTML = data.recovered;
  }
+
+
+ function COVIDCountries(callback) {
+     let response = getInfoAboutCountries();
+     response.then(data => {
+         console.log(data);
+         callback(data);
+     });
+ }
+ COVIDCountries(outputTable);
+
+
 
  //------------------TABLE
  let table = document.querySelector('#covid');
 
  function outputTable(data) {
-     let partOfCountries = data.Countries.slice(0, 5);
+     let partOfCountries = data.slice(0, 5);
      covidWorld = partOfCountries;
      covidWorld.forEach((country, index) => {
          let tr = document.createElement('tr');
@@ -33,12 +46,12 @@
 
  function createRow(index2, tr, country) {
      maketCovid(index2 + 1, tr);
-     maketCovid(country.Country, tr)
-     maketCovid(country.TotalConfirmed, tr)
-     maketCovid(country.NewConfirmed, tr)
-     maketCovid(country.TotalDeaths, tr)
-     maketCovid(country.NewDeaths, tr)
-     maketCovid(country.TotalRecovered, tr)
+     maketCovid(country.country, tr)
+     maketCovid(country.cases, tr)
+     maketCovid(country.todayCases, tr)
+     maketCovid(country.deaths, tr)
+     maketCovid(country.todayDeaths, tr)
+     maketCovid(country.recovered, tr)
  }
 
  function maketCovid(text, tr) {
@@ -59,7 +72,7 @@
 
  function filterDate() {
      let insedent = covidWorld.sort(function(a, b) {
-         return a.TotalConfirmed - b.TotalConfirmed;
+         return a.cases - b.cases;
      });
 
      $('table').children('tr').remove();
@@ -70,5 +83,4 @@
 
          createRow(index, tr, country);
      });
-
  }
