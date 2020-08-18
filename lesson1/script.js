@@ -1,15 +1,13 @@
  let covidWorld = [];
 
- function COVID(callback) {
+ function country(callback) {
      let response = getInfoAboutCOVID();
      response.then(data => {
-         //console.log(data);
          callback(data);
      });
  }
 
- COVID(outputDataCOVID);
- //COVID(outputTable);
+ country(outputDataCOVID);
 
  function outputDataCOVID(data) {
      let paragraph = document.querySelectorAll('p');
@@ -22,13 +20,11 @@
  function COVIDCountries(callback) {
      let response = getInfoAboutCountries();
      response.then(data => {
-         console.log(data);
+         // console.log(data);
          callback(data);
      });
  }
  COVIDCountries(outputTable);
-
-
 
  //------------------TABLE
  let table = document.querySelector('#covid');
@@ -47,7 +43,7 @@
 
  function createRow(index2, tr, country) {
      maketCovid(index2 + 1, tr);
-     columnWithLink(country.country, tr)
+     columnWithLink(country.country, tr, country) //!!!!!!!!!!!!!!!!!!!!!!!!!!
      maketCovid(country.cases, tr)
      maketCovid(country.todayCases, tr)
      maketCovid(country.deaths, tr)
@@ -55,11 +51,12 @@
      maketCovid(country.recovered, tr)
  }
 
- function columnWithLink(text, tr) {
+ function columnWithLink(text, tr, country) {
      let a = document.createElement('a');
      let link = document.createTextNode(text);
      a.appendChild(link);
-     a.href = "#";
+     a.href = `countries.html?id=${country.countryInfo._id}`;
+     console.log(a)
      let td = document.createElement('td');
      td.appendChild(a);
      tr.appendChild(td);
