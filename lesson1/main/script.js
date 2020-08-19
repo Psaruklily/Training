@@ -1,14 +1,14 @@
  let covidWorld = [];
 
 
- function country(callback) {
+ function displayData(callback) {
      let response = getInfoAboutCOVID();
      response.then(data => {
          callback(data);
      });
  }
 
- country(outputDataCOVID);
+ displayData(outputDataCOVID);
 
  function outputDataCOVID(data) {
      let paragraph = document.querySelectorAll('p');
@@ -30,8 +30,9 @@
  let table = document.querySelector('#covid');
 
  function outputTable(data) {
-     let partOfCountries = data.slice(0, 5);
-     covidWorld = partOfCountries;
+     //let partOfCountries = data.slice(0, 5);
+     //covidWorld = partOfCountries;
+     covidWorld = data;
      covidWorld.forEach((country, index) => {
          let tr = document.createElement('tr');
 
@@ -56,12 +57,18 @@
      let a = document.createElement('a');
      let link = document.createTextNode(text);
      a.appendChild(link);
-     a.href = `countries.html?id=${country.countryInfo._id}`;
+     //a.href = `countries.html?id=${country.countryInfo._id}`;
+     a.href = '../country/countries.html';
+     a.onclick = () => {
+         //console.log(country.countryInfo._id);
+         localStorage.setItem('number', country.countryInfo._id);
+     }
+
      let td = document.createElement('td');
      td.appendChild(a);
      tr.appendChild(td);
-
  }
+
 
  function maketCovid(text, tr) {
      let td = document.createElement('td');

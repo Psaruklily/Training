@@ -1,12 +1,12 @@
-function displayData(response) {
-    //let response = getInfoAboutCountry();
+function displayData() {
+    let response = getInfoAboutCountry();
     response.then(data => {
         console.log(data);
         outputDataCOVID(data)
     })
 }
 
-//country(outputDataCOVID);
+displayData();
 
 
 function outputDataCOVID(data) {
