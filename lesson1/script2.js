@@ -1,12 +1,12 @@
-function country(callback) {
-    let response = getInfoAboutCountry();
+function displayData(response) {
+    //let response = getInfoAboutCountry();
     response.then(data => {
         console.log(data);
-        callback(data);
+        outputDataCOVID(data)
     })
 }
 
-country(outputDataCOVID);
+//country(outputDataCOVID);
 
 
 function outputDataCOVID(data) {
@@ -15,3 +15,5 @@ function outputDataCOVID(data) {
     paragraph[1].innerHTML = data.deaths;
     paragraph[2].innerHTML = data.recovered;
 }
+
+//---------------------------------------------------------------

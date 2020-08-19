@@ -1,5 +1,6 @@
  let covidWorld = [];
 
+
  function country(callback) {
      let response = getInfoAboutCOVID();
      response.then(data => {
@@ -20,7 +21,6 @@
  function COVIDCountries(callback) {
      let response = getInfoAboutCountries();
      response.then(data => {
-         // console.log(data);
          callback(data);
      });
  }
@@ -38,6 +38,7 @@
          table.appendChild(tr);
 
          createRow(index, tr, country);
+
      });
  }
 
@@ -56,10 +57,10 @@
      let link = document.createTextNode(text);
      a.appendChild(link);
      a.href = `countries.html?id=${country.countryInfo._id}`;
-     console.log(a)
      let td = document.createElement('td');
      td.appendChild(a);
      tr.appendChild(td);
+
  }
 
  function maketCovid(text, tr) {
