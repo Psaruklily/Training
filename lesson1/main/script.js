@@ -79,30 +79,26 @@
  }
 
  //------------------------------------------------------FILTER BUTTON
- let btnFilter = document.querySelector('.filter');
- btnFilter.onclick = function() {
-     filterData();
- }
 
  let trWithBtnFilter = document.querySelector('.with-button');
  console.log(trWithBtnFilter);
 
- trWithBtnFilter.addEventListener('click', filterData);
+ trWithBtnFilter.onclick = (event) => {
+     let placeOfClick = event.target;
+     if (placeOfClick.tagName != 'BUTTON') return; //не на кнопці? Тоді не цікавить
+     filterData(placeOfClick);
+ };
 
+ function filterData(button) {
+     let sortdata = covidWorld.sort(function(a, b) {
+         return b.cases - a.cases;
+     });
+     $('table').children('tr').remove();
 
- function filterData(event) {
-     let x = event.target;
-     console.log('Click is on' + x.tagName)
-         /* let insedent = covidWorld.sort(function(a, b) {
-             return b.cases - a.cases;
-         });
+     sortdata.forEach((country, index) => {
+         let tr = document.createElement('tr');
+         table.appendChild(tr);
+         createRow(index, tr, country);
+     });
 
-         $('table').children('tr').remove();
-
-         insedent.forEach((country, index) => {
-             let tr = document.createElement('tr');
-             table.appendChild(tr);
-
-             createRow(index, tr, country);
-         }); */
  }
