@@ -57,10 +57,8 @@
      let a = document.createElement('a');
      let link = document.createTextNode(text);
      a.appendChild(link);
-     //a.href = `countries.html?id=${country.countryInfo._id}`;
      a.href = '../country/countries.html';
      a.onclick = () => {
-         //console.log(country.countryInfo._id);
          localStorage.setItem('number', country.countryInfo._id);
      }
 
@@ -83,20 +81,28 @@
  //------------------------------------------------------FILTER BUTTON
  let btnFilter = document.querySelector('.filter');
  btnFilter.onclick = function() {
-     filterDate();
+     filterData();
  }
 
- function filterDate() {
-     let insedent = covidWorld.sort(function(a, b) {
-         return a.cases - b.cases;
-     });
+ let trWithBtnFilter = document.querySelector('.with-button');
+ console.log(trWithBtnFilter);
 
-     $('table').children('tr').remove();
+ trWithBtnFilter.addEventListener('click', filterData);
 
-     insedent.forEach((country, index) => {
-         let tr = document.createElement('tr');
-         table.appendChild(tr);
 
-         createRow(index, tr, country);
-     });
+ function filterData(event) {
+     let x = event.target;
+     console.log('Click is on' + x.tagName)
+         /* let insedent = covidWorld.sort(function(a, b) {
+             return b.cases - a.cases;
+         });
+
+         $('table').children('tr').remove();
+
+         insedent.forEach((country, index) => {
+             let tr = document.createElement('tr');
+             table.appendChild(tr);
+
+             createRow(index, tr, country);
+         }); */
  }

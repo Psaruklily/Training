@@ -1,0 +1,10 @@
+/*Change the bg of btn after ckick(event.rarget)*/
+
+.one-btn {
+    background: red;
+}
+
+th,
+td {
+    border: 1px solid black;
+}

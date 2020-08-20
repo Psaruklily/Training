@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleTest.css">
     <title>Document</title>
 </head>
 
@@ -11,6 +12,28 @@
 
     <input type="number" class="output">
     <button type="submit" class="btn">GO</button>
+
+    <!--Change the bg of btn after ckick(event.rarget)-->
+    <table id="covid">
+        <tr>
+            <th>#</th>
+            <th>Country, Other</th>
+            <th>Total Cases</th>
+            <th>New Cases</th>
+            <th>Total Deaths</th>
+            <th>New Deaths</th>
+            <th>Total Recovered</th>
+        </tr>
+        <tr class="with-button">
+            <td></td>
+            <td></td>
+            <td><button type="submit" class="btn-filter one-btn">Filter</button></td>
+            <td><button type="submit" class="btn-filter">Filter</button></td>
+            <td><button type="submit" class="btn-filter">Filter</button></td>
+            <td><button type="submit" class="btn-filter">Filter</button></td>
+            <td><button type="submit" class="btn-filter">Filter</button></td>
+        </tr>
+    </table>
 
     <script src="script.test.js"></script>
 </body>
