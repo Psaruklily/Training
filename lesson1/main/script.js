@@ -81,24 +81,38 @@
  //------------------------------------------------------FILTER BUTTON
 
  let trWithBtnFilter = document.querySelector('.with-button');
- console.log(trWithBtnFilter);
+ //console.log(trWithBtnFilter);
+
+ let buttons = document.querySelectorAll('button');
+ //console.log(buttons)
 
  trWithBtnFilter.onclick = (event) => {
+     //console.log(covidWorld)
      let placeOfClick = event.target;
      if (placeOfClick.tagName != 'BUTTON') return; //не на кнопці? Тоді не цікавить
-     filterData(placeOfClick);
- };
+     if (placeOfClick == buttons[0]) filterData(covidWorld, 'cases');
+     if (placeOfClick == buttons[1]) filterData(covidWorld, 'todayCases');
+     if (placeOfClick == buttons[2]) filterData(covidWorld, 'deaths');
+     if (placeOfClick == buttons[3]) filterData(covidWorld, 'todayDeaths');
+     if (placeOfClick == buttons[4]) filterData(covidWorld, 'recovered');
+ }
 
- function filterData(button) {
-     let sortdata = covidWorld.sort(function(a, b) {
-         return b.cases - a.cases;
+ function sort(arr, property) {
+     let sortData = arr.sort(function(a, b) {
+         return b[property] - a[property];
      });
+     //console.log(sortData);
+     return sortData;
+ }
+
+ function filterData(arr, property) {
+     let sortedData = sort(arr, property);
+     //console.log(sortedData);
      $('table').children('tr').remove();
 
-     sortdata.forEach((country, index) => {
+     sortedData.forEach((country, index) => {
          let tr = document.createElement('tr');
          table.appendChild(tr);
          createRow(index, tr, country);
      });
-
  }
