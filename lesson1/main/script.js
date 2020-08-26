@@ -113,7 +113,7 @@
  } */
 
 
- //-------------------------------------------------------------------------------------------------TEST
+ //------------------------------------------------------------------------------FILTER BUTTONS WITH TOGGLE
 
  let trWithBtnFilter = document.querySelector('.with-button');
 
@@ -124,23 +124,36 @@
      if (placeOfClick.tagName != 'BUTTON') return; //не на кнопці? Тоді не цікавить
      if (placeOfClick == buttons[0] && buttons[0].classList.toggle("false")) {
          filterDataToSmaller(covidWorld, 'cases');
-     } else {
+     } else if (placeOfClick == buttons[0]) {
          filterDataToLarger(covidWorld, 'cases');
      };
 
-     /*   if (placeOfClick == buttons[1] && buttons[1].classList.toggle("false")) {
-           filterDataToSmaller(covidWorld, 'todayCases');
-       } else {
-           filterDataToLarger(covidWorld, 'todayCases');
-       } */
+     if (placeOfClick == buttons[1] && buttons[1].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'todayCases');
+     } else if (placeOfClick == buttons[1]) {
+         filterDataToLarger(covidWorld, 'todayCases');
+     }
 
-     /*   if (placeOfClick == buttons[1]) filterData(covidWorld, 'todayCases');
-       if (placeOfClick == buttons[2]) filterData(covidWorld, 'deaths');
-       if (placeOfClick == buttons[3]) filterData(covidWorld, 'todayDeaths');
-       if (placeOfClick == buttons[4]) filterData(covidWorld, 'recovered'); */
+     if (placeOfClick == buttons[2] && buttons[2].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'deaths');
+     } else if (placeOfClick == buttons[2]) {
+         filterDataToLarger(covidWorld, 'deaths');
+     }
+
+     if (placeOfClick == buttons[3] && buttons[3].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'todayDeaths');
+     } else if (placeOfClick == buttons[3]) {
+         filterDataToLarger(covidWorld, 'todayDeaths');
+     }
+
+     if (placeOfClick == buttons[4] && buttons[4].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'recovered');
+     } else if (placeOfClick == buttons[4]) {
+         filterDataToLarger(covidWorld, 'recovered');
+     }
  }
 
- function sortFromLargeToSmaller(arr, property) { //for false
+ function sortFromLargeToSmaller(arr, property) { //---------------------------------for false
      let sortData = arr.sort(function(a, b) {
          return b[property] - a[property];
      });
@@ -158,7 +171,7 @@
      });
  }
 
- function sortFromSmallerToLarger(arr, property) { //for true
+ function sortFromSmallerToLarger(arr, property) { //---------------------------------for true
      let sortData = arr.sort(function(a, b) {
          return a[property] - b[property];
      });
