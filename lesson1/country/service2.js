@@ -7,10 +7,9 @@
  } */
 function numberId() {
     let id = localStorage.getItem('number');
-    console.log(id)
+    //console.log(id)
     return id;
 }
-
 
 async function getInfoAboutCountry() {
     let id = numberId();
@@ -20,5 +19,3 @@ async function getInfoAboutCountry() {
     let response = await promise.json();
     return response;
 }
-
-//getUrlParams()

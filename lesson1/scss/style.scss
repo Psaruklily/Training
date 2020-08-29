@@ -1,0 +1,76 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+$padding: 20px;
+@mixin font_color($font, $color) {
+    font-size: $font;
+    color: $color;
+}
+
+%font_color {
+    font-size: 40px;
+    color: rgb(60, 60, 60);
+}
+
+.container {
+    background: rgb(240, 240, 240);
+    .flag-country_name {
+        // background: rgb(184, 192, 233);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+        padding: $padding;
+        & p {
+            font-size: 40px;
+            margin-bottom: 0px;
+        }
+        & img {
+            height: 80px;
+            margin-right: 15px;
+        }
+    }
+    .cases {
+        // background: rgb(243, 103, 103);
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(180, 180, 180))
+        }
+    }
+    .death {
+        // background: rgb(103, 163, 241);
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(60, 60, 60))
+        }
+    }
+    .recovered {
+        // background: rgb(182, 240, 48);
+        padding: $padding;
+        text-align: center;
+        & p {
+            margin-bottom: 0px;
+            font-weight: bold;
+            @include font_color(50px, rgb(20, 168, 32))
+        }
+    }
+    .header {
+        @extend %font_color;
+    }
+    .line {
+        border-top: 1px solid rgb(168, 176, 218);
+    }
+}
