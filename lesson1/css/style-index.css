@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.container .header {
+  font-size: 40px;
+  color: #3c3c3c;
+}
+
+.container {
+  background: #f0f0f0;
+}
+.container .cases {
+  padding: 20px;
+  text-align: center;
+}
+.container .cases p {
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 50px;
+  color: #b4b4b4;
+}
+.container .death {
+  padding: 20px;
+  text-align: center;
+}
+.container .death p {
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 50px;
+  color: #3c3c3c;
+}
+.container .recovered {
+  padding: 20px;
+  text-align: center;
+}
+.container .recovered p {
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 50px;
+  color: #14a820;
+}
+th,
+td {
+  border: 1px solid black;
+}
+
+.red-cell {
+  background: red;
+}
+
+.creamy {
+  background: #f2d98f;
+}

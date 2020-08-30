@@ -9,33 +9,18 @@ html {
 }
 
 $padding: 20px;
-@mixin font_color($font, $color) {
-    font-size: $font;
-    color: $color;
-}
-
 %font_color {
     font-size: 40px;
     color: rgb(60, 60, 60);
 }
 
+@mixin font_color($font, $color) {
+    font-size: $font;
+    color: $color;
+}
+
 .container {
     background: rgb(240, 240, 240);
-    .flag-country_name {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 16px;
-        padding: $padding;
-        & p {
-            font-size: 40px;
-            margin-bottom: 0px;
-        }
-        & img {
-            height: 80px;
-            margin-right: 15px;
-        }
-    }
     .cases {
         padding: $padding;
         text-align: center;
@@ -66,7 +51,17 @@ $padding: 20px;
     .header {
         @extend %font_color;
     }
-    .line {
-        border-top: 1px solid rgb(168, 176, 218);
-    }
+}
+
+th,
+td {
+    border: 1px solid black;
+}
+
+.red-cell {
+    background: red;
+}
+
+.creamy {
+    background: rgb(242, 217, 143);
 }

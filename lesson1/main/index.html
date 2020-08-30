@@ -4,42 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style-index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <h3>Coronavirus Cases:</h3>
-        <p></p>
+        <div class="cases">
+            <h3 class="header">Coronavirus Cases:</h3>
+            <p class="commonInfoAboutCountry"></p>
+        </div>
 
-        <h3>Deaths:</h3>
-        <p></p>
+        <div class="death">
+            <h3 class="header">Deaths:</h3>
+            <p class="commonInfoAboutCountry"></p>
+        </div>
 
-        <h3>Recovered:</h3>
-        <p></p>
+        <div class="recovered">
+            <h3 class="header">Recovered:</h3>
+            <p class="commonInfoAboutCountry"></p>
+        </div>
+        <div class="table-COVID">
+            <table id="covid">
+                <tr>
+                    <th>#</th>
+                    <th>Country, Other</th>
+                    <th>Total Cases</th>
+                    <th>New Cases</th>
+                    <th>Total Deaths</th>
+                    <th>New Deaths</th>
+                    <th>Total Recovered</th>
+                </tr>
+                <tr class="with-button">
+                    <td></td>
+                    <td></td>
+                    <td><button type="submit" class="btn-filter1">Filter</button></td>
+                    <td><button type="submit" class="btn-filter2">Filter</button></td>
+                    <td><button type="submit" class="btn-filter3">Filter</button></td>
+                    <td><button type="submit" class="btn-filter4">Filter</button></td>
+                    <td><button type="submit" class="btn-filter5">Filter</button></td>
+                </tr>
+            </table>
+        </div>
 
-        <table id="covid">
-            <tr>
-                <th>#</th>
-                <th>Country, Other</th>
-                <th>Total Cases</th>
-                <th>New Cases</th>
-                <th>Total Deaths</th>
-                <th>New Deaths</th>
-                <th>Total Recovered</th>
-            </tr>
-            <tr class="with-button">
-                <td></td>
-                <td></td>
-                <td><button type="submit" class="btn-filter1">Filter</button></td>
-                <td><button type="submit" class="btn-filter2">Filter</button></td>
-                <td><button type="submit" class="btn-filter3">Filter</button></td>
-                <td><button type="submit" class="btn-filter4">Filter</button></td>
-                <td><button type="submit" class="btn-filter5">Filter</button></td>
-            </tr>
-        </table>
     </div>
 
 

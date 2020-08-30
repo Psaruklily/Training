@@ -39,23 +39,22 @@
          table.appendChild(tr);
 
          createRow(index, tr, country);
-
      });
  }
 
- function createRow(index2, tr, country) {
-     maketCovid(index2 + 1, tr);
+ function createRow(index, tr, country) {
+     createTdWithData(index + 1, tr, country);
      columnWithLink(country.country, tr, country) //!!!!!!!!!!!!!!!!!!!!!!!!!!
-     maketCovid(country.cases, tr)
-     maketCovid(country.todayCases, tr)
-     maketCovid(country.deaths, tr)
-     maketCovid(country.todayDeaths, tr)
-     maketCovid(country.recovered, tr)
+     createTdWithData(country.cases, tr, country)
+     maketCovid(country.todayCases, tr, country) //залишаємо
+     createTdWithData(country.deaths, tr, country)
+     maketCovid(country.todayDeaths, tr, country) //залишаємо
+     createTdWithData(country.recovered, tr, country)
  }
 
- function columnWithLink(text, tr, country) {
+ function columnWithLink(nameCountry, tr, country) {
      let a = document.createElement('a');
-     let link = document.createTextNode(text);
+     let link = document.createTextNode(nameCountry);
      a.appendChild(link);
      a.href = '../country/countries.html';
      a.onclick = () => {
@@ -68,7 +67,26 @@
  }
 
 
- function maketCovid(text, tr) {
+ function maketCovid(text, tr, country) {
+     // console.log(country)
+     let td = document.createElement('td');
+     if (text == 0) {
+         td.innerHTML = ' ';
+     } else if (text == country.todayCases) {
+         td.classList.add('creamy');
+         td.innerHTML = text;
+     } else if (text == country.todayDeaths) {
+         td.classList.add('red-cell');
+         td.innerHTML = text;
+     } else {
+         td.innerHTML = text;
+     }
+     tr.appendChild(td);
+ }
+
+
+ function createTdWithData(text, tr) {
+     // console.log(country)
      let td = document.createElement('td');
      if (text == 0) {
          td.innerHTML = ' ';
