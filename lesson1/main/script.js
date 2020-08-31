@@ -44,17 +44,24 @@
 
  function createRow(index, tr, country) {
      createTdWithData(index + 1, tr, country);
-     columnWithLink(country.country, tr, country) //!!!!!!!!!!!!!!!!!!!!!!!!!!
+     columnWithLink(country.country, tr, country)
      createTdWithData(country.cases, tr, country)
-     maketCovid(country.todayCases, tr, country) //залишаємо
+     maketCovid(country.todayCases, tr, country)
      createTdWithData(country.deaths, tr, country)
-     maketCovid(country.todayDeaths, tr, country) //залишаємо
+     maketCovid(country.todayDeaths, tr, country)
      createTdWithData(country.recovered, tr, country)
+     createTdWithData(country.active, tr, country)
+     createTdWithData(country.critical, tr, country)
+     createTdWithData(country.casesPerOneMillion, tr, country)
+     createTdWithData(country.deathsPerOneMillion, tr, country)
+     createTdWithData(country.tests, tr, country)
+     createTdWithData(country.testsPerOneMillion, tr, country)
+     columnWithLink(country.population, tr, country)
  }
 
- function columnWithLink(nameCountry, tr, country) {
+ function columnWithLink(text, tr, country) {
      let a = document.createElement('a');
-     let link = document.createTextNode(nameCountry);
+     let link = document.createTextNode(text);
      a.appendChild(link);
      a.href = '../country/countries.html';
      a.onclick = () => {
