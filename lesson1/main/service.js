@@ -13,6 +13,6 @@ async function getInfoAboutCountries() {
         method: 'GET'
     });
     let response = await promise.json();
-    console.log(response);
+    //console.log(response);
     return response;
 }

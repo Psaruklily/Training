@@ -1,6 +1,5 @@
  let covidWorld = [];
 
-
  function displayData(callback) {
      let response = getInfoAboutCOVID();
      response.then(data => {
@@ -17,7 +16,6 @@
      paragraph[2].innerHTML = data.recovered;
  }
 
-
  function COVIDCountries(callback) {
      let response = getInfoAboutCountries();
      response.then(data => {
@@ -30,8 +28,6 @@
  let table = document.querySelector('#covid');
 
  function outputTable(data) {
-     //let partOfCountries = data.slice(0, 5);
-     //covidWorld = partOfCountries;
      covidWorld = data;
      covidWorld.forEach((country, index) => {
          let tr = document.createElement('tr');
@@ -90,7 +86,6 @@
      }
      tr.appendChild(td);
  }
-
 
  function createTdWithData(text, tr) {
      // console.log(country)
@@ -208,6 +203,35 @@
      $('table').children('tr').remove();
 
      sortedData.forEach((country, index) => {
+         let tr = document.createElement('tr');
+         table.appendChild(tr);
+         createRow(index, tr, country);
+     });
+ }
+
+ //------------------------------------------------------------------INPUT SEARCH
+ let searchCountry = document.querySelector('.searchCountry');
+ let buttonSubmit = document.querySelector('.submitCountry');
+
+ let countriesStartsWithCurrentLetter = [];
+ buttonSubmit.onclick = () => {
+     $('table').children('tr').remove();
+
+     /*    sortedData.forEach((country, index) => {
+           let tr = document.createElement('tr');
+           table.appendChild(tr);
+           createRow(index, tr, country);
+       }); */
+
+     covidWorld.forEach(country => {
+         let a = country.country.startsWith(searchCountry.value);
+         if (a == true) {
+             countriesStartsWithCurrentLetter.push(country);
+         }
+     });
+     console.log(countriesStartsWithCurrentLetter);
+
+     countriesStartsWithCurrentLetter.forEach((country, index) => {
          let tr = document.createElement('tr');
          table.appendChild(tr);
          createRow(index, tr, country);
