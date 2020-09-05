@@ -210,28 +210,45 @@
  }
 
  //------------------------------------------------------------------INPUT SEARCH
- let searchCountry = document.querySelector('.searchCountry');
- let buttonSubmit = document.querySelector('.submitCountry');
+ /*  let searchCountry = document.querySelector('.searchCountry');
+  let buttonSubmit = document.querySelector('.submitCountry');
 
- let countriesStartsWithCurrentLetter = [];
- buttonSubmit.onclick = () => {
+  let countriesStartsWithCurrentLetter = [];
+  buttonSubmit.onclick = () => {
+      $('table').children('tr').remove();
+      covidWorld.forEach(country => {
+          let a = country.country.startsWith(searchCountry.value);
+          if (a == true) {
+              countriesStartsWithCurrentLetter.push(country);
+          }
+      });
+      //console.log(countriesStartsWithCurrentLetter);
+      countriesStartsWithCurrentLetter.forEach((country, index) => {
+          let tr = document.createElement('tr');
+          table.appendChild(tr);
+          createRow(index, tr, country);
+      });
+  } */
+
+ //----------------------------------------------------------------------SENSITIVE SEARCH
+
+ let searchCountry = document.querySelector('.searchCountry')
+ let arr = [];
+ searchCountry.onkeyup = function() {
+     arr = [];
      $('table').children('tr').remove();
+     let val = this.value.toLowerCase();
+     if (val != '') {
+         covidWorld.forEach(function(country) {
 
-     /*    sortedData.forEach((country, index) => {
-           let tr = document.createElement('tr');
-           table.appendChild(tr);
-           createRow(index, tr, country);
-       }); */
-
-     covidWorld.forEach(country => {
-         let a = country.country.startsWith(searchCountry.value);
-         if (a == true) {
-             countriesStartsWithCurrentLetter.push(country);
-         }
-     });
-     console.log(countriesStartsWithCurrentLetter);
-
-     countriesStartsWithCurrentLetter.forEach((country, index) => {
+             if (country.country.toLowerCase().indexOf(val) > -1) {
+                 arr.push(country);
+             }
+         })
+     } else {
+         arr = covidWorld;
+     }
+     arr.forEach((country, index) => {
          let tr = document.createElement('tr');
          table.appendChild(tr);
          createRow(index, tr, country);

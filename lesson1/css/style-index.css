@@ -58,3 +58,7 @@ td {
 .creamy {
   background: #f2d98f;
 }
+
+.hide {
+  display: none;
+}
