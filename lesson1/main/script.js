@@ -25,6 +25,15 @@
  COVIDCountries(outputTable);
 
  //------------------TABLE
+ //-------------------------------------SPINNER
+ let spinner = document.querySelector('.spinner-border');
+ window.addEventListener('load', () => {
+         spinner.classList.add('hide1');
+         setTimeout(() => {
+             spinner.remove();
+         }, 6000);
+     })
+     //-------------------------------------SPINNER END
  let table = document.querySelector('#covid');
 
  function outputTable(data) {
@@ -35,6 +44,7 @@
          table.appendChild(tr);
 
          createRow(index, tr, country);
+         filterDataToSmaller(covidWorld, 'cases');
      });
  }
 
@@ -137,7 +147,7 @@
 
  let trWithBtnFilter = document.querySelector('.with-button');
 
- let buttons = document.querySelectorAll('button');
+ let buttons = document.querySelectorAll('.btn-filter');
 
  trWithBtnFilter.onclick = (event) => {
      let placeOfClick = event.target;
@@ -237,10 +247,9 @@
  searchCountry.onkeyup = function() {
      arr = [];
      $('table').children('tr').remove();
-     let val = this.value.toLowerCase();
+     let val = this.value.toLowerCase().trim();
      if (val != '') {
          covidWorld.forEach(function(country) {
-
              if (country.country.toLowerCase().indexOf(val) > -1) {
                  arr.push(country);
              }
