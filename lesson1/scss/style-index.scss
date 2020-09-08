@@ -70,6 +70,22 @@ td {
     display: none;
 }
 
-.hide1 {
-    opacity: 0;
+//------------------------------default-arrows
+.default-arrows {
+    cursor: pointer;
+    &:after {
+        content: url('../image/sortByDefault.png');
+    }
+}
+
+.sortToSmaller1 {
+    &:after {
+        content: url('../image/sortFromLtoS.png');
+    }
+}
+
+.sortToLarger1 {
+    &:after {
+        content: url('../image/sortFromStoL.png');
+    }
 }

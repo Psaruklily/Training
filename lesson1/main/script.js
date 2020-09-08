@@ -28,12 +28,11 @@
  //-------------------------------------SPINNER
  let spinner = document.querySelector('.spinner-border');
  window.addEventListener('load', () => {
-         spinner.classList.add('hide1');
-         setTimeout(() => {
-             spinner.remove();
-         }, 6000);
-     })
-     //-------------------------------------SPINNER END
+     setTimeout(() => {
+         spinner.remove();
+     }, 6000);
+ })
+
  let table = document.querySelector('#covid');
 
  function outputTable(data) {
@@ -44,7 +43,7 @@
          table.appendChild(tr);
 
          createRow(index, tr, country);
-         filterDataToSmaller(covidWorld, 'cases');
+         //filterDataToSmaller(covidWorld, 'cases');
      });
  }
 
@@ -143,43 +142,86 @@
  } */
 
 
- //------------------------------------------------------------------------------FILTER BUTTONS WITH TOGGLE
+ //------------------------------------------------------------------------------FILTER DATA WITH TOGGLE
 
- let trWithBtnFilter = document.querySelector('.with-button');
+ let tableHeader = document.querySelector('.tableHeader');
+ let thHeader = document.querySelectorAll('.headerTh');
+ console.log(thHeader)
 
- let buttons = document.querySelectorAll('.btn-filter');
-
- trWithBtnFilter.onclick = (event) => {
-     let placeOfClick = event.target;
-     if (placeOfClick.tagName != 'BUTTON') return; //не на кнопці? Тоді не цікавить
-     if (placeOfClick == buttons[0] && buttons[0].classList.toggle("false")) {
+ tableHeader.onclick = (event) => {
+     let placeOfClick = event.target.closest('th');
+     if (placeOfClick == thHeader[2] && thHeader[2].classList.toggle("false")) {
+         changeArrows(placeOfClick)
          filterDataToSmaller(covidWorld, 'cases');
-     } else if (placeOfClick == buttons[0]) {
+     } else if (placeOfClick == thHeader[2]) {
+         changeArrows(placeOfClick)
          filterDataToLarger(covidWorld, 'cases');
      };
 
-     if (placeOfClick == buttons[1] && buttons[1].classList.toggle("false")) {
+     if (placeOfClick == thHeader[3] && thHeader[3].classList.toggle("false")) {
          filterDataToSmaller(covidWorld, 'todayCases');
-     } else if (placeOfClick == buttons[1]) {
+     } else if (placeOfClick == thHeader[3]) {
          filterDataToLarger(covidWorld, 'todayCases');
      }
 
-     if (placeOfClick == buttons[2] && buttons[2].classList.toggle("false")) {
+     if (placeOfClick == thHeader[4] && thHeader[4].classList.toggle("false")) {
          filterDataToSmaller(covidWorld, 'deaths');
-     } else if (placeOfClick == buttons[2]) {
+     } else if (placeOfClick == thHeader[4]) {
          filterDataToLarger(covidWorld, 'deaths');
      }
 
-     if (placeOfClick == buttons[3] && buttons[3].classList.toggle("false")) {
+     if (placeOfClick == thHeader[5] && thHeader[5].classList.toggle("false")) {
          filterDataToSmaller(covidWorld, 'todayDeaths');
-     } else if (placeOfClick == buttons[3]) {
+     } else if (placeOfClick == thHeader[5]) {
          filterDataToLarger(covidWorld, 'todayDeaths');
      }
 
-     if (placeOfClick == buttons[4] && buttons[4].classList.toggle("false")) {
+     if (placeOfClick == thHeader[6] && thHeader[6].classList.toggle("false")) {
          filterDataToSmaller(covidWorld, 'recovered');
-     } else if (placeOfClick == buttons[4]) {
+     } else if (placeOfClick == thHeader[6]) {
          filterDataToLarger(covidWorld, 'recovered');
+     }
+
+     if (placeOfClick == thHeader[7] && thHeader[7].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'active');
+     } else if (placeOfClick == thHeader[7]) {
+         filterDataToLarger(covidWorld, 'active');
+     }
+
+     if (placeOfClick == thHeader[8] && thHeader[8].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'critical');
+     } else if (placeOfClick == thHeader[8]) {
+         filterDataToLarger(covidWorld, 'critical');
+     }
+
+     if (placeOfClick == thHeader[9] && thHeader[9].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'casesPerOneMillion');
+     } else if (placeOfClick == thHeader[9]) {
+         filterDataToLarger(covidWorld, 'casesPerOneMillion');
+     }
+
+     if (placeOfClick == thHeader[10] && thHeader[10].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'deathsPerOneMillion');
+     } else if (placeOfClick == thHeader[10]) {
+         filterDataToLarger(covidWorld, 'deathsPerOneMillion');
+     }
+
+     if (placeOfClick == thHeader[11] && thHeader[11].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'tests');
+     } else if (placeOfClick == thHeader[11]) {
+         filterDataToLarger(covidWorld, 'tests');
+     }
+
+     if (placeOfClick == thHeader[12] && thHeader[12].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'testsPerOneMillion');
+     } else if (placeOfClick == thHeader[12]) {
+         filterDataToLarger(covidWorld, 'testsPerOneMillion');
+     }
+
+     if (placeOfClick == thHeader[13] && thHeader[13].classList.toggle("false")) {
+         filterDataToSmaller(covidWorld, 'population');
+     } else if (placeOfClick == thHeader[13]) {
+         filterDataToLarger(covidWorld, 'population');
      }
  }
 
@@ -193,6 +235,9 @@
  function filterDataToSmaller(arr, property) {
      let sortedData = sortFromLargeToSmaller(arr, property);
      $('table').children('tr').remove();
+
+     //---------
+
 
      sortedData.forEach((country, index) => {
          let tr = document.createElement('tr');
@@ -217,6 +262,16 @@
          table.appendChild(tr);
          createRow(index, tr, country);
      });
+ }
+
+ //--------------------------------------------------------------------ARROWS
+ function changeArrows(placeOfClick) {
+     if (placeOfClick.classList.contains('default-arrows')) {
+         placeOfClick.classList.remove('default-arrows')
+         placeOfClick.classList.add('sortToSmaller1')
+     } else if (placeOfClick.classList.contains('sortToSmaller1')) {
+         placeOfClick.classList.toggle('sortToLarger1')
+     }
  }
 
  //------------------------------------------------------------------INPUT SEARCH

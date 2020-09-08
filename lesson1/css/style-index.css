@@ -62,3 +62,18 @@ td {
 .hide {
   display: none;
 }
+
+.default-arrows {
+  cursor: pointer;
+}
+.default-arrows:after {
+  content: url("../image/sortByDefault.png");
+}
+
+.sortToSmaller1:after {
+  content: url("../image/sortFromLtoS.png");
+}
+
+.sortToLarger1:after {
+  content: url("../image/sortFromStoL.png");
+}
