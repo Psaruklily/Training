@@ -203,29 +203,78 @@ getRandomUrl()
 
 //-------------------------------------------------------------------------
 //      FINISHED!!!!!
-container = document.querySelector('#div');
-async function getRandomUrl(callback) {
-    const url = 'https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM';
-    let promise = await fetch(url);
-    let urlImage = await promise.json();
-    let stringUrl = urlImage['url'];
-    let image = document.createElement('img');
-    image.src = stringUrl;
-    container.appendChild(image);
-    callback(stringUrl, image);
-}
+// container = document.querySelector('#div');
+// async function getRandomUrl(callback) {
+//     const url = 'https://random.dog/woof.json?fbclid=IwAR03VGYezarr3RFjvKuZ6TGzqhEv3WtK6n60FVTpoLHsKHNj6b4liCQTqAM';
+//     let promise = await fetch(url);
+//     let urlImage = await promise.json();
+//     let stringUrl = urlImage['url'];
+//     let image = document.createElement('img');
+//     image.src = stringUrl;
+//     container.appendChild(image);
+//     callback(stringUrl, image);
+// }
 
-function auditUrl(stringUrl, image) {
-    console.log(stringUrl);
-    if (stringUrl.includes('jpg')) {
-        image.style.display = 'block';
-    } else {
-        image.style.display = 'none';
-        getRandomUrl(auditUrl);
+// function auditUrl(stringUrl, image) {
+//     console.log(stringUrl);
+//     if (stringUrl.includes('jpg')) {
+//         image.style.display = 'block';
+//     } else {
+//         image.style.display = 'none';
+//         getRandomUrl(auditUrl);
 
-    }
-}
+//     }
+// }
 
-for (let i = 0; i < 40; i++) {
-    getRandomUrl(auditUrl);
-}
+// for (let i = 0; i < 40; i++) {
+//     getRandomUrl(auditUrl);
+// }
+
+//====================================================================================  ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ start
+
+let container = document.querySelector('.container');
+
+fetch('https://randomuser.me/api/?inc=gender,name,picture,location&results=5')
+    .then(response => response.json())
+    .then(result => {
+        return result.results;
+    })
+    .then(arrUsers => {
+
+        for (let user of arrUsers) {
+            let image = document.createElement('img');
+            image.src = '';
+            image.dataset.url = user.picture.large;
+            container.appendChild(image) // Резервую місце для кожної каритнки
+        }
+
+        let images = document.querySelectorAll('.container>*');
+
+        let options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        }
+
+        function handlerImg(myImg, observer) {
+            console.log('Data: ', myImg) //Отримуємо масив об'єктів (спостережувальні картинки із їх властивостями, де зазначено певні зміни)
+            myImg.forEach(currentImg => {
+                console.log(currentImg.intersectionRatio);
+                if (currentImg.intersectionRatio > 0) {
+                    loadImage(currentImg.target)
+                }
+            })
+        }
+
+        function loadImage(image) {
+            image.src = image.dataset.url;
+        }
+
+        let observer = new IntersectionObserver(handlerImg, options);
+
+        images.forEach(image => {
+            observer.observe(image);
+        })
+    })
+
+//====================================================================================  ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ end
