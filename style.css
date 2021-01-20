@@ -1,4 +1,4 @@
-#div {
+/* #div {
     max-width: 1200px;
     display: flex;
     justify-content: space-around;
@@ -9,23 +9,43 @@
     width: 30%;
     margin-top: 30px;
     object-fit: cover;
-    /* width: 200px;*/
     height: 300px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-}
+} */
 
 
 /*ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ start*/
 
-.container>* {
+
+/* .container>* {
     width: 500px;
     height: 500px;
     display: block;
-}
+} */
 
 
 /*ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ end*/
+
+
+/*=====================================================================*/
+
+
+/*ПАГІНАЦІЯ ПРИ СКРОЛІ СТОРІНКИ start*/
+
+.container-for-image {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.for-image {
+    width: 250px;
+    display: block;
+    padding: 50px;
+}
+
+
+/*ПАГІНАЦІЯ ПРИ СКРОЛІ СТОРІНКИ end*/

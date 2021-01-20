@@ -232,49 +232,102 @@ getRandomUrl()
 
 //====================================================================================  ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ start
 
-let container = document.querySelector('.container');
+// let container = document.querySelector('.container');
 
-fetch('https://randomuser.me/api/?inc=gender,name,picture,location&results=5')
-    .then(response => response.json())
-    .then(result => {
-        return result.results;
-    })
-    .then(arrUsers => {
+// fetch('https://randomuser.me/api/?inc=gender,name,picture,location&results=5')
+//     .then(response => response.json())
+//     .then(result => {
+//         return result.results;
+//     })
+//     .then(arrUsers => {
 
-        for (let user of arrUsers) {
-            let image = document.createElement('img');
-            image.src = '';
-            image.dataset.url = user.picture.large;
-            container.appendChild(image) // Резервую місце для кожної каритнки
-        }
+//         for (let user of arrUsers) {
+//             let image = document.createElement('img');
+//             image.src = '';
+//             image.dataset.url = user.picture.large;
+//             container.appendChild(image) // Резервую місце для кожної каритнки
+//         }
 
-        let images = document.querySelectorAll('.container>*');
+//         let images = document.querySelectorAll('.container>*');
 
-        let options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        }
+//         let options = {
+//             root: null,
+//             rootMargin: '0px',
+//             threshold: 0.1
+//         }
 
-        function handlerImg(myImg, observer) {
-            console.log('Data: ', myImg) //Отримуємо масив об'єктів (спостережувальні картинки із їх властивостями, де зазначено певні зміни)
-            myImg.forEach(currentImg => {
-                console.log(currentImg.intersectionRatio);
-                if (currentImg.intersectionRatio > 0) {
-                    loadImage(currentImg.target)
-                }
-            })
-        }
+//         function handlerImg(myImg, observer) {
+//             console.log('Data: ', myImg) //Отримуємо масив об'єктів (спостережувальні картинки із їх властивостями, де зазначено певні зміни)
+//             myImg.forEach(currentImg => {
+//                 console.log(currentImg.intersectionRatio);
+//                 if (currentImg.intersectionRatio > 0) {
+//                     loadImage(currentImg.target)
+//                 }
+//             })
+//         }
 
-        function loadImage(image) {
-            image.src = image.dataset.url;
-        }
+//         function loadImage(image) {
+//             image.src = image.dataset.url;
+//         }
 
-        let observer = new IntersectionObserver(handlerImg, options);
+//         let observer = new IntersectionObserver(handlerImg, options);
 
-        images.forEach(image => {
-            observer.observe(image);
-        })
-    })
+//         images.forEach(image => {
+//             observer.observe(image);
+//         })
+//     })
 
 //====================================================================================  ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ end
+
+//===================================================================================ПАГІНАЦІЯ ПРИ СКРОЛІ СТОРІНКИ start
+
+// 1. Отримати дані від backendy
+// 2. Запушити отримані дані у новий пустий масив
+// 3. Вивести дані першої сторінки одразу після завантаження сайту
+// 4. Коли я доскролюю до останнього елементу масиву, робити новий запит 
+
+let isRequest = false;
+let containerForImage = document.querySelector('.container-for-image');
+let indexPage = 0;
+
+async function getData() {
+    isRequest = true;
+    let promise = await fetch(`https://api.instantwebtools.net/v1/passenger?page=${indexPage}&size=10`);
+    let result = await promise.json();
+
+    indexPage++;
+    isRequest = false;
+    return result;
+}
+
+async function outputData() {
+    let data = await getData()
+    let array = data.data;
+    console.log(array)
+
+    for (let item of array) {
+        let image = document.createElement('img');
+        image.src = item.airline.logo;
+        image.classList.add('for-image');
+        containerForImage.appendChild(image);
+    }
+}
+
+outputData()
+
+window.addEventListener('scroll', function() {
+    let window_height = window.innerHeight;
+    let contentHeight = containerForImage.offsetHeight;
+    let yOffset = window.pageYOffset;
+    // console.log('window_height', window_height);
+    // console.log('contentHeight', contentHeight);
+    // console.log('yOffset', yOffset);
+    // console.log('=============================')
+
+    if (yOffset + window_height + 100 >= contentHeight && !isRequest) {
+        console.log('end')
+        outputData()
+    }
+})
+
+//===================================================================================ПАГІНАЦІЯ ПРИ СКРОЛІ СТОРІНКИ end
