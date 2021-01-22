@@ -6,37 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
 
     <div class="container">
-        <div>
-            <div class="output-data">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Trips</th>
-                            <th>Id</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-
-            <div class="navigation">
-                <div class="prev">
-                    <p>Назад</p>
-                </div>
-                <ul class="inherit-color-bth"></ul>
-                <div class="next">
-                    <p>Уперед</p>
-                </div>
-            </div>
-        </div>
+        <form>
+            <label>Message: <input type="text" name="message"></label>
+            <button type="submit">Save</button> <span id="feedback"></span>
+        </form>
     </div>
-
 
 </body>
 <script src="script.js"></script>
