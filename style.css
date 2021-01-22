@@ -1,51 +1,67 @@
-/* #div {
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-#div>img {
-    width: 30%;
-    margin-top: 30px;
-    object-fit: cover;
-    height: 300px;
-}
-
 .container {
+    padding: 40px;
     display: flex;
-    flex-direction: column;
-} */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+table,
+td,
+th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 5px;
+}
 
 
-/*ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ start*/
+/*Navigation*/
 
+.navigation {
+    display: flex;
+    /* color: #4285f4; */
+    justify-content: center;
+}
 
-/* .container>* {
-    width: 500px;
-    height: 500px;
-    display: block;
-} */
-
-
-/*ПІДГРУЗКА КАРТИНОК ПРИ СКРОЛІ end*/
-
-
-/*=====================================================================*/
-
-
-/*ПАГІНАЦІЯ ПРИ СКРОЛІ СТОРІНКИ start*/
-
-.container-for-image {
+.navigation ul {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
 }
 
-.for-image {
-    width: 250px;
-    display: block;
-    padding: 50px;
+.navigation ul li {
+    padding: 5px;
 }
 
+.navigation ul li:hover,
+.prev:hover,
+.next:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
-/*ПАГІНАЦІЯ ПРИ СКРОЛІ СТОРІНКИ end*/
+.prev,
+.next {
+    position: relative;
+    top: 5px;
+    padding: 0px 30px;
+    color: #4285f4;
+}
+
+.prev {
+    visibility: hidden;
+}
+
+.inherit-color-bth {
+    color: #4285f4;
+}
+
+.activeCl {
+    color: #000;
+}
