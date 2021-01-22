@@ -11,11 +11,34 @@
 
 <body>
 
+    <div class="headerList">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMC3t_W_aoi0MAlM2kkRX0VPWr8QeNAbKb9A&usqp=CAU" alt="">
+        <h1>ToDo List</h1>
+    </div>
+
     <div class="container">
-        <form>
-            <label>Message: <input type="text" name="message"></label>
-            <button type="submit">Save</button> <span id="feedback"></span>
-        </form>
+        <h4>Add An item</h4>
+        <div class="wrap-for-input-buttons">
+            <div>
+                <form>
+                    <input type="text" name="message">
+                </form>
+            </div>
+            <div>
+                <button type="button" class="update-btn">UPDATE</button>
+            </div>
+            <div>
+                <button type="button" class="cancle-btn">Cancel</button>
+            </div>
+        </div>
+
+
+        <div class="list">
+            <ul></ul>
+        </div>
+
+        <button type="button" class="btn btn-dark hide">Reset all</button>
+
     </div>
 
 </body>

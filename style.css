@@ -1,7 +1,57 @@
-.container {
-    margin-top: 30px;
+.headerList {
+    padding: 10px 84px;
+    background: rgb(22, 16, 51);
+    height: 70px;
+    display: flex;
 }
 
-#feedback {
-    color: green;
+.headerList img {
+    height: 50px;
+    margin: 0px 25px 0px 45px;
+}
+
+.container h4 {
+    margin: 0px;
+    padding: 15px 0px;
+}
+
+.headerList h1 {
+    color: #fff;
+}
+
+.wrap-for-input-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.wrap-for-input-buttons div input {
+    width: 980px;
+    border: 1px solid rgb(201, 188, 188);
+    border-radius: 2px;
+    margin-right: 19px;
+}
+
+.wrap-for-input-buttons button {
+    border: 1px solid;
+    border-radius: 3px;
+    width: 110px;
+    height: 31px;
+    color: #fff;
+}
+
+.update-btn {
+    background: #007bff;
+    border-color: #007bff;
+    margin-bottom: 5px;
+}
+
+.cancle-btn {
+    background: #cc2b40;
+    border-color: #007bff;
+}
+
+.hide {
+    visibility: hidden;
 }
