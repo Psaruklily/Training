@@ -9,15 +9,68 @@ let itemsArray = localStorage.getItem('items') ?
 // 2. Занесла масив у localStorage
 localStorage.setItem('items', JSON.stringify(itemsArray));
 
+// Oтримую масив для робити з ним у JS
+const data = JSON.parse(localStorage.getItem('items'));
+//console.log(data);
 
 
 const liMaker = text => {
     let li = document.createElement('li');
-    li.textContent = text;
+    let mainDiv = document.createElement('div');
+    let task = document.createElement('div');
+    let divForButn = document.createElement('div');
+    let p = document.createElement('p');
+    p.textContent = text;
+    task.appendChild(p);
+    mainDiv.appendChild(task);
+    let cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.classList.add('delete');
+
+    let updateBtn = document.createElement('button');
+    updateBtn.textContent = 'Update'
+    updateBtn.classList.add('update');
+
+    divForButn.appendChild(cancelBtn)
+    divForButn.appendChild(updateBtn)
+    mainDiv.appendChild(divForButn)
+
+    li.appendChild(mainDiv)
     ul.appendChild(li);
+
     if (itemsArray.length > 0) {
         resetBtn.classList.remove('hide');
     }
+    console.log(mainDiv)
+
+    let cancel = mainDiv.lastElementChild.firstElementChild;
+    let update = mainDiv.lastElementChild.lastElementChild;
+
+    mainDiv.addEventListener('click', function(event) {
+        if (event.target === cancel) {
+            console.log(text)
+            console.log(itemsArray)
+            itemsArray = itemsArray.filter(task => task !== text)
+            console.log('clicked', itemsArray)
+            localStorage.setItem('items', JSON.stringify(itemsArray));
+            this.parentNode.parentNode.removeChild(this.parentNode);
+            if (itemsArray.length === 0) {
+                resetBtn.classList.add('hide');
+            }
+        } else if (event.target === update) {
+            console.log('update')
+        }
+        //console.log(this)
+        // console.log(text)
+        // console.log(itemsArray)
+        // itemsArray = itemsArray.filter(task => task !== text)
+        // console.log('clicked', itemsArray)
+        // localStorage.setItem('items', JSON.stringify(itemsArray));
+        // this.parentNode.parentNode.removeChild(this.parentNode);
+        // if (itemsArray.length === 0) {
+        //     resetBtn.classList.add('hide');
+        // }
+    })
 }
 
 // 3. Коли користувач ввів новий item у input, перезаписати значення 'items' у localStorage
@@ -30,19 +83,18 @@ messageForm.addEventListener('submit', function(e) {
     messageInput.value = '';
 })
 
-// Oтримую масив для робити з ним у JS
-const data = JSON.parse(localStorage.getItem('items'));
-
 
 
 
 // Одразу після завантаження сторінки виводжу items
 data.forEach(item => {
     liMaker(item);
+
 });
 
 resetBtn.addEventListener('click', function() {
-    localStorage.clear();
+    itemsArray = [];
+    localStorage.setItem('items', JSON.stringify(itemsArray));
     while (ul.firstChild) {
         ul.removeChild(ul.firstChild);
         resetBtn.classList.add('hide');
