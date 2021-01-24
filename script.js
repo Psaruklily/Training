@@ -2,6 +2,7 @@ const messageForm = document.querySelector('form');
 const messageInput = document.querySelector('[name = "message"]');
 const resetBtn = document.querySelector('.btn-dark');
 const ul = document.querySelector('.list ul');
+const updateBtn = document.querySelector('.update-btn');
 // 1. Якщо у localStorage уже записані дані, тоді присвоїти цій змінній їх, якщо ні - пустий масив;
 let itemsArray = localStorage.getItem('items') ?
     JSON.parse(localStorage.getItem('items')) : []
@@ -41,35 +42,29 @@ const liMaker = text => {
     if (itemsArray.length > 0) {
         resetBtn.classList.remove('hide');
     }
-    console.log(mainDiv)
+    //console.log(mainDiv)
 
     let cancel = mainDiv.lastElementChild.firstElementChild;
     let update = mainDiv.lastElementChild.lastElementChild;
 
     mainDiv.addEventListener('click', function(event) {
         if (event.target === cancel) {
-            console.log(text)
-            console.log(itemsArray)
+            // console.log(text)
+            // console.log(itemsArray)
             itemsArray = itemsArray.filter(task => task !== text)
-            console.log('clicked', itemsArray)
+                //console.log('clicked', itemsArray)
             localStorage.setItem('items', JSON.stringify(itemsArray));
             this.parentNode.parentNode.removeChild(this.parentNode);
             if (itemsArray.length === 0) {
                 resetBtn.classList.add('hide');
             }
         } else if (event.target === update) {
-            console.log('update')
+            //console.log('update')
+            //console.log(text)
+            messageInput.value = text;
+            //console.log(messageInput.value)
+            updateItem(updateLocalStorage)
         }
-        //console.log(this)
-        // console.log(text)
-        // console.log(itemsArray)
-        // itemsArray = itemsArray.filter(task => task !== text)
-        // console.log('clicked', itemsArray)
-        // localStorage.setItem('items', JSON.stringify(itemsArray));
-        // this.parentNode.parentNode.removeChild(this.parentNode);
-        // if (itemsArray.length === 0) {
-        //     resetBtn.classList.add('hide');
-        // }
     })
 }
 
@@ -100,6 +95,37 @@ resetBtn.addEventListener('click', function() {
         resetBtn.classList.add('hide');
     }
 })
+
+function updateLocalStorage(indexItem) {
+    updateBtn.addEventListener('click', function() {
+        // if (messageInput.value) {
+        //     //console.log(messageInput.value)
+        //     //console.log(itemsArray)
+        //     // itemsArray.findIndex(el => el === )
+        // } else {
+        //     console.log('empty')
+        // }
+        //let indexItem = updateItem();
+        console.log(messageInput.value)
+        itemsArray[indexItem] = messageInput.value;
+        localStorage.setItem('items', JSON.stringify(itemsArray))
+
+    })
+}
+
+updateLocalStorage()
+
+function updateItem(callback) {
+    //console.log(messageInput.value)
+    console.log("I'm an apdate item")
+    console.log(messageInput.value)
+    let index = itemsArray.findIndex(el => el === messageInput.value);
+    //console.log(index);
+    // console.log(itemsArray[index])
+    callback(index)
+}
+
+
 
 
 
