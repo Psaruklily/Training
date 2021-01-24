@@ -11,9 +11,6 @@ let itemsArray = localStorage.getItem('items') ?
 // 2. Занесла масив у localStorage
 localStorage.setItem('items', JSON.stringify(itemsArray));
 
-// Oтримую масив для робити з ним у JS
-const data = JSON.parse(localStorage.getItem('items'));
-
 const liMaker = text => {
     let li = document.createElement('li');
     let mainDiv = document.createElement('div');
@@ -23,16 +20,18 @@ const liMaker = text => {
     p.textContent = text;
     task.appendChild(p);
     mainDiv.appendChild(task);
-    let cancelBtn = document.createElement('button');
-    cancelBtn.textContent = 'Cancel';
-    cancelBtn.classList.add('delete');
 
     let updateBtn = document.createElement('button');
     updateBtn.textContent = 'Update'
     updateBtn.classList.add('update');
 
-    divForButn.appendChild(cancelBtn)
+    let cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.classList.add('delete');
+
     divForButn.appendChild(updateBtn)
+    divForButn.appendChild(cancelBtn)
+
     mainDiv.appendChild(divForButn)
 
     li.appendChild(mainDiv)
@@ -42,15 +41,12 @@ const liMaker = text => {
         resetBtn.classList.remove('hide');
     }
 
-    let cancel = mainDiv.lastElementChild.firstElementChild;
-    let update = mainDiv.lastElementChild.lastElementChild;
+    let update = mainDiv.lastElementChild.firstElementChild;
+    let cancel = mainDiv.lastElementChild.lastElementChild;
 
     mainDiv.addEventListener('click', function(event) {
         if (event.target === cancel) {
-            // console.log(text)
-            // console.log(itemsArray)
             itemsArray = itemsArray.filter(task => task !== text)
-                //console.log('clicked', itemsArray)
             localStorage.setItem('items', JSON.stringify(itemsArray));
             this.parentNode.parentNode.removeChild(this.parentNode);
             if (itemsArray.length === 0) {
@@ -58,8 +54,8 @@ const liMaker = text => {
             }
         } else if (event.target === update) {
             messageInput.value = text;
-            console.log('click here', event.target)
-            updateItem(updateLocalStorage)
+            let index = itemsArray.findIndex(el => el === messageInput.value);
+            updateLocalStorage(index, p)
         }
     })
 }
@@ -75,13 +71,10 @@ messageForm.addEventListener('submit', function(e) {
     messageInput.value = '';
 })
 
-
-
-
 // Одразу після завантаження сторінки виводжу items
-data.forEach(item => {
+itemsArray.forEach(item => {
     liMaker(item);
-    console.log('output')
+    console.log('output on page out')
 });
 
 resetBtn.addEventListener('click', function() {
@@ -94,93 +87,19 @@ resetBtn.addEventListener('click', function() {
 })
 
 function updateLocalStorage(indexItem) {
+
     updateBtn.addEventListener('click', function() {
-        //console.log(messageInput.value)
         itemsArray[indexItem] = messageInput.value;
+        localStorage.setItem('items', JSON.stringify(itemsArray));
 
-        localStorage.setItem('items', JSON.stringify(itemsArray))
         ul.innerHTML = '';
-        let newData = JSON.parse(localStorage.getItem('items'))
-        console.log(newData)
-        newData.forEach(item => {
+
+        itemsArray.forEach(item => {
             liMaker(item);
-            console.log('output')
         });
-        // liMaker(itemsArray[indexItem]); //????????????
-        // console.log('last main')
     })
-
 }
-
-updateLocalStorage()
-
-
-
-function updateItem(callback) {
-    //console.log(messageInput.value)
-    console.log("I'm an apdate item")
-    console.log(messageInput.value)
-    let index = itemsArray.findIndex(el => el === messageInput.value);
-    //console.log(index)
-    callback(index)
-}
-
-
 
 cleanUp.addEventListener('click', () => {
-    messageInput.value = '';
+    messageInput.value = null;
 })
-
-
-
-
-
-
-
-
-
-
-
-//===================
-
-
-// function setItemLocalStorage() {
-//     messageForm.addEventListener('submit', event => {
-//         event.preventDefault();
-//         //let message = messageInput.value;
-//         arr.push('learn HTML')
-//         localStorage.setItem('todoList', JSON.stringify(arr))
-
-//     })
-// }
-
-// setItemLocalStorage()
-
-
-
-//==================================
-
-// function setItemLocalStorage() {
-//     messageForm.addEventListener('submit', event => {
-//         event.preventDefault();
-//         let message = messageInput.value;
-//         let arr = JSON.parse(localStorage.getItem('todoList'));
-//         if (message === '') {
-//             return false;
-//         }
-//         arr.push(message);
-//         localStorage.setItem('todoList', JSON.stringify(arr));
-
-//         console.log(arr)
-//         message = '';
-
-//     })
-// }
-
-// setItemLocalStorage()
-
-// const liMaker = text => {
-//     let li = document.createElement('li');
-//     li.textContent = item;
-//     ul.appendChild(li)
-// }
