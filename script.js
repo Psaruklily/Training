@@ -16,8 +16,17 @@ const liMaker = text => {
     let mainDiv = document.createElement('div');
     let task = document.createElement('div');
     let divForButn = document.createElement('div');
+    let divForChecbox = document.createElement('div'); //==
     let p = document.createElement('p');
     p.textContent = text;
+    p.classList.add('task-text') //===
+    mainDiv.classList.add('main-div-li')
+    let checkbox = document.createElement('input') //==
+    checkbox.type = 'checkbox';
+    checkbox.classList.add('checkbox')
+
+    task.classList.add('task') //===
+    task.appendChild(checkbox)
     task.appendChild(p);
     mainDiv.appendChild(task);
 
@@ -36,6 +45,8 @@ const liMaker = text => {
 
     li.appendChild(mainDiv)
     ul.appendChild(li);
+    let hr = document.createElement('hr') ///==
+    ul.appendChild(hr)
 
     if (itemsArray.length > 0) {
         resetBtn.classList.remove('hide');
