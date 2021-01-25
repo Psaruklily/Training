@@ -41,6 +41,11 @@
     color: #fff;
 }
 
+.save-btn {
+    background: #156b21;
+    border-color: #156b21;
+}
+
 .update-btn {
     background: #007bff;
     border-color: #007bff;
@@ -56,16 +61,25 @@
     visibility: hidden;
 }
 
-.delete {
-    width: 60px;
-    height: 30px;
-    background: red;
+.display-none {
+    display: none;
 }
 
-.update {
-    width: 65px;
+.delete-small {
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    background: rgb(175, 27, 27);
+}
+
+.update-small {
+    width: 30px;
     height: 30px;
     background: rgb(42, 108, 231);
+    border-radius: 3px;
+    border: none;
+    margin-right: 10px;
 }
 
 
