@@ -1,4 +1,7 @@
-html {
+/*---------------------------------------------------------------Кнопки при наведенні*/
+
+
+/* html {
     box-sizing: border-box;
 }
 
@@ -7,6 +10,8 @@ html {
 *:before {
     box-sizing: inherit;
 }
+
+
 
 .wrapper {
     margin: 0 auto;
@@ -49,7 +54,48 @@ html {
 .up-btn:hover {
     background: rgb(20, 102, 139);
     top: 25px;
-    /* transition-duration: 1s, 100ms;
-    transition-property: background-color, top; */
     transition: all 1s ease 0s;
+} */
+
+
+/*---------------------------------------------------------------Пошук*/
+
+.wrapper {
+    margin: 0 auto;
+    width: 700px;
+    height: 600px;
+    padding: 30px;
+}
+
+.form-wrapper {
+    display: flex;
+}
+
+.icon {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+input {
+    outline: none;
+    width: 100px;
+    background: transparent;
+    outline: none;
+    margin-inline-end: 360px;
+    border: none;
+    border-bottom: 1px solid #000;
+    transition: width 3s ease;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+form:hover input {
+    transition: width 1s ease;
+    width: 300px;
+}
+
+input:focus {
+    width: 300px;
 }
